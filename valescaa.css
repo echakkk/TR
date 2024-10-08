@@ -33,11 +33,7 @@ body {
     width: 570px;
 }
 
-.promoimg {
-    height: 1000px;
-    border: solid 10px white;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-}
+
 
 .maps {
     width: 500px;
@@ -45,14 +41,12 @@ body {
     color: #ffe2df;
 }
 
-.promo a {
-
-    text-decoration: none;
-    color: inherit;
-}
 
 .custom-navbar {
+    padding-top: 15px;
+    padding-bottom: 15px;
     background-color: #5f1919 !important;
+    max-height: 600px;
 }
 
 .custom-navbar .nav-link {
@@ -88,27 +82,9 @@ body {
 
 /* Carousel Styles */
 .carousel-item img {
-    width: 100%;
-    height: 500px;
+    max-width: 100%;
+    max-height: 500px;
     object-fit: cover;
-}
-
-.product-img {
-    width: 100%;
-    height: 300px;
-    object-fit: cover;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-/* Hover effect to scale the image and add a shadow */
-.product-img:hover {
-    transform: scale(1.05);
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
-    cursor: pointer;
-}
-
-.products {
-    padding: 50px 0;
 }
 
 .bg-secondary {
@@ -129,6 +105,10 @@ body {
     color: #ffe2df !important;
 }
 
+footer p {
+    margin: 5px 0;
+}
+
 a {
     color: #ffe2df;
     text-decoration: none;
@@ -137,14 +117,6 @@ a {
 header {
     font-family: "Frank Ruhl Libre", serif;
     font-optical-sizing: auto;
-}
-
-footer p {
-    margin: 5px 0;
-}
-
-header {
-    font-size: 20px;
     background-color: #343a40;
     color: white;
     position: fixed;
@@ -163,10 +135,6 @@ header p {
     padding-right: 18px;
 }
 
-.navbar-nav .loginm {
-    padding-top: 3px;
-}
-
 .dropdown:hover .dropdown-menu {
     display: block;
 }
@@ -175,7 +143,6 @@ header p {
     font-size: 18px;
     display: none;
     position: absolute;
-    background-color: #343a40;
     left: 50% !important;
     transform: translateX(-50%) !important;
     top: 100% !important;
@@ -199,20 +166,6 @@ header p {
     height: 10px;
 }
 
-.salam {
-    color: #5f1919;
-    background-color: #ffecea;
-}
-
-.salam h1 {
-    padding-top: 40px;
-}
-.salam hr {
-    opacity: 1;
-    background-color: #5f1919;
-    height: 5px;
-}
-
 .utama {
     color: #5f1919;
     background-color: #ffecea;
@@ -224,4 +177,186 @@ header p {
     font-family: "Paytone One", sans-serif;
     font-weight: 400;
     font-style: normal;
+    max-width: 100%;
+    max-height: 380px;
+}
+
+.promo img {
+    max-width: 100%;
+    max-height: 400px;
+    object-fit: cover;
+}
+
+.promo h1 {
+    font-size: clamp(16px, 1.8vw, 36px);
+    text-align: center;
+}
+
+.promo a {
+
+    text-decoration: none;
+    color: inherit;
+}
+
+.promoimg {
+    height: 1000px;
+    border: solid 10px white;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.product-img {
+    max-width: 100%;
+    max-height: 300px;
+    object-fit: cover;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.product-img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+}
+
+.salam {
+    color: #5f1919;
+    background-color: #ffecea;
+}
+
+.salam h1 {
+    font-size: clamp(8px, 2.5vw, 38px);
+}
+
+.salam h5 {
+    font-size: clamp(4px, 1.4vw, 20px);
+}
+
+.salam hr {
+    opacity: 1;
+    background-color: #5f1919;
+    height: 0.3vw;
+}
+
+.salam img {
+    max-width: 100%;
+    max-height: 350px;
+    object-fit: cover;
+}
+
+h1 {
+    font-size: clamp(26px, 4vw, 42px);
+}
+
+#logo {
+    width: 80px;
+
+}
+footer h1 {
+    font-size: clamp(8px, 2.5vw, 28px);
+}
+footer h5{
+    font-size: clamp(8px, 2vw, 20px);
+}
+#halal {
+    width: 70px;
+
+}
+#logo-fb{
+    max-width: 100%;
+    max-height: 41px;
+    object-fit: cover;
+}
+#logo-ig{
+    max-width: 100%;
+    max-height: 35px;
+    object-fit: cover;
+}
+#logo-tiktok{
+    max-width: 40px;
+}
+#logo-wa{
+    width: 40px;
+}
+
+
+@media (min-width: 991px) {
+    .text-salam {
+        margin-left: 100px;
+        margin-right: 50px;
+    }
+    .navbar-collapse{
+        justify-content: center;
+    }
+    #logo-collapse {
+        width: 0px;
+    }
+}
+
+@media (max-width: 991px) {
+    #logo {
+        width: 75px;
+    }
+    .text-salam {
+        margin-right: 10px;
+    }
+
+    .salam img {
+        max-width: 100%;
+        max-height: 200px;
+        object-fit: cover;
+    }
+
+    #halal {
+        width: 0px;
+
+    }
+    #logo-collapse {
+        width: 80px;
+    }
+    #logo {
+        width: 0px;
+    }
+    .dropdown:hover .dropdown-menu {
+        display: block;
+    }
+    .nav-link {
+        font-size: clamp(10px, 2.5vw, 20px);
+    }
+    .dropdown-menu {
+        font-size: clamp(8px, 2.5vw, 16px);
+        background-color: #343a40;
+        right: 0% !important;
+        transform: translateX(0%) !important;
+        top: 0% !important;
+    }
+    .dropdown-menu li {
+        display: block;
+        float: left;
+        position: relative;
+    }
+}
+
+@media (max-width: 600px) {
+    .salam h5 {
+        font-size: 8px;
+    }
+    h1 {
+        font-size: 26px;
+    }
+
+    .carousel-item img {
+        height: 200px;
+        object-fit: cover;
+    }
+
+    #logo-collapse {
+        width: 55px;
+    }
+    #halal {
+        width: 0px;
+    }
+    .salam img{
+        max-width: 100%;
+        max-height: 180px;
+        object-fit: cover;
+    }
 }
