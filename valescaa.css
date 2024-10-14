@@ -80,6 +80,20 @@ body {
     /* Teks berubah menjadi #5f1919 */
 }
 
+.btn-custom {
+    color: #ffe2df; /* Warna teks */
+    text-decoration: none; /* Menghapus garis bawah pada link */
+    padding: 10px 20px;
+    border: 1px solid #ffe2df; /* Border dengan warna yang sama */
+    border-radius: 5px;
+    display: inline-block;
+}
+
+.btn-custom:hover {
+    background-color: #5f1919; /* Mengubah warna latar belakang saat hover */
+    color: #fff; /* Warna teks berubah saat hover */
+}
+
 .hero {
     background: #e6e0cf;
     color: #333;
