@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brownies - Valesca Cake & Bakery</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="valescaa.css">
+</head>
+
+<body>
+    <!-- Header -->
+    <header class="sticky-top navbar navbar-expand-lg d-flex justify-content-center custom-navbar">
+        <a class="navbar-brand p-2" href="/Home.html"><img src="Logo.PNG" alt="Logo" style="width: 85px; height: 75px;"></a>
+        <div class="navbar" id="navbarSupportedContent">
+            <ul class="navbar-nav">
+                <li class="nav-item pr-4"><a class="nav-link" href="/Home.html">Home</a></li>
+                <li class="nav-item pr-4"><a class="nav-link" href="#">About Us</a></li>
+                <li class="nav-item dropdown pr-4">
+                    <a class="nav-link" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Product</a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="#">Brownies</a>
+                        <a class="dropdown-item" href="Cake.html">Cake</a>
+                        <a class="dropdown-item" href="Dessert.html">Dessert</a>
+                        <a class="dropdown-item" href="Pastry.html">Pastry</a>
+                        <a class="dropdown-item" href="Pizza.html">Pizza</a>
+                        <a class="dropdown-item" href="RotiManis.html">Roti Manis</a>
+                        <a class="dropdown-item" href="RotiManisBox.html">Roti Manis Box</a>
+                        <a class="dropdown-item" href="Snack.html">Snack</a>
+                        <a class="dropdown-item" href="Tart.html">Tar</a>
+                        <a class="dropdown-item" href="Tawar.html">Tawar</a>
+                    </div>
+                </li>
+                <li class="nav-item pr-4"><a class="nav-link" href="/Promo.html">Info</a></li>
+                <li class="nav-item pr-4"><a class="nav-link" href="/Orders.html">Order</a></li>
+                <li class="nav-item pr-4"><a class="nav-link" href="#">Hotline</a></li>
+            </ul>
+        </div>
+        <a class="navbar-brand p-2" href="#"><img src="halal.PNG" alt="Halal Logo" style="width: 70px; height: 70px;"></a>
+    </header>
+
+  <!-- Content Section -->
+<section class="products py-5">
+    <div class="container">
+        <h2 class="text-center mb-4">Brownies</h2>
+        <div class="d-flex justify-content-center flex-wrap">
+            <div class="col-lg-4 mb-4 d-flex justify-content-center">
+                <div class="text-center">
+                    <p class="text-black">Coklat Keju.</p>
+                    <img src="Brownies1.Jpeg" alt="Product 1" class="img-fluid rounded product-img" style="height: 200px; margin-bottom: 15px;">
+                    <div class="d-flex justify-content-center align-items-center mt-2">
+                        <button class="btn btn-outline-secondary" onclick="updateQuantity('coklatKeju', -1)">-</button>
+                        <input type="number" id="coklatKeju" value="1" min="1" class="mx-2 text-center" style="width: 50px; text-align: center;">
+                        <button class="btn btn-outline-secondary" onclick="updateQuantity('coklatKeju', 1)">+</button>
+                    </div>
+                    <button class="btn btn-primary mt-3" onclick="buyProduct('Coklat Keju', 'coklatKeju')">Beli</button>
+                </div>
+            </div>
+            <div class="col-lg-4 mb-4 d-flex justify-content-center">
+                <div class="text-center">
+                    <p class="text-black">Kukus.</p>
+                    <img src="Brownies2.Jpeg" alt="Product 2" class="img-fluid rounded product-img" style="height: 200px; margin-bottom: 15px;">
+                    <div class="d-flex justify-content-center align-items-center mt-2">
+                        <button class="btn btn-outline-secondary" onclick="updateQuantity('kukus', -1)">-</button>
+                        <input type="number" id="kukus" value="1" min="1" class="mx-2 text-center" style="width: 50px; text-align: center;">
+                        <button class="btn btn-outline-secondary" onclick="updateQuantity('kukus', 1)">+</button>
+                    </div>
+                    <button class="btn btn-primary mt-3" onclick="buyProduct('Kukus', 'kukus')">Beli</button>
+                </div>
+            </div>
+            <div class="col-lg-4 mb-4 d-flex justify-content-center">
+                <div class="text-center">
+                    <p class="text-black">Moist.</p>
+                    <img src="Brownies3.Jpeg" alt="Product 3" class="img-fluid rounded product-img" style="height: 200px; margin-bottom: 15px;">
+                    <div class="d-flex justify-content-center align-items-center mt-2">
+                        <button class="btn btn-outline-secondary" onclick="updateQuantity('moist', -1)">-</button>
+                        <input type="number" id="moist" value="1" min="1" class="mx-2 text-center" style="width: 50px; text-align: center;">
+                        <button class="btn btn-outline-secondary" onclick="updateQuantity('moist', 1)">+</button>
+                    </div>
+                    <button class="btn btn-primary mt-3" onclick="buyProduct('Moist', 'moist')">Beli</button>
+                </div>
+            </div>
+            <div class="col-12 mb-4"></div>
+
+            <div class="col-lg-4 mb-4 d-flex justify-content-center">
+                <div class="text-center">
+                    <p class="text-black">Muffin.</p>
+                    <img src="Brownies4.Jpeg" alt="Product 4" class="img-fluid rounded product-img" style="height: 200px; margin-bottom: 15px;">
+                    <div class="d-flex justify-content-center align-items-center mt-2">
+                        <button class="btn btn-outline-secondary" onclick="updateQuantity('muffin', -1)">-</button>
+                        <input type="number" id="muffin" value="1" min="1" class="mx-2 text-center" style="width: 50px; text-align: center;">
+                        <button class="btn btn-outline-secondary" onclick="updateQuantity('muffin', 1)">+</button>
+                    </div>
+                    <button class="btn btn-primary mt-3" onclick="buyProduct('Muffin', 'muffin')">Beli</button>
+                </div>
+            </div>
+            <div class="col-lg-4 mb-4 d-flex justify-content-center">
+                <div class="text-center">
+                    <p class="text-black">Sinny.</p>
+                    <img src="Brownies5.Jpeg" alt="Product 5" class="img-fluid rounded product-img" style="height: 200px; margin-bottom: 15px;">
+                    <div class="d-flex justify-content-center align-items-center mt-2">
+                        <button class="btn btn-outline-secondary" onclick="updateQuantity('sinny', -1)">-</button>
+                        <input type="number" id="sinny" value="1" min="1" class="mx-2 text-center" style="width: 50px; text-align: center;">
+                        <button class="btn btn-outline-secondary" onclick="updateQuantity('sinny', 1)">+</button>
+                    </div>
+                    <button class="btn btn-primary mt-3" onclick="buyProduct('Sinny', 'sinny')">Beli</button>
+                </div>
+            </div>
+            <div class="col-lg-4 mb-4 d-flex justify-content-center">
+                <div class="text-center">
+                    <p class="text-black">Topping coklat.</p>
+                    <img src="Brownies6.Jpeg" alt="Product 6" class="img-fluid rounded product-img" style="height: 200px; margin-bottom: 15px;">
+                    <div class="d-flex justify-content-center align-items-center mt-2">
+                        <button class="btn btn-outline-secondary" onclick="updateQuantity('toppingCoklat', -1)">-</button>
+                        <input type="number" id="toppingCoklat" value="1" min="1" class="mx-2 text-center" style="width: 50px; text-align: center;">
+                        <button class="btn btn-outline-secondary" onclick="updateQuantity('toppingCoklat', 1)">+</button>
+                    </div>
+                    <button class="btn btn-primary mt-3" onclick="buyProduct('Topping Coklat', 'toppingCoklat')">Beli</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script>
+function updateQuantity(productId, change) {
+    const quantityInput = document.getElementById(productId);
+    let currentValue = parseInt(quantityInput.value);
+    currentValue += change;
+    if (currentValue < 1) currentValue = 1; // Ensure minimum quantity is 1
+    quantityInput.value = currentValue;
+}
+
+function buyProduct(productName, quantityId) {
+    const quantity = document.getElementById(quantityId).value;
+    alert(`Anda membeli ${quantity} ${productName}.`);
+}
+</script>
+
+
+
+
+    
+
+    <!-- Footer -->
+    <footer class="custom-footer text-light d-flex align-items-center flex-column py-4">
+        <h2>Contact Us</h2>
+        <div class="d-flex align-items-center flex-column" style="padding-left: 3px;">
+            <div class="d-flex justify-content-start py-1" style="padding-left: 710px;">
+                <img src="Facebook.png" class="pr-3" style="width: 6%; margin-left: 2.5px">
+                <h5 style="padding-top: 10px">@Valesca Valesca</h5>
+            </div>
+            <div class="d-flex justify-content-start py-1" style="padding-left: 407px;">
+                <img src="Instagram.png" class="pr-3" style="width: 9%;">
+                <h5 style="padding-top: 8px">@valescabakey</h5>
+            </div>
+            <div class="d-flex justify-content-start py-1" style="padding-left: 128px;">
+                <img src="Tiktok.png" class="pr-3" style="width: 14%; margin-right: 3px; margin-left: 3px;">
+                <h5 style="padding-top: 3px;">@valescabakery01</h5>
+            </div>
+            <div class="d-flex justify-content-start py-1" style="padding-left: 396px;">
+                <img src="Whatsaap.png" class="pr-3" style="width: 8%; padding-top: 2px; margin-right: 6px; margin-left: 6px;">
+                <h5 style="padding-top: 7px">08156799697</h5>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

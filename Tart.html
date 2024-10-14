@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tar - Valesca Cake & Bakery</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="valescaa.css">
+</head>
+
+<body>
+    <header class="sticky-top navbar navbar-expand-lg d-flex justify-content-center custom-navbar">
+        <a class="navbar-brand p-2" href="/Home.html"><img src="Logo.PNG" alt="Logo" style="width: 85px; height: 75px;"></a>
+        <div class="navbar" id="navbarSupportedContent">
+            <ul class="navbar-nav">
+                <li class="nav-item pr-4"><a class="nav-link" href="/Home.html">Home</a></li>
+                <li class="nav-item pr-4"><a class="nav-link" href="#">About Us</a></li>
+                <li class="nav-item dropdown pr-4">
+                    <a class="nav-link" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Product</a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="Brownies.html">Brownies</a>
+                        <a class="dropdown-item" href="Cake.html">Cake</a>
+                        <a class="dropdown-item" href="Dessert.html">Dessert</a>
+                        <a class="dropdown-item" href="Pastry.html">Pastry</a>
+                        <a class="dropdown-item" href="Pizza.html">Pizza</a>
+                        <a class="dropdown-item" href="RotiManis.html">Roti Manis</a>
+                        <a class="dropdown-item" href="RotiManisBox.html">Roti Manis Box</a>
+                        <a class="dropdown-item" href="#">Tar</a>
+                        <a class="dropdown-item" href="Tawar.html">Tawar</a>
+                        <a class="dropdown-item" href="Snack.html">Snack</a>
+                    </div>
+                </li>
+                <li class="nav-item pr-4"><a class="nav-link" href="/Promo.html">Info</a></li>
+                <li class="nav-item pr-4"><a class="nav-link" href="/Orders.html">Order</a></li>
+                <li class="nav-item pr-4"><a class="nav-link" href="#">Hotline</a></li>
+            </ul>
+        </div>
+        <a class="navbar-brand p-2" href="#"><img src="halal.PNG" alt="Halal Logo" style="width: 70px; height: 70px;"></a>
+    </header>
+
+   <!-- Content Section -->
+<section class="products py-5">
+    <div class="container">
+        <h2 class="text-center mb-4">Tart</h2>
+        <div class="d-flex justify-content-center flex-wrap">
+            <div class="col-lg-4 mb-4 d-flex justify-content-center">
+                <div class="text-center">
+                    <p class="text-black">Cup Cake Jumbo.</p>
+                    <img src="Tart1.Jpeg" alt="Product 1" class="img-fluid rounded product-img" style="height: 200px; margin-bottom: 15px;">
+                    <div class="d-flex justify-content-center align-items-center mt-2">
+                        <button class="btn btn-outline-secondary" onclick="updateQuantity('jumbo', -1)">-</button>
+                        <input type="number" id="jumbo" value="1" min="1" class="mx-2 text-center" style="width: 50px; text-align: center;">
+                        <button class="btn btn-outline-secondary" onclick="updateQuantity('jumbo', 1)">+</button>
+                    </div>
+                    <button class="btn btn-primary mt-3" onclick="buyProduct('Cup Cake Jumbo', 'jumbo')">Beli</button>
+                </div>
+            </div>
+            <div class="col-lg-4 mb-4 d-flex justify-content-center">
+                <div class="text-center">
+                    <p class="text-black">Cup Cake Mini.</p>
+                    <img src="Tart2.Jpeg" alt="Product 2" class="img-fluid rounded product-img" style="height: 200px; margin-bottom: 15px;">
+                    <div class="d-flex justify-content-center align-items-center mt-2">
+                        <button class="btn btn-outline-secondary" onclick="updateQuantity('mini', -1)">-</button>
+                        <input type="number" id="mini" value="1" min="1" class="mx-2 text-center" style="width: 50px; text-align: center;">
+                        <button class="btn btn-outline-secondary" onclick="updateQuantity('mini', 1)">+</button>
+                    </div>
+                    <button class="btn btn-primary mt-3" onclick="buyProduct('Cup Cake Mini', 'mini')">Beli</button>
+                </div>
+            </div>
+            <div class="col-lg-4 mb-4 d-flex justify-content-center">
+                <div class="text-center">
+                    <p class="text-black">Tart Black Fores UK 18.</p>
+                    <img src="Tart3.Jpeg" alt="Product 3" class="img-fluid rounded product-img" style="height: 200px; margin-bottom: 15px;">
+                    <div class="d-flex justify-content-center align-items-center mt-2">
+                        <button class="btn btn-outline-secondary" onclick="updateQuantity('blackfores18', -1)">-</button>
+                        <input type="number" id="blackfores18" value="1" min="1" class="mx-2 text-center" style="width: 50px; text-align: center;">
+                        <button class="btn btn-outline-secondary" onclick="updateQuantity('blackfores18', 1)">+</button>
+                    </div>
+                    <button class="btn btn-primary mt-3" onclick="buyProduct('Tart Black Fores UK 18', 'blackfores18')">Beli</button>
+                </div>
+            </div>
+            <div class="col-lg-4 mb-4 d-flex justify-content-center">
+                <div class="text-center">
+                    <p class="text-black">Tart Black Fores UK 20.</p>
+                    <img src="Tart4.Jpeg" alt="Product 4" class="img-fluid rounded product-img" style="height: 200px; margin-bottom: 15px;">
+                    <div class="d-flex justify-content-center align-items-center mt-2">
+                        <button class="btn btn-outline-secondary" onclick="updateQuantity('blackfores20', -1)">-</button>
+                        <input type="number" id="blackfores20" value="1" min="1" class="mx-2 text-center" style="width: 50px; text-align: center;">
+                        <button class="btn btn-outline-secondary" onclick="updateQuantity('blackfores20', 1)">+</button>
+                    </div>
+                    <button class="btn btn-primary mt-3" onclick="buyProduct('Tart Black Fores UK 20', 'blackfores20')">Beli</button>
+                </div>
+            </div>
+            <div class="col-lg-4 mb-4 d-flex justify-content-center">
+                <div class="text-center">
+                    <p class="text-black">Tart Karakter.</p>
+                    <img src="Tart5.Jpeg" alt="Product 5" class="img-fluid rounded product-img" style="height: 200px; margin-bottom: 15px;">
+                    <div class="d-flex justify-content-center align-items-center mt-2">
+                        <button class="btn btn-outline-secondary" onclick="updateQuantity('karakter', -1)">-</button>
+                        <input type="number" id="karakter" value="1" min="1" class="mx-2 text-center" style="width: 50px; text-align: center;">
+                        <button class="btn btn-outline-secondary" onclick="updateQuantity('karakter', 1)">+</button>
+                    </div>
+                    <button class="btn btn-primary mt-3" onclick="buyProduct('Tart Karakter', 'karakter')">Beli</button>
+                </div>
+            </div>
+            <div class="col-lg-4 mb-4 d-flex justify-content-center">
+                <div class="text-center">
+                    <p class="text-black">Tart Love.</p>
+                    <img src="Tart6.Jpeg" alt="Product 6" class="img-fluid rounded product-img" style="height: 200px; margin-bottom: 15px;">
+                    <div class="d-flex justify-content-center align-items-center mt-2">
+                        <button class="btn btn-outline-secondary" onclick="updateQuantity('love', -1)">-</button>
+                        <input type="number" id="love" value="1" min="1" class="mx-2 text-center" style="width: 50px; text-align: center;">
+                        <button class="btn btn-outline-secondary" onclick="updateQuantity('love', 1)">+</button>
+                    </div>
+                    <button class="btn btn-primary mt-3" onclick="buyProduct('Tart Love', 'love')">Beli</button>
+                </div>
+            </div>
+            <div class="col-lg-4 mb-4 d-flex justify-content-center">
+                <div class="text-center">
+                    <p class="text-black">Tart Meses.</p>
+                    <img src="Tart7.Jpeg" alt="Product 7" class="img-fluid rounded product-img" style="height: 200px; margin-bottom: 15px;">
+                    <div class="d-flex justify-content-center align-items-center mt-2">
+                        <button class="btn btn-outline-secondary" onclick="updateQuantity('meses', -1)">-</button>
+                        <input type="number" id="meses" value="1" min="1" class="mx-2 text-center" style="width: 50px; text-align: center;">
+                        <button class="btn btn-outline-secondary" onclick="updateQuantity('meses', 1)">+</button>
+                    </div>
+                    <button class="btn btn-primary mt-3" onclick="buyProduct('Tart Meses', 'meses')">Beli</button>
+                </div>
+            </div>
+            <div class="col-lg-4 mb-4 d-flex justify-content-center">
+                <div class="text-center">
+                    <p class="text-black">Tart Redvelvet.</p>
+                    <img src="Tart8.Jpeg" alt="Product 8" class="img-fluid rounded product-img" style="height: 200px; margin-bottom: 15px;">
+                    <div class="d-flex justify-content-center align-items-center mt-2">
+                        <button class="btn btn-outline-secondary" onclick="updateQuantity('redvelvet', -1)">-</button>
+                        <input type="number" id="redvelvet" value="1" min="1" class="mx-2 text-center" style="width: 50px; text-align: center;">
+                        <button class="btn btn-outline-secondary" onclick="updateQuantity('redvelvet', 1)">+</button>
+                    </div>
+                    <button class="btn btn-primary mt-3" onclick="buyProduct('Tart Redvelvet', 'redvelvet')">Beli</button>
+                </div>
+            </div>
+            <div class="col-lg-4 mb-4 d-flex justify-content-center">
+                <div class="text-center">
+                    <p class="text-black">Tart Tema Anak 1.</p>
+                    <img src="Tart9.Jpeg" alt="Product 9" class="img-fluid rounded product-img" style="height: 200px; margin-bottom: 15px;">
+                    <div class="d-flex justify-content-center align-items-center mt-2">
+                        <button class="btn btn-outline-secondary" onclick="updateQuantity('temaAnak1', -1)">-</button>
+                        <input type="number" id="temaAnak1" value="1" min="1" class="mx-2 text-center" style="width: 50px; text-align: center;">
+                        <button class="btn btn-outline-secondary" onclick="updateQuantity('temaAnak1', 1)">+</button>
+                    </div>
+                    <button class="btn btn-primary mt-3" onclick="buyProduct('Tart Tema Anak 1', 'temaAnak1')">Beli</button>
+                </div>
+            </div>
+            <div class="col-lg-4 mb-4 d-flex justify-content-center">
+                <div class="text-center">
+                    <p class="text-black">Tart Tema Anak 2.</p>
+                    <img src="Tart10.Jpeg" alt="Product 10" class="img-fluid rounded product-img" style="height: 200px; margin-bottom: 15px;">
+                    <div class="d-flex justify-content-center align-items-center mt-2">
+                        <button class="btn btn-outline-secondary" onclick="updateQuantity('temaAnak2', -1)">-</button>
+                        <input type="number" id="temaAnak2" value="1" min="1" class="mx-2 text-center" style="width: 50px; text-align: center;">
+                        <button class="btn btn-outline-secondary" onclick="updateQuantity('temaAnak2', 1)">+</button>
+                    </div>
+                    <button class="btn btn-primary mt-3" onclick="buyProduct('Tart Tema Anak 2', 'temaAnak2')">Beli</button>
+                </div>
+            </div>
+            <div class="col-lg-4 mb-4 d-flex justify-content-center">
+                <div class="text-center">
+                    <p class="text-black">Tart UK 15.</p>
+                    <img src="Tart11.Jpeg" alt="Product 11" class="img-fluid rounded product-img" style="height: 200px; margin-bottom: 15px;">
+                    <div class="d-flex justify-content-center align-items-center mt-2">
+                        <button class="btn btn-outline-secondary" onclick="updateQuantity('uk15', -1)">-</button>
+                        <input type="number" id="uk15" value="1" min="1" class="mx-2 text-center" style="width: 50px; text-align: center;">
+                        <button class="btn btn-outline-secondary" onclick="updateQuantity('uk15', 1)">+</button>
+                    </div>
+                    <button class="btn btn-primary mt-3" onclick="buyProduct('Tart UK 15', 'uk15')">Beli</button>
+                </div>
+            </div>
+            <div class="col-lg-4 mb-4 d-flex justify-content-center">
+                <div class="text-center">
+                    <p class="text-black">Tart UK 15 Es Cream.</p>
+                    <img src="Tart12.Jpeg" alt="Product 12" class="img-fluid rounded product-img" style="height: 200px; margin-bottom: 15px;">
+                    <div class="d-flex justify-content-center align-items-center mt-2">
+                        <button class="btn btn-outline-secondary" onclick="updateQuantity('uk15es', -1)">-</button>
+                        <input type="number" id="uk15es" value="1" min="1" class="mx-2 text-center" style="width: 50px; text-align: center;">
+                        <button class="btn btn-outline-secondary" onclick="updateQuantity('uk15es', 1)">+</button>
+                    </div>
+                    <button class="btn btn-primary mt-3" onclick="buyProduct('Tart UK 15 Es Cream', 'uk15es')">Beli</button>
+                </div>
+            </div>
+            <div class="col-lg-4 mb-4 d-flex justify-content-center">
+                <div class="text-center">
+                    <p class="text-black">Tart UK 18.</p>
+                    <img src="Tart13.Jpeg" alt="Product 13" class="img-fluid rounded product-img" style="height: 200px; margin-bottom: 15px;">
+                    <div class="d-flex justify-content-center align-items-center mt-2">
+                        <button class="btn btn-outline-secondary" onclick="updateQuantity('uk18', -1)">-</button>
+                        <input type="number" id="uk18" value="1" min="1" class="mx-2 text-center" style="width: 50px; text-align: center;">
+                        <button class="btn btn-outline-secondary" onclick="updateQuantity('uk18', 1)">+</button>
+                    </div>
+                    <button class="btn btn-primary mt-3" onclick="buyProduct('Tart UK 18', 'uk18')">Beli</button>
+                </div>
+            </div>
+            <div class="col-lg-4 mb-4 d-flex justify-content-center">
+                <div class="text-center">
+                    <p class="text-black">Tart UK 18 Es Cream.</p>
+                    <img src="Tart14.Jpeg" alt="Product 14" class="img-fluid rounded product-img" style="height: 200px; margin-bottom: 15px;">
+                    <div class="d-flex justify-content-center align-items-center mt-2">
+                        <button class="btn btn-outline-secondary" onclick="updateQuantity('uk18es', -1)">-</button>
+                        <input type="number" id="uk18es" value="1" min="1" class="mx-2 text-center" style="width: 50px; text-align: center;">
+                        <button class="btn btn-outline-secondary" onclick="updateQuantity('uk18es', 1)">+</button>
+                    </div>
+                    <button class="btn btn-primary mt-3" onclick="buyProduct('Tart UK 18 Es Cream', 'uk18es')">Beli</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script>
+    function updateQuantity(product, change) {
+        const input = document.getElementById(product);
+        let currentValue = parseInt(input.value);
+        currentValue += change;
+        if (currentValue < 1) currentValue = 1; // Prevent going below 1
+        input.value = currentValue;
+    }
+
+    function buyProduct(productName, productId) {
+        const quantity = document.getElementById(productId).value;
+        alert(`Anda membeli ${quantity} ${productName}.`);
+    }
+</script>
+
+
+    <footer class="custom-footer text-light d-flex align-items-center flex-column py-4">
+        <h2>Contact Us</h2>
+        <div class="d-flex align-items-center flex-column" style="padding-left: 3px;">
+            <div class="d-flex justify-content-start py-1" style="padding-left: 710px;">
+                <img src="Facebook.png" class="pr-3" style="width: 6%; margin-left: 2.5px">
+                <h5 style="padding-top: 10px">@Valesca Valesca</h5>
+            </div>
+            <div class="d-flex justify-content-start py-1" style="padding-left: 407px;">
+                <img src="Instagram.png" class="pr-3" style="width: 9%;">
+                <h5 style="padding-top: 8px">@valescabakey</h5>
+            </div>
+            <div class="d-flex justify-content-start py-1" style="padding-left: 128px;">
+                <img src="Tiktok.png" class="pr-3" style="width: 14%; margin-right: 3px; margin-left: 3px;">
+                <h5 style="padding-top: 3px;">@valescabakery01</h5>
+            </div>
+            <div class="d-flex justify-content-start py-1" style="padding-left: 396px;">
+                <img src="Whatsaap.png" class="pr-3" style="width: 8%; padding-top: 2px; margin-right: 6px; margin-left: 6px;">
+                <h5 style="padding-top: 7px">08156799697</h5>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
