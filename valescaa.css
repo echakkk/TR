@@ -301,7 +301,23 @@ footer h5 {
     color: #ffe2df;
 }
 
+.login {
+    margin-top: 4px;
+    padding-left: 0px;
+}
+
+.login button {
+    color: #5f1919;
+    background-color: #ffe2df;
+}
+
 @media (min-width: 991px) {
+    .login-collapse {
+        visibility: collapse;
+        height: 0px;
+        width: 0px;
+    }
+
     .text-salam {
         margin-left: 100px;
         margin-right: 50px;
@@ -317,6 +333,17 @@ footer h5 {
 }
 
 @media (max-width: 991px) {
+
+    .login-collapse button {
+        color: #5f1919;
+        background-color: #ffe2df;
+    }
+    .collapse .login {
+        visibility: collapse;
+        height: 0px;
+        width: 0px;
+    }
+
     .bg-1 {
         background-image: url("/Orders/1.jpg");
         background-size: cover;
@@ -429,6 +456,11 @@ footer h5 {
 }
 
 @media (max-width: 600px) {
+    .login {
+        margin-top: 1px;
+        margin-right: 0px;
+    }
+
     .orders {
         flex-direction: column;
     }
