@@ -41,92 +41,181 @@
 
 
 
-    <!-- Content Section -->
+   <!-- Content Section -->
 <section class="products py-5">
     <div class="container">
         <h2 class="text-center mb-4">Cake</h2>
         <div class="d-flex justify-content-center flex-wrap">
             <div class="col-lg-4 mb-4 d-flex justify-content-center">
-                <a href="page1.html" class="text-center">
+                <div class="text-center">
                     <p class="text-black">Bolu Gula Jawa Saos Caramel.</p>
                     <img src="Cake1.Jpeg" alt="Product 1" class="img-fluid rounded product-img" style="height: 200px; margin-bottom: 15px;">
-                </a>
+                    <div class="d-flex justify-content-center align-items-center mt-2">
+                        <button class="btn btn-outline-secondary" onclick="updateQuantity('boluGulaJawa', -1)">-</button>
+                        <input type="number" id="boluGulaJawa" value="1" min="1" class="mx-2 text-center" style="width: 50px; text-align: center;">
+                        <button class="btn btn-outline-secondary" onclick="updateQuantity('boluGulaJawa', 1)">+</button>
+                    </div>
+                    <button class="btn btn-primary mt-3" onclick="buyProduct('Bolu Gula Jawa Saos Caramel', 'boluGulaJawa')">Beli</button>
+                </div>
             </div>
             <div class="col-lg-4 mb-4 d-flex justify-content-center">
-                <a href="page2.html" class="text-center">
+                <div class="text-center">
                     <p class="text-black">Bolu Pisang.</p>
                     <img src="Cake2.Jpeg" alt="Product 2" class="img-fluid rounded product-img" style="height: 200px; margin-bottom: 15px;">
-                </a>
+                    <div class="d-flex justify-content-center align-items-center mt-2">
+                        <button class="btn btn-outline-secondary" onclick="updateQuantity('boluPisang', -1)">-</button>
+                        <input type="number" id="boluPisang" value="1" min="1" class="mx-2 text-center" style="width: 50px; text-align: center;">
+                        <button class="btn btn-outline-secondary" onclick="updateQuantity('boluPisang', 1)">+</button>
+                    </div>
+                    <button class="btn btn-primary mt-3" onclick="buyProduct('Bolu Pisang', 'boluPisang')">Beli</button>
+                </div>
             </div>
             <div class="col-lg-4 mb-4 d-flex justify-content-center">
-                <a href="page3.html" class="text-center">
+                <div class="text-center">
                     <p class="text-black">Bolu Sarang Semut.</p>
                     <img src="Cake3.Jpeg" alt="Product 3" class="img-fluid rounded product-img" style="height: 200px; margin-bottom: 15px;">
-                </a>
+                    <div class="d-flex justify-content-center align-items-center mt-2">
+                        <button class="btn btn-outline-secondary" onclick="updateQuantity('boluSarangSemut', -1)">-</button>
+                        <input type="number" id="boluSarangSemut" value="1" min="1" class="mx-2 text-center" style="width: 50px; text-align: center;">
+                        <button class="btn btn-outline-secondary" onclick="updateQuantity('boluSarangSemut', 1)">+</button>
+                    </div>
+                    <button class="btn btn-primary mt-3" onclick="buyProduct('Bolu Sarang Semut', 'boluSarangSemut')">Beli</button>
+                </div>
             </div>
             <div class="col-12 mb-4"></div>
 
             <div class="col-lg-4 mb-4 d-flex justify-content-center">
-                <a href="page4.html" class="text-center">
+                <div class="text-center">
                     <p class="text-black">Gulung Crumbel.</p>
                     <img src="Cake4.Jpeg" alt="Product 4" class="img-fluid rounded product-img" style="height: 200px; margin-bottom: 15px;">
-                </a>
+                    <div class="d-flex justify-content-center align-items-center mt-2">
+                        <button class="btn btn-outline-secondary" onclick="updateQuantity('gulungCrumbel', -1)">-</button>
+                        <input type="number" id="gulungCrumbel" value="1" min="1" class="mx-2 text-center" style="width: 50px; text-align: center;">
+                        <button class="btn btn-outline-secondary" onclick="updateQuantity('gulungCrumbel', 1)">+</button>
+                    </div>
+                    <button class="btn btn-primary mt-3" onclick="buyProduct('Gulung Crumbel', 'gulungCrumbel')">Beli</button>
+                </div>
             </div>
             <div class="col-lg-4 mb-4 d-flex justify-content-center">
-                <a href="page5.html" class="text-center">
+                <div class="text-center">
                     <p class="text-black">Gulung Keju.</p>
                     <img src="Cake5.Jpeg" alt="Product 5" class="img-fluid rounded product-img" style="height: 200px; margin-bottom: 15px;">
-                </a>
+                    <div class="d-flex justify-content-center align-items-center mt-2">
+                        <button class="btn btn-outline-secondary" onclick="updateQuantity('gulungKeju', -1)">-</button>
+                        <input type="number" id="gulungKeju" value="1" min="1" class="mx-2 text-center" style="width: 50px; text-align: center;">
+                        <button class="btn btn-outline-secondary" onclick="updateQuantity('gulungKeju', 1)">+</button>
+                    </div>
+                    <button class="btn btn-primary mt-3" onclick="buyProduct('Gulung Keju', 'gulungKeju')">Beli</button>
+                </div>
             </div>
             <div class="col-lg-4 mb-4 d-flex justify-content-center">
-                <a href="page6.html" class="text-center">
+                <div class="text-center">
                     <p class="text-black">Gulung Meses.</p>
                     <img src="Cake6.Jpeg" alt="Product 6" class="img-fluid rounded product-img" style="height: 200px; margin-bottom: 15px;">
-                </a>
+                    <div class="d-flex justify-content-center align-items-center mt-2">
+                        <button class="btn btn-outline-secondary" onclick="updateQuantity('gulungMeses', -1)">-</button>
+                        <input type="number" id="gulungMeses" value="1" min="1" class="mx-2 text-center" style="width: 50px; text-align: center;">
+                        <button class="btn btn-outline-secondary" onclick="updateQuantity('gulungMeses', 1)">+</button>
+                    </div>
+                    <button class="btn btn-primary mt-3" onclick="buyProduct('Gulung Meses', 'gulungMeses')">Beli</button>
+                </div>
             </div>
             <div class="col-12 mb-4"></div>
 
             <div class="col-lg-4 mb-4 d-flex justify-content-center">
-                <a href="page7.html" class="text-center">
+                <div class="text-center">
                     <p class="text-black">Gulung Rainbow.</p>
                     <img src="Cake7.Jpeg" alt="Product 7" class="img-fluid rounded product-img" style="height: 200px; margin-bottom: 15px;">
-                </a>
+                    <div class="d-flex justify-content-center align-items-center mt-2">
+                        <button class="btn btn-outline-secondary" onclick="updateQuantity('gulungRainbow', -1)">-</button>
+                        <input type="number" id="gulungRainbow" value="1" min="1" class="mx-2 text-center" style="width: 50px; text-align: center;">
+                        <button class="btn btn-outline-secondary" onclick="updateQuantity('gulungRainbow', 1)">+</button>
+                    </div>
+                    <button class="btn btn-primary mt-3" onclick="buyProduct('Gulung Rainbow', 'gulungRainbow')">Beli</button>
+                </div>
             </div>
             <div class="col-lg-4 mb-4 d-flex justify-content-center">
-                <a href="page8.html" class="text-center">
+                <div class="text-center">
                     <p class="text-black">Gulung Selai.</p>
                     <img src="Cake8.Jpeg" alt="Product 8" class="img-fluid rounded product-img" style="height: 200px; margin-bottom: 15px;">
-                </a>
+                    <div class="d-flex justify-content-center align-items-center mt-2">
+                        <button class="btn btn-outline-secondary" onclick="updateQuantity('gulungSelai', -1)">-</button>
+                        <input type="number" id="gulungSelai" value="1" min="1" class="mx-2 text-center" style="width: 50px; text-align: center;">
+                        <button class="btn btn-outline-secondary" onclick="updateQuantity('gulungSelai', 1)">+</button>
+                    </div>
+                    <button class="btn btn-primary mt-3" onclick="buyProduct('Gulung Selai', 'gulungSelai')">Beli</button>
+                </div>
             </div>
             <div class="col-lg-4 mb-4 d-flex justify-content-center">
-                <a href="page9.html" class="text-center">
+                <div class="text-center">
                     <p class="text-black">Sifon Keju.</p>
                     <img src="Cake9.Jpeg" alt="Product 9" class="img-fluid rounded product-img" style="height: 200px; margin-bottom: 15px;">
-                </a>
+                    <div class="d-flex justify-content-center align-items-center mt-2">
+                        <button class="btn btn-outline-secondary" onclick="updateQuantity('sifonKeju', -1)">-</button>
+                        <input type="number" id="sifonKeju" value="1" min="1" class="mx-2 text-center" style="width: 50px; text-align: center;">
+                        <button class="btn btn-outline-secondary" onclick="updateQuantity('sifonKeju', 1)">+</button>
+                    </div>
+                    <button class="btn btn-primary mt-3" onclick="buyProduct('Sifon Keju', 'sifonKeju')">Beli</button>
+                </div>
             </div>
             <div class="col-12 mb-4"></div>
 
             <div class="col-lg-4 mb-4 d-flex justify-content-center">
-                <a href="page10.html" class="text-center">
+                <div class="text-center">
                     <p class="text-black">Sokade.</p>
                     <img src="Cake10.Jpeg" alt="Product 10" class="img-fluid rounded product-img" style="height: 200px; margin-bottom: 15px;">
-                </a>
+                    <div class="d-flex justify-content-center align-items-center mt-2">
+                        <button class="btn btn-outline-secondary" onclick="updateQuantity('sokade', -1)">-</button>
+                        <input type="number" id="sokade" value="1" min="1" class="mx-2 text-center" style="width: 50px; text-align: center;">
+                        <button class="btn btn-outline-secondary" onclick="updateQuantity('sokade', 1)">+</button>
+                    </div>
+                    <button class="btn btn-primary mt-3" onclick="buyProduct('Sokade', 'sokade')">Beli</button>
+                </div>
             </div>
             <div class="col-lg-4 mb-4 d-flex justify-content-center">
-                <a href="page11.html" class="text-center">
+                <div class="text-center">
                     <p class="text-black">Sponge Panda.</p>
                     <img src="Cake11.Jpeg" alt="Product 11" class="img-fluid rounded product-img" style="height: 200px; margin-bottom: 15px;">
-                </a>
+                    <div class="d-flex justify-content-center align-items-center mt-2">
+                        <button class="btn btn-outline-secondary" onclick="updateQuantity('spongePanda', -1)">-</button>
+                        <input type="number" id="spongePanda" value="1" min="1" class="mx-2 text-center" style="width: 50px; text-align: center;">
+                        <button class="btn btn-outline-secondary" onclick="updateQuantity('spongePanda', 1)">+</button>
+                    </div>
+                    <button class="btn btn-primary mt-3" onclick="buyProduct('Sponge Panda', 'spongePanda')">Beli</button>
+                </div>
             </div>
             <div class="col-lg-4 mb-4 d-flex justify-content-center">
-                <a href="page12.html" class="text-center">
+                <div class="text-center">
                     <p class="text-black">Zebra.</p>
                     <img src="Cake12.Jpeg" alt="Product 12" class="img-fluid rounded product-img" style="height: 200px; margin-bottom: 15px;">
-                </a>
+                    <div class="d-flex justify-content-center align-items-center mt-2">
+                        <button class="btn btn-outline-secondary" onclick="updateQuantity('zebra', -1)">-</button>
+                        <input type="number" id="zebra" value="1" min="1" class="mx-2 text-center" style="width: 50px; text-align: center;">
+                        <button class="btn btn-outline-secondary" onclick="updateQuantity('zebra', 1)">+</button>
+                    </div>
+                    <button class="btn btn-primary mt-3" onclick="buyProduct('Zebra', 'zebra')">Beli</button>
+                </div>
             </div>
         </div>
     </div>
 </section>
+
+<script>
+function updateQuantity(productId, change) {
+    const inputField = document.getElementById(productId);
+    const currentValue = parseInt(inputField.value);
+    const newValue = currentValue + change;
+    if (newValue >= 1) {
+        inputField.value = newValue;
+    }
+}
+
+function buyProduct(productName, productId) {
+    const quantity = document.getElementById(productId).value;
+    alert(`Anda telah membeli ${quantity} ${productName}`);
+}
+</script>
+
 
 
     <footer class="custom-footer text-light d-flex align-items-center flex-column py-4">

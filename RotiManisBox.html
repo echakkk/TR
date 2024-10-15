@@ -39,56 +39,119 @@
         <a class="navbar-brand p-2" href="#"><img src="halal.PNG" alt="Halal Logo" style="width: 70px; height: 70px;"></a>
     </header>
 
-      <!-- Content Section -->
+<!-- Content Section -->
 <section class="products py-5">
     <div class="container">
         <h2 class="text-center mb-4">Roti Manis Box</h2>
-        <div class="d-flex justify-content-center flex-wrap">
-            <div class="col-lg-4 mb-4 d-flex justify-content-center">
-                <a href="page1.html" class="text-center">
+
+        <div class="row mb-4">
+            <div class="col-lg-4 d-flex justify-content-center">
+                <div class="text-center">
                     <p class="text-black">3 Rasa.</p>
                     <img src="RotiManisBox1.Jpeg" alt="Product 1" class="img-fluid rounded product-img" style="height: 200px; margin-bottom: 15px;">
-                </a>
+                    <div class="d-flex justify-content-center align-items-center mt-2">
+                        <button class="btn btn-outline-secondary" onclick="updateQuantity('rotiManisBox1', -1)">-</button>
+                        <input type="number" id="rotiManisBox1" value="1" min="1" class="mx-2 text-center" style="width: 50px; text-align: center;">
+                        <button class="btn btn-outline-secondary" onclick="updateQuantity('rotiManisBox1', 1)">+</button>
+                    </div>
+                    <button class="btn btn-primary mt-3" onclick="buyProduct('3 Rasa', 'rotiManisBox1')">Beli</button>
+                </div>
             </div>
-            <div class="col-lg-4 mb-4 d-flex justify-content-center">
-                <a href="page2.html" class="text-center">
+            <div class="col-lg-4 d-flex justify-content-center">
+                <div class="text-center">
                     <p class="text-black">5 Rasa.</p>
                     <img src="RotiManisBox2.Jpeg" alt="Product 2" class="img-fluid rounded product-img" style="height: 200px; margin-bottom: 15px;">
-                </a>
+                    <div class="d-flex justify-content-center align-items-center mt-2">
+                        <button class="btn btn-outline-secondary" onclick="updateQuantity('rotiManisBox2', -1)">-</button>
+                        <input type="number" id="rotiManisBox2" value="1" min="1" class="mx-2 text-center" style="width: 50px; text-align: center;">
+                        <button class="btn btn-outline-secondary" onclick="updateQuantity('rotiManisBox2', 1)">+</button>
+                    </div>
+                    <button class="btn btn-primary mt-3" onclick="buyProduct('5 Rasa', 'rotiManisBox2')">Beli</button>
+                </div>
             </div>
-            <div class="col-lg-4 mb-4 d-flex justify-content-center">
-                <a href="page3.html" class="text-center">
+            <div class="col-lg-4 d-flex justify-content-center">
+                <div class="text-center">
                     <p class="text-black">7 Rasa.</p>
                     <img src="RotiManisBox3.Jpeg" alt="Product 3" class="img-fluid rounded product-img" style="height: 200px; margin-bottom: 15px;">
-                </a>
+                    <div class="d-flex justify-content-center align-items-center mt-2">
+                        <button class="btn btn-outline-secondary" onclick="updateQuantity('rotiManisBox3', -1)">-</button>
+                        <input type="number" id="rotiManisBox3" value="1" min="1" class="mx-2 text-center" style="width: 50px; text-align: center;">
+                        <button class="btn btn-outline-secondary" onclick="updateQuantity('rotiManisBox3', 1)">+</button>
+                    </div>
+                    <button class="btn btn-primary mt-3" onclick="buyProduct('7 Rasa', 'rotiManisBox3')">Beli</button>
+                </div>
             </div>
-            <div class="col-lg-4 mb-4 d-flex justify-content-center">
-                <a href="page4.html" class="text-center">
-                    <p class="text-black"> Cilik.</p>
+        </div>
+
+        <div class="row mb-4">
+            <div class="col-lg-4 d-flex justify-content-center">
+                <div class="text-center">
+                    <p class="text-black">Cilik.</p>
                     <img src="RotiManisBox4.Jpeg" alt="Product 4" class="img-fluid rounded product-img" style="height: 200px; margin-bottom: 15px;">
-                </a>
+                    <div class="d-flex justify-content-center align-items-center mt-2">
+                        <button class="btn btn-outline-secondary" onclick="updateQuantity('rotiManisBox4', -1)">-</button>
+                        <input type="number" id="rotiManisBox4" value="1" min="1" class="mx-2 text-center" style="width: 50px; text-align: center;">
+                        <button class="btn btn-outline-secondary" onclick="updateQuantity('rotiManisBox4', 1)">+</button>
+                    </div>
+                    <button class="btn btn-primary mt-3" onclick="buyProduct('Cilik', 'rotiManisBox4')">Beli</button>
+                </div>
             </div>
-            <div class="col-lg-4 mb-4 d-flex justify-content-center">
-                <a href="page5.html" class="text-center">
+            <div class="col-lg-4 d-flex justify-content-center">
+                <div class="text-center">
                     <p class="text-black">Krumpul Gula.</p>
                     <img src="RotiManisBox5.Jpeg" alt="Product 5" class="img-fluid rounded product-img" style="height: 200px; margin-bottom: 15px;">
-                </a>
+                    <div class="d-flex justify-content-center align-items-center mt-2">
+                        <button class="btn btn-outline-secondary" onclick="updateQuantity('rotiManisBox5', -1)">-</button>
+                        <input type="number" id="rotiManisBox5" value="1" min="1" class="mx-2 text-center" style="width: 50px; text-align: center;">
+                        <button class="btn btn-outline-secondary" onclick="updateQuantity('rotiManisBox5', 1)">+</button>
+                    </div>
+                    <button class="btn btn-primary mt-3" onclick="buyProduct('Krumpul Gula', 'rotiManisBox5')">Beli</button>
+                </div>
             </div>
-            <div class="col-lg-4 mb-4 d-flex justify-content-center">
-                <a href="page6.html" class="text-center">
+            <div class="col-lg-4 d-flex justify-content-center">
+                <div class="text-center">
                     <p class="text-black">Krumpul Keju.</p>
                     <img src="RotiManisBox6.Jpeg" alt="Product 6" class="img-fluid rounded product-img" style="height: 200px; margin-bottom: 15px;">
-                </a>
+                    <div class="d-flex justify-content-center align-items-center mt-2">
+                        <button class="btn btn-outline-secondary" onclick="updateQuantity('rotiManisBox6', -1)">-</button>
+                        <input type="number" id="rotiManisBox6" value="1" min="1" class="mx-2 text-center" style="width: 50px; text-align: center;">
+                        <button class="btn btn-outline-secondary" onclick="updateQuantity('rotiManisBox6', 1)">+</button>
+                    </div>
+                    <button class="btn btn-primary mt-3" onclick="buyProduct('Krumpul Keju', 'rotiManisBox6')">Beli</button>
+                </div>
             </div>
-            <div class="col-lg-4 mb-4 d-flex justify-content-center">
-                <a href="page7.html" class="text-center">
+        </div>
+
+        <div class="row mb-4">
+            <div class="col-lg-4 d-flex justify-content-center">
+                <div class="text-center">
                     <p class="text-black">Pisang Keju.</p>
                     <img src="RotiManisBox7.Jpeg" alt="Product 7" class="img-fluid rounded product-img" style="height: 200px; margin-bottom: 15px;">
-                </a>
+                    <div class="d-flex justify-content-center align-items-center mt-2">
+                        <button class="btn btn-outline-secondary" onclick="updateQuantity('rotiManisBox7', -1)">-</button>
+                        <input type="number" id="rotiManisBox7" value="1" min="1" class="mx-2 text-center" style="width: 50px; text-align: center;">
+                        <button class="btn btn-outline-secondary" onclick="updateQuantity('rotiManisBox7', 1)">+</button>
+                    </div>
+                    <button class="btn btn-primary mt-3" onclick="buyProduct('Pisang Keju', 'rotiManisBox7')">Beli</button>
+                </div>
             </div>
         </div>
     </div>
 </section>
+<script>
+    function updateQuantity(product, change) {
+        const input = document.getElementById(product);
+        let currentValue = parseInt(input.value);
+        currentValue += change;
+        if (currentValue < 1) currentValue = 1; // Prevent going below 1
+        input.value = currentValue;
+    }
+
+    function buyProduct(productName, productId) {
+        const quantity = document.getElementById(productId).value;
+        alert(`Anda membeli ${quantity} ${productName}.`);
+    }
+</script>
 
     <footer class="custom-footer text-light d-flex align-items-center flex-column py-4">
         <h2>Contact Us</h2>

@@ -45,26 +45,61 @@
         <h2 class="text-center mb-4">Pastry</h2>
         <div class="d-flex justify-content-center flex-wrap">
             <div class="col-lg-4 mb-4 d-flex justify-content-center">
-                <a href="page1.html" class="text-center">
+                <div class="text-center">
                     <p class="text-black">Bolen.</p>
                     <img src="Pastry1.Jpeg" alt="Product 1" class="img-fluid rounded product-img" style="height: 200px; margin-bottom: 15px;">
-                </a>
+                    <div class="d-flex justify-content-center align-items-center mt-2">
+                        <button class="btn btn-outline-secondary" onclick="updateQuantity('bolen', -1)">-</button>
+                        <input type="number" id="bolen" value="1" min="1" class="mx-2 text-center" style="width: 50px; text-align: center;">
+                        <button class="btn btn-outline-secondary" onclick="updateQuantity('bolen', 1)">+</button>
+                    </div>
+                    <button class="btn btn-primary mt-3" onclick="buyProduct('Bolen', 'bolen')">Beli</button>
+                </div>
             </div>
             <div class="col-lg-4 mb-4 d-flex justify-content-center">
-                <a href="page2.html" class="text-center">
+                <div class="text-center">
                     <p class="text-black">Croissant.</p>
                     <img src="Pastry2.Jpeg" alt="Product 2" class="img-fluid rounded product-img" style="height: 200px; margin-bottom: 15px;">
-                </a>
+                    <div class="d-flex justify-content-center align-items-center mt-2">
+                        <button class="btn btn-outline-secondary" onclick="updateQuantity('croissant', -1)">-</button>
+                        <input type="number" id="croissant" value="1" min="1" class="mx-2 text-center" style="width: 50px; text-align: center;">
+                        <button class="btn btn-outline-secondary" onclick="updateQuantity('croissant', 1)">+</button>
+                    </div>
+                    <button class="btn btn-primary mt-3" onclick="buyProduct('Croissant', 'croissant')">Beli</button>
+                </div>
             </div>
             <div class="col-lg-4 mb-4 d-flex justify-content-center">
-                <a href="page3.html" class="text-center">
+                <div class="text-center">
                     <p class="text-black">Cromboloni Coklat.</p>
                     <img src="Pastry3.Jpeg" alt="Product 3" class="img-fluid rounded product-img" style="height: 200px; margin-bottom: 15px;">
-                </a>
+                    <div class="d-flex justify-content-center align-items-center mt-2">
+                        <button class="btn btn-outline-secondary" onclick="updateQuantity('cromboloniCoklat', -1)">-</button>
+                        <input type="number" id="cromboloniCoklat" value="1" min="1" class="mx-2 text-center" style="width: 50px; text-align: center;">
+                        <button class="btn btn-outline-secondary" onclick="updateQuantity('cromboloniCoklat', 1)">+</button>
+                    </div>
+                    <button class="btn btn-primary mt-3" onclick="buyProduct('Cromboloni Coklat', 'cromboloniCoklat')">Beli</button>
+                </div>
             </div>
         </div>
     </div>
 </section>
+
+<script>
+function updateQuantity(productId, change) {
+    const inputField = document.getElementById(productId);
+    const currentValue = parseInt(inputField.value);
+    const newValue = currentValue + change;
+    if (newValue >= 1) {
+        inputField.value = newValue;
+    }
+}
+
+function buyProduct(productName, productId) {
+    const quantity = document.getElementById(productId).value;
+    alert(`Anda telah membeli ${quantity} ${productName}`);
+}
+</script>
+
 
     <footer class="custom-footer text-light d-flex align-items-center flex-column py-4">
         <h2>Contact Us</h2>

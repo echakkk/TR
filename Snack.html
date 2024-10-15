@@ -39,98 +39,198 @@
         <a class="navbar-brand p-2" href="#"><img src="halal.PNG" alt="Halal Logo" style="width: 70px; height: 70px;"></a>
     </header>
 
-    <!-- Content Section -->
+   <!-- Content Section -->
 <section class="products py-5">
     <div class="container">
         <h2 class="text-center mb-4">Snack</h2>
         <div class="d-flex justify-content-center flex-wrap">
             <div class="col-lg-4 mb-4 d-flex justify-content-center">
-                <a href="page1.html" class="text-center">
+                <div class="text-center">
                     <p class="text-black">Arem Arem.</p>
                     <img src="Snack1.Jpeg" alt="Product 1" class="img-fluid rounded product-img" style="height: 200px; margin-bottom: 15px;">
-                </a>
+                    <div class="d-flex justify-content-center align-items-center mt-2">
+                        <button class="btn btn-outline-secondary" onclick="updateQuantity('snack1', -1)">-</button>
+                        <input type="number" id="snack1" value="1" min="1" class="mx-2 text-center" style="width: 50px; text-align: center;">
+                        <button class="btn btn-outline-secondary" onclick="updateQuantity('snack1', 1)">+</button>
+                    </div>
+                    <button class="btn btn-primary mt-3" onclick="buyProduct('Arem Arem', 'snack1')">Beli</button>
+                </div>
             </div>
             <div class="col-lg-4 mb-4 d-flex justify-content-center">
-                <a href="page2.html" class="text-center">
+                <div class="text-center">
                     <p class="text-black">Bolu Kukus.</p>
                     <img src="Snack2.Jpeg" alt="Product 2" class="img-fluid rounded product-img" style="height: 200px; margin-bottom: 15px;">
-                </a>
+                    <div class="d-flex justify-content-center align-items-center mt-2">
+                        <button class="btn btn-outline-secondary" onclick="updateQuantity('snack2', -1)">-</button>
+                        <input type="number" id="snack2" value="1" min="1" class="mx-2 text-center" style="width: 50px; text-align: center;">
+                        <button class="btn btn-outline-secondary" onclick="updateQuantity('snack2', 1)">+</button>
+                    </div>
+                    <button class="btn btn-primary mt-3" onclick="buyProduct('Bolu Kukus', 'snack2')">Beli</button>
+                </div>
             </div>
             <div class="col-lg-4 mb-4 d-flex justify-content-center">
-                <a href="page3.html" class="text-center">
+                <div class="text-center">
                     <p class="text-black">Dadar Gulung.</p>
                     <img src="Snack3.Jpeg" alt="Product 3" class="img-fluid rounded product-img" style="height: 200px; margin-bottom: 15px;">
-                </a>
+                    <div class="d-flex justify-content-center align-items-center mt-2">
+                        <button class="btn btn-outline-secondary" onclick="updateQuantity('snack3', -1)">-</button>
+                        <input type="number" id="snack3" value="1" min="1" class="mx-2 text-center" style="width: 50px; text-align: center;">
+                        <button class="btn btn-outline-secondary" onclick="updateQuantity('snack3', 1)">+</button>
+                    </div>
+                    <button class="btn btn-primary mt-3" onclick="buyProduct('Dadar Gulung', 'snack3')">Beli</button>
+                </div>
             </div>
             <div class="col-lg-4 mb-4 d-flex justify-content-center">
-                <a href="page4.html" class="text-center">
-                    <p class="text-black"> Klepon.</p>
+                <div class="text-center">
+                    <p class="text-black">Klepon.</p>
                     <img src="Snack4.Jpeg" alt="Product 4" class="img-fluid rounded product-img" style="height: 200px; margin-bottom: 15px;">
-                </a>
+                    <div class="d-flex justify-content-center align-items-center mt-2">
+                        <button class="btn btn-outline-secondary" onclick="updateQuantity('snack4', -1)">-</button>
+                        <input type="number" id="snack4" value="1" min="1" class="mx-2 text-center" style="width: 50px; text-align: center;">
+                        <button class="btn btn-outline-secondary" onclick="updateQuantity('snack4', 1)">+</button>
+                    </div>
+                    <button class="btn btn-primary mt-3" onclick="buyProduct('Klepon', 'snack4')">Beli</button>
+                </div>
             </div>
             <div class="col-lg-4 mb-4 d-flex justify-content-center">
-                <a href="page5.html" class="text-center">
+                <div class="text-center">
                     <p class="text-black">Kue Tok.</p>
                     <img src="Snack5.Jpeg" alt="Product 5" class="img-fluid rounded product-img" style="height: 200px; margin-bottom: 15px;">
-                </a>
+                    <div class="d-flex justify-content-center align-items-center mt-2">
+                        <button class="btn btn-outline-secondary" onclick="updateQuantity('snack5', -1)">-</button>
+                        <input type="number" id="snack5" value="1" min="1" class="mx-2 text-center" style="width: 50px; text-align: center;">
+                        <button class="btn btn-outline-secondary" onclick="updateQuantity('snack5', 1)">+</button>
+                    </div>
+                    <button class="btn btn-primary mt-3" onclick="buyProduct('Kue Tok', 'snack5')">Beli</button>
+                </div>
             </div>
             <div class="col-lg-4 mb-4 d-flex justify-content-center">
-                <a href="page6.html" class="text-center">
+                <div class="text-center">
                     <p class="text-black">Lemper.</p>
                     <img src="Snack6.Jpeg" alt="Product 6" class="img-fluid rounded product-img" style="height: 200px; margin-bottom: 15px;">
-                </a>
+                    <div class="d-flex justify-content-center align-items-center mt-2">
+                        <button class="btn btn-outline-secondary" onclick="updateQuantity('snack6', -1)">-</button>
+                        <input type="number" id="snack6" value="1" min="1" class="mx-2 text-center" style="width: 50px; text-align: center;">
+                        <button class="btn btn-outline-secondary" onclick="updateQuantity('snack6', 1)">+</button>
+                    </div>
+                    <button class="btn btn-primary mt-3" onclick="buyProduct('Lemper', 'snack6')">Beli</button>
+                </div>
             </div>
             <div class="col-lg-4 mb-4 d-flex justify-content-center">
-                <a href="page7.html" class="text-center">
+                <div class="text-center">
                     <p class="text-black">Mochi.</p>
                     <img src="Snack7.Jpeg" alt="Product 7" class="img-fluid rounded product-img" style="height: 200px; margin-bottom: 15px;">
-                </a>
+                    <div class="d-flex justify-content-center align-items-center mt-2">
+                        <button class="btn btn-outline-secondary" onclick="updateQuantity('snack7', -1)">-</button>
+                        <input type="number" id="snack7" value="1" min="1" class="mx-2 text-center" style="width: 50px; text-align: center;">
+                        <button class="btn btn-outline-secondary" onclick="updateQuantity('snack7', 1)">+</button>
+                    </div>
+                    <button class="btn btn-primary mt-3" onclick="buyProduct('Mochi', 'snack7')">Beli</button>
+                </div>
             </div>
             <div class="col-lg-4 mb-4 d-flex justify-content-center">
-                <a href="page8.html" class="text-center">
+                <div class="text-center">
                     <p class="text-black">Pastel.</p>
                     <img src="Snack8.Jpeg" alt="Product 8" class="img-fluid rounded product-img" style="height: 200px; margin-bottom: 15px;">
-                </a>
+                    <div class="d-flex justify-content-center align-items-center mt-2">
+                        <button class="btn btn-outline-secondary" onclick="updateQuantity('snack8', -1)">-</button>
+                        <input type="number" id="snack8" value="1" min="1" class="mx-2 text-center" style="width: 50px; text-align: center;">
+                        <button class="btn btn-outline-secondary" onclick="updateQuantity('snack8', 1)">+</button>
+                    </div>
+                    <button class="btn btn-primary mt-3" onclick="buyProduct('Pastel', 'snack8')">Beli</button>
+                </div>
             </div>
             <div class="col-lg-4 mb-4 d-flex justify-content-center">
-                <a href="page9.html" class="text-center">
+                <div class="text-center">
                     <p class="text-black">Pisang Coklat.</p>
                     <img src="Snack9.Jpeg" alt="Product 9" class="img-fluid rounded product-img" style="height: 200px; margin-bottom: 15px;">
-                </a>
+                    <div class="d-flex justify-content-center align-items-center mt-2">
+                        <button class="btn btn-outline-secondary" onclick="updateQuantity('snack9', -1)">-</button>
+                        <input type="number" id="snack9" value="1" min="1" class="mx-2 text-center" style="width: 50px; text-align: center;">
+                        <button class="btn btn-outline-secondary" onclick="updateQuantity('snack9', 1)">+</button>
+                    </div>
+                    <button class="btn btn-primary mt-3" onclick="buyProduct('Pisang Coklat', 'snack9')">Beli</button>
+                </div>
             </div>
             <div class="col-lg-4 mb-4 d-flex justify-content-center">
-                <a href="page10.html" class="text-center">
+                <div class="text-center">
                     <p class="text-black">Semar Mendem.</p>
                     <img src="Snack10.Jpeg" alt="Product 10" class="img-fluid rounded product-img" style="height: 200px; margin-bottom: 15px;">
-                </a>
+                    <div class="d-flex justify-content-center align-items-center mt-2">
+                        <button class="btn btn-outline-secondary" onclick="updateQuantity('snack10', -1)">-</button>
+                        <input type="number" id="snack10" value="1" min="1" class="mx-2 text-center" style="width: 50px; text-align: center;">
+                        <button class="btn btn-outline-secondary" onclick="updateQuantity('snack10', 1)">+</button>
+                    </div>
+                    <button class="btn btn-primary mt-3" onclick="buyProduct('Semar Mendem', 'snack10')">Beli</button>
+                </div>
             </div>
             <div class="col-lg-4 mb-4 d-flex justify-content-center">
-                <a href="page11.html" class="text-center">
-                    <p class="text-black"> Sosis Ayam.</p>
+                <div class="text-center">
+                    <p class="text-black">Sosis Ayam.</p>
                     <img src="Snack11.Jpeg" alt="Product 11" class="img-fluid rounded product-img" style="height: 200px; margin-bottom: 15px;">
-                </a>
+                    <div class="d-flex justify-content-center align-items-center mt-2">
+                        <button class="btn btn-outline-secondary" onclick="updateQuantity('snack11', -1)">-</button>
+                        <input type="number" id="snack11" value="1" min="1" class="mx-2 text-center" style="width: 50px; text-align: center;">
+                        <button class="btn btn-outline-secondary" onclick="updateQuantity('snack11', 1)">+</button>
+                    </div>
+                    <button class="btn btn-primary mt-3" onclick="buyProduct('Sosis Ayam', 'snack11')">Beli</button>
+                </div>
             </div>
             <div class="col-lg-4 mb-4 d-flex justify-content-center">
-                <a href="page12.html" class="text-center">
+                <div class="text-center">
                     <p class="text-black">Sus.</p>
                     <img src="Snack12.Jpeg" alt="Product 12" class="img-fluid rounded product-img" style="height: 200px; margin-bottom: 15px;">
-                </a>
+                    <div class="d-flex justify-content-center align-items-center mt-2">
+                        <button class="btn btn-outline-secondary" onclick="updateQuantity('snack12', -1)">-</button>
+                        <input type="number" id="snack12" value="1" min="1" class="mx-2 text-center" style="width: 50px; text-align: center;">
+                        <button class="btn btn-outline-secondary" onclick="updateQuantity('snack12', 1)">+</button>
+                    </div>
+                    <button class="btn btn-primary mt-3" onclick="buyProduct('Sus', 'snack12')">Beli</button>
+                </div>
             </div>
             <div class="col-lg-4 mb-4 d-flex justify-content-center">
-                <a href="page13.html" class="text-center">
+                <div class="text-center">
                     <p class="text-black">Tahu Bakso.</p>
                     <img src="Snack13.Jpeg" alt="Product 13" class="img-fluid rounded product-img" style="height: 200px; margin-bottom: 15px;">
-                </a>
+                    <div class="d-flex justify-content-center align-items-center mt-2">
+                        <button class="btn btn-outline-secondary" onclick="updateQuantity('snack13', -1)">-</button>
+                        <input type="number" id="snack13" value="1" min="1" class="mx-2 text-center" style="width: 50px; text-align: center;">
+                        <button class="btn btn-outline-secondary" onclick="updateQuantity('snack13', 1)">+</button>
+                    </div>
+                    <button class="btn btn-primary mt-3" onclick="buyProduct('Tahu Bakso', 'snack13')">Beli</button>
+                </div>
             </div>
             <div class="col-lg-4 mb-4 d-flex justify-content-center">
-                <a href="page14.html" class="text-center">
+                <div class="text-center">
                     <p class="text-black">Wajek.</p>
                     <img src="Snack14.Jpeg" alt="Product 14" class="img-fluid rounded product-img" style="height: 200px; margin-bottom: 15px;">
-                </a>
+                    <div class="d-flex justify-content-center align-items-center mt-2">
+                        <button class="btn btn-outline-secondary" onclick="updateQuantity('snack14', -1)">-</button>
+                        <input type="number" id="snack14" value="1" min="1" class="mx-2 text-center" style="width: 50px; text-align: center;">
+                        <button class="btn btn-outline-secondary" onclick="updateQuantity('snack14', 1)">+</button>
+                    </div>
+                    <button class="btn btn-primary mt-3" onclick="buyProduct('Wajek', 'snack14')">Beli</button>
+                </div>
             </div>
         </div>
     </div>
 </section>
+
+<script>
+function updateQuantity(id, change) {
+    const input = document.getElementById(id);
+    let currentValue = parseInt(input.value);
+    currentValue += change;
+    if (currentValue < 1) currentValue = 1;
+    input.value = currentValue;
+}
+
+function buyProduct(productName, productId) {
+    const quantity = document.getElementById(productId).value;
+    alert(`Anda membeli ${quantity} ${productName}`);
+}
+</script>
+
 
 
     <footer class="custom-footer text-light d-flex align-items-center flex-column py-4">
