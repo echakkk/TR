@@ -10,72 +10,73 @@
 </head>
 
 <body>
-    <nav class="sticky-top navbar navbar-expand-lg d-flex custom-navbar">
-        <img class="img-fluid" id="logo-collapse" src="/Logo.PNG">
-        <div class="d-flex justify-content-center">
-            <ul class="navbar-nav">
-                <li class="nav-item login-collapse">
-                    <button class="btn" data-toggle="login" data-target="#login">Login Member</button>
-                </li>
-            </ul>
-            <ul class="navbar-nav">
-                <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav"
-                    aria-expanded="false" aria-label="Toggle navigation">
-                    <img src="/navbar-toggler.png" width="30px">
-                </button>
-                </li>
-            </ul>
-        </div>
+    <body>
+        <!-- NAVBAR -->
+        <nav class="sticky-top navbar navbar-expand-lg d-flex custom-navbar">
+            <img class="img-fluid" id="logo-collapse" src="/Logo.PNG">
+            <div class="d-flex justify-content-center">
+                <ul class="navbar-nav">
+                    <li class="nav-item login-collapse">
+                        <a class="btn btn-custom" href="/login.html">Login Member</a>
+                    </li>
+                </ul>
+                <ul class="navbar-nav">
+                    <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                        <img src="/navbar-toggler.png" width="30px">
+                    </button>
+                    </li>
+                </ul>
+            </div>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <img class="img-fluid" id="logo" src="/Logo.PNG">
+                <ul class="navbar-nav">
+                    <li class="nav-item pr-4"><a class="nav-link" href="/Home.html">Home</a></li>
+                    <li class="nav-item pr-4"><a class="nav-link" href="#">About Us</a></li>
+                    <li class="nav-item dropdown pr-4">
+                        <a class="nav-link" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+                            aria-haspopup="true" aria-expanded="false">
+                            Product
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                            <a class="dropdown-item" href="Brownies.html">Brownies</a>
+                            <a class="dropdown-item" href="Cake.html">Cake</a>
+                            <a class="dropdown-item" href="Dessert.html">Dessert</a>
+                            <a class="dropdown-item" href="Pastry.html">Pastry</a>
+                            <a class="dropdown-item" href="Pizza.html">Pizza</a>
+                            <a class="dropdown-item" href="RotiManis.html">Roti Manis</a>
+                            <a class="dropdown-item" href="RotiManisBox.html">Roti Manis Box</a>
+                            <a class="dropdown-item" href="Snack.html">Snack</a>
+                            <a class="dropdown-item" href="Tart.html">Tar</a>
+                            <a class="dropdown-item" href="Tawar.html">Tawar</a>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown pr-4">
+                        <a class="nav-link" href="/Promo.html">
+                            Info
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                            <a class="dropdown-item" href="/Promo.html">Promo</a>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown pr-4">
+                        <a class="nav-link" href="/Orders.html">
+                            Order
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                            <a class="dropdown-item" href="/Outlet.html">Outlet Valecia Bakery</a>
+                        </div>
+                    </li>
+                    <li class="nav-item pr-4"><a class="nav-link" href="#">Hotline</a></li>
+                    <li class="nav-item login" id="login">
+                        <a class="btn btn-custom" href="/login.html">Login Member</a>
+                    </li>
+                </ul>
+                <img src="/halal.PNG" id="halal">
+            </div>
+        </nav>
 
-        <div class="collapse navbar-collapse" id="navbarNav">
-            <img class="img-fluid" id="logo" src="/Logo.PNG">
-            <ul class="navbar-nav">
-                <li class="nav-item pr-4"><a class="nav-link" href="/Home.html">Home</a></li>
-                <li class="nav-item pr-4"><a class="nav-link" href="#">About Us</a></li>
-                <li class="nav-item dropdown pr-4">
-                    <a class="nav-link" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
-                        aria-haspopup="true" aria-expanded="false">
-                        Product
-                    </a>
-                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                        <a class="dropdown-item" href="Brownies.html">Brownies</a>
-                        <a class="dropdown-item" href="Cake.html">Cake</a>
-                        <a class="dropdown-item" href="Dessert.html">Dessert</a>
-                        <a class="dropdown-item" href="Pastry.html">Pastry</a>
-                        <a class="dropdown-item" href="Pizza.html">Pizza</a>
-                        <a class="dropdown-item" href="RotiManis.html">Roti Manis</a>
-                        <a class="dropdown-item" href="RotiManisBox.html">Roti Manis Box</a>
-                        <a class="dropdown-item" href="Snack.html">Snack</a>
-                        <a class="dropdown-item" href="Tart.html">Tar</a>
-                        <a class="dropdown-item" href="Tawar.html">Tawar</a>
-                    </div>
-                </li>
-                <li class="nav-item dropdown pr-4">
-                    <a class="nav-link" href="/Promo.html">
-                        Info
-                    </a>
-                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                        <a class="dropdown-item" href="/Promo.html">Promo</a>
-                    </div>
-                </li>
-                <li class="nav-item dropdown pr-4">
-                    <a class="nav-link" href="/Orders.html">
-                        Order
-                    </a>
-                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                        <a class="dropdown-item" href="/Outlet.html">Outlet Valecia Bakery</a>
-                    </div>
-                </li>
-                <li class="nav-item pr-4"><a class="nav-link" href="#">Hotline</a></li>
-                <li class="nav-item login">
-                    <a class="btn btn-custom" href="login.html">Login Member</a>
-                </li>
-            </ul>
-
-            <img src="/halal.PNG" id="halal">
-        </div>
-    </nav>
-      <!-- Content Section -->
+    <!-- Content Section -->
 
 <section class="products py-5">
     <div class="container">
@@ -84,38 +85,23 @@
         <div class="row mb-4">
             <div class="col-lg-4 d-flex justify-content-center">
                 <div class="text-center">
-                    <p class="text-black">3 Rasa.</p>
+                    <p class="text-black">3 Rasa</p>
                     <img src="RotiManisBox1.Jpeg" alt="Product 1" class="img-fluid rounded product-img" style="height: 200px; margin-bottom: 15px;">
-                    <div class="d-flex justify-content-center align-items-center mt-2">
-                        <button class="btn btn-outline-secondary" onclick="updateQuantity('rotiManisBox1', -1)">-</button>
-                        <input type="number" id="rotiManisBox1" value="1" min="1" class="mx-2 text-center" style="width: 50px; text-align: center;">
-                        <button class="btn btn-outline-secondary" onclick="updateQuantity('rotiManisBox1', 1)">+</button>
-                    </div>
-                    <button class="btn btn-primary mt-3" onclick="buyProduct('3 Rasa', 'rotiManisBox1')">Beli</button>
+                    <p class="text-black">Rp 14.500</p>
                 </div>
             </div>
             <div class="col-lg-4 d-flex justify-content-center">
                 <div class="text-center">
-                    <p class="text-black">5 Rasa.</p>
+                    <p class="text-black">5 Rasa</p>
                     <img src="RotiManisBox2.Jpeg" alt="Product 2" class="img-fluid rounded product-img" style="height: 200px; margin-bottom: 15px;">
-                    <div class="d-flex justify-content-center align-items-center mt-2">
-                        <button class="btn btn-outline-secondary" onclick="updateQuantity('rotiManisBox2', -1)">-</button>
-                        <input type="number" id="rotiManisBox2" value="1" min="1" class="mx-2 text-center" style="width: 50px; text-align: center;">
-                        <button class="btn btn-outline-secondary" onclick="updateQuantity('rotiManisBox2', 1)">+</button>
-                    </div>
-                    <button class="btn btn-primary mt-3" onclick="buyProduct('5 Rasa', 'rotiManisBox2')">Beli</button>
+                    <p class="text-black">Rp 17.500</p>
                 </div>
             </div>
             <div class="col-lg-4 d-flex justify-content-center">
                 <div class="text-center">
-                    <p class="text-black">7 Rasa.</p>
+                    <p class="text-black">7 Rasa</p>
                     <img src="RotiManisBox3.Jpeg" alt="Product 3" class="img-fluid rounded product-img" style="height: 200px; margin-bottom: 15px;">
-                    <div class="d-flex justify-content-center align-items-center mt-2">
-                        <button class="btn btn-outline-secondary" onclick="updateQuantity('rotiManisBox3', -1)">-</button>
-                        <input type="number" id="rotiManisBox3" value="1" min="1" class="mx-2 text-center" style="width: 50px; text-align: center;">
-                        <button class="btn btn-outline-secondary" onclick="updateQuantity('rotiManisBox3', 1)">+</button>
-                    </div>
-                    <button class="btn btn-primary mt-3" onclick="buyProduct('7 Rasa', 'rotiManisBox3')">Beli</button>
+                    <p class="text-black">Rp 20.000</p>
                 </div>
             </div>
         </div>
@@ -123,38 +109,23 @@
         <div class="row mb-4">
             <div class="col-lg-4 d-flex justify-content-center">
                 <div class="text-center">
-                    <p class="text-black">Cilik.</p>
+                    <p class="text-black">Cilik</p>
                     <img src="RotiManisBox4.Jpeg" alt="Product 4" class="img-fluid rounded product-img" style="height: 200px; margin-bottom: 15px;">
-                    <div class="d-flex justify-content-center align-items-center mt-2">
-                        <button class="btn btn-outline-secondary" onclick="updateQuantity('rotiManisBox4', -1)">-</button>
-                        <input type="number" id="rotiManisBox4" value="1" min="1" class="mx-2 text-center" style="width: 50px; text-align: center;">
-                        <button class="btn btn-outline-secondary" onclick="updateQuantity('rotiManisBox4', 1)">+</button>
-                    </div>
-                    <button class="btn btn-primary mt-3" onclick="buyProduct('Cilik', 'rotiManisBox4')">Beli</button>
+                    <p class="text-black">Rp 25.000</p>
                 </div>
             </div>
             <div class="col-lg-4 d-flex justify-content-center">
                 <div class="text-center">
-                    <p class="text-black">Krumpul Gula.</p>
+                    <p class="text-black">Krumpul Gula</p>
                     <img src="RotiManisBox5.Jpeg" alt="Product 5" class="img-fluid rounded product-img" style="height: 200px; margin-bottom: 15px;">
-                    <div class="d-flex justify-content-center align-items-center mt-2">
-                        <button class="btn btn-outline-secondary" onclick="updateQuantity('rotiManisBox5', -1)">-</button>
-                        <input type="number" id="rotiManisBox5" value="1" min="1" class="mx-2 text-center" style="width: 50px; text-align: center;">
-                        <button class="btn btn-outline-secondary" onclick="updateQuantity('rotiManisBox5', 1)">+</button>
-                    </div>
-                    <button class="btn btn-primary mt-3" onclick="buyProduct('Krumpul Gula', 'rotiManisBox5')">Beli</button>
+                    <p class="text-black">Rp 12.000</p>
                 </div>
             </div>
             <div class="col-lg-4 d-flex justify-content-center">
                 <div class="text-center">
-                    <p class="text-black">Krumpul Keju.</p>
+                    <p class="text-black">Krumpul Keju</p>
                     <img src="RotiManisBox6.Jpeg" alt="Product 6" class="img-fluid rounded product-img" style="height: 200px; margin-bottom: 15px;">
-                    <div class="d-flex justify-content-center align-items-center mt-2">
-                        <button class="btn btn-outline-secondary" onclick="updateQuantity('rotiManisBox6', -1)">-</button>
-                        <input type="number" id="rotiManisBox6" value="1" min="1" class="mx-2 text-center" style="width: 50px; text-align: center;">
-                        <button class="btn btn-outline-secondary" onclick="updateQuantity('rotiManisBox6', 1)">+</button>
-                    </div>
-                    <button class="btn btn-primary mt-3" onclick="buyProduct('Krumpul Keju', 'rotiManisBox6')">Beli</button>
+                    <p class="text-black">Rp 21.000</p>
                 </div>
             </div>
         </div>
@@ -162,33 +133,14 @@
         <div class="row mb-4">
             <div class="col-lg-4 d-flex justify-content-center">
                 <div class="text-center">
-                    <p class="text-black">Pisang Keju.</p>
+                    <p class="text-black">Pisang Keju</p>
                     <img src="RotiManisBox7.Jpeg" alt="Product 7" class="img-fluid rounded product-img" style="height: 200px; margin-bottom: 15px;">
-                    <div class="d-flex justify-content-center align-items-center mt-2">
-                        <button class="btn btn-outline-secondary" onclick="updateQuantity('rotiManisBox7', -1)">-</button>
-                        <input type="number" id="rotiManisBox7" value="1" min="1" class="mx-2 text-center" style="width: 50px; text-align: center;">
-                        <button class="btn btn-outline-secondary" onclick="updateQuantity('rotiManisBox7', 1)">+</button>
-                    </div>
-                    <button class="btn btn-primary mt-3" onclick="buyProduct('Pisang Keju', 'rotiManisBox7')">Beli</button>
+                    <p class="text-black">Rp 35.000</p>
                 </div>
             </div>
         </div>
     </div>
 </section>
-<script>
-    function updateQuantity(product, change) {
-        const input = document.getElementById(product);
-        let currentValue = parseInt(input.value);
-        currentValue += change;
-        if (currentValue < 1) currentValue = 1; // Prevent going below 1
-        input.value = currentValue;
-    }
-
-    function buyProduct(productName, productId) {
-        const quantity = document.getElementById(productId).value;
-        alert(`Anda membeli ${quantity} ${productName}.`);
-    }
-</script>
 
     <footer class="custom-footer text-light d-flex align-items-center flex-column py-4">
         <h2>Contact Us</h2>
