@@ -5,9 +5,17 @@ body {
     font-style: normal;
     background-color: #ffe2df;
 }
+
+.navbar-toggler:focus {
+    text-decoration: none;
+    outline: 0;
+    box-shadow: 0 0 0 0;
+}
+
 .bgt a {
     text-decoration: none;
 }
+
 .bgt a:hover {
     color: #ffe2df;
 }
@@ -115,7 +123,7 @@ body {
 /* Carousel Styles */
 .carousel-item img {
     max-width: 100%;
-    max-height: 500px;
+    max-height: 440px;
     object-fit: cover;
 }
 
@@ -304,23 +312,32 @@ footer h5 {
 }
 
 #logo-fb {
-    max-width: 100%;
-    max-height: 41px;
-    object-fit: cover;
+    width: 33px;
+    height: 33px;
 }
 
 #logo-ig {
-    max-width: 100%;
-    max-height: 35px;
-    object-fit: cover;
+    width: 33px;
+    height: 36px;
 }
 
 #logo-tiktok {
-    max-width: 40px;
+    width: 33px;
+    height: 33px;
 }
 
 #logo-wa {
-    width: 40px;
+    width: 33px;
+    height: 30px;
+}
+
+footer h5 {
+    margin-left: 8px;
+    padding-top: 7px;
+}
+
+footer img {
+    margin-left: 20px;
 }
 
 .outlet iframe {
@@ -365,6 +382,7 @@ footer h5 {
         background-color: #5f1919;
         height: 0.3vw;
     }
+
     .login-collapse button {
         color: #5f1919;
         background-color: #ffe2df;
@@ -580,32 +598,36 @@ footer h5 {
     }
 
     .outlet iframe {
-        width: 200px;
-        height: 230px;
+        width: 350px;
+        height: 200px;
 
     }
 
     .maps {
-        width: 220px;
+        width: 350px;
         background-color: #5f1919;
         color: #ffe2df;
         font-size: 6px;
     }
 
     .maps p {
-
+        font-size: 10px;
         margin-bottom: 0.5em;
     }
 
+    .maps a {
+        font-size: 10px;
+    }
+
     .maps h4 {
-        font-size: 12px;
+        font-size: 16px;
         line-height: 0;
         margin-bottom: 0.5em;
     }
 
     .maps h6 {
         margin-bottom: 0.5em;
-        font-size: 8px;
+        font-size: 12px;
     }
 
     .promoimg {
@@ -624,7 +646,7 @@ footer h5 {
     }
 
     .carousel-item img {
-        height: 200px;
+        max-height: 200px;
         object-fit: cover;
     }
 
@@ -641,4 +663,43 @@ footer h5 {
         height: 280px;
         object-fit: cover;
     }
+
+    .outlet {
+        flex-direction: column;
+    }
+
+    .container-outlet {
+        display: flex;
+        justify-content: center;
+    }
+
+    #logo-fb {
+        width: 22px;
+        height: 22px;
+    }
+
+    #logo-ig {
+        width: 22px;
+        height: 25px;
+    }
+
+    #logo-tiktok {
+        width: 22px;
+        height: 22px;
+    }
+
+    #logo-wa {
+        width: 24px;
+        height: 22px;
+    }
+
+    footer h5 {
+        margin-left: 5px;
+        padding-top: 7px;
+    }
+
+    footer img {
+        margin-left: 25px;
+    }
+
 }
