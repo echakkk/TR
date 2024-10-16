@@ -5,6 +5,12 @@ body {
     font-style: normal;
     background-color: #ffe2df;
 }
+.bgt a {
+    text-decoration: none;
+}
+.bgt a:hover {
+    color: #ffe2df;
+}
 
 .orders {
     background-color: #ffe2df;
@@ -82,17 +88,23 @@ body {
 }
 
 .btn-custom {
-    color: #ffe2df; /* Warna teks */
-    text-decoration: none; /* Menghapus garis bawah pada link */
-    padding: 10px 20px;
-    border: 1px solid #ffe2df; /* Border dengan warna yang sama */
+    margin-top: 2px;
+    color: #ffe2df;
+    /* Warna teks */
+    text-decoration: none;
+    /* Menghapus garis bawah pada link */
+    padding: 8px 14px;
+    border: 1px solid #ffe2df;
+    /* Border dengan warna yang sama */
     border-radius: 5px;
     display: inline-block;
 }
 
 .btn-custom:hover {
-    background-color: #5f1919; /* Mengubah warna latar belakang saat hover */
-    color: #fff; /* Warna teks berubah saat hover */
+    background-color: #5f1919;
+    /* Mengubah warna latar belakang saat hover */
+    color: #fff;
+    /* Warna teks berubah saat hover */
 }
 
 .hero {
@@ -153,6 +165,12 @@ header p {
 .navbar-nav li {
     padding-left: 18px;
     padding-right: 18px;
+}
+
+#login {
+    padding-left: 0px;
+    padding-right: 0px;
+    margin-right: 26px;
 }
 
 .dropdown:hover .dropdown-menu {
@@ -244,11 +262,11 @@ header p {
 }
 
 .salam h1 {
-    font-size: clamp(8px, 2.5vw, 38px);
+    font-size: clamp(14px, 2.5vw, 36px);
 }
 
 .salam h5 {
-    font-size: clamp(4px, 1.4vw, 20px);
+    font-size: clamp(6px, 1.4vw, 20px);
 }
 
 .salam hr {
@@ -316,15 +334,6 @@ footer h5 {
     color: #ffe2df;
 }
 
-.login {
-    margin-top: 4px;
-    padding-left: 0px;
-}
-
-.login button {
-    color: #5f1919;
-    background-color: #ffe2df;
-}
 
 @media (min-width: 991px) {
     .login-collapse {
@@ -348,15 +357,27 @@ footer h5 {
 }
 
 @media (max-width: 991px) {
-
+    .salam hr {
+        margin: 0;
+        margin-bottom: 10px;
+        padding: 0;
+        opacity: 1;
+        background-color: #5f1919;
+        height: 0.3vw;
+    }
     .login-collapse button {
         color: #5f1919;
         background-color: #ffe2df;
     }
-    .collapse .login {
+
+    .login {
         visibility: collapse;
-        height: 0px;
-        width: 0px;
+        width: 0;
+        height: 0;
+    }
+
+    .login-collapse a {
+        margin: 0;
     }
 
     .bg-1 {
@@ -461,6 +482,7 @@ footer h5 {
         right: 0% !important;
         transform: translateX(0%) !important;
         top: 0% !important;
+
     }
 
     .dropdown-menu li {
@@ -468,12 +490,42 @@ footer h5 {
         float: left;
         position: relative;
     }
+
+    .dropdown-menu a {
+        display: block;
+        color: white;
+        text-align: left;
+    }
 }
 
 @media (max-width: 600px) {
+    .salam hr {
+        margin: 0;
+        margin-bottom: 10px;
+        padding: 0;
+        opacity: 1;
+        background-color: #5f1919;
+        height: 0.3vw;
+    }
+
+    .salam h1 {
+        padding-top: 10px;
+    }
+
     .login {
-        margin-top: 1px;
-        margin-right: 0px;
+        visibility: collapse;
+        width: 0;
+        height: 0;
+    }
+
+    .login-collapse a {
+        margin: 0;
+        padding: 0;
+        margin-top: 3px;
+        padding-top: 7px;
+        font-size: 13px;
+        width: 100px;
+        height: 35px;
     }
 
     .orders {
@@ -586,7 +638,7 @@ footer h5 {
 
     .salam img {
         max-width: 100%;
-        max-height: 180px;
+        height: 280px;
         object-fit: cover;
     }
 }

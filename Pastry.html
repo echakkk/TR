@@ -10,73 +10,73 @@
 </head>
 
 <body>
-    <nav class="sticky-top navbar navbar-expand-lg d-flex custom-navbar">
-        <img class="img-fluid" id="logo-collapse" src="/Logo.PNG">
-        <div class="d-flex justify-content-center">
-            <ul class="navbar-nav">
-                <li class="nav-item login-collapse">
-                    <button class="btn" data-toggle="login" data-target="#login">Login Member</button>
-                </li>
-            </ul>
-            <ul class="navbar-nav">
-                <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav"
-                    aria-expanded="false" aria-label="Toggle navigation">
-                    <img src="/navbar-toggler.png" width="30px">
-                </button>
-                </li>
-            </ul>
-        </div>
+    <body>
+        <!-- NAVBAR -->
+        <nav class="sticky-top navbar navbar-expand-lg d-flex custom-navbar">
+            <img class="img-fluid" id="logo-collapse" src="/Logo.PNG">
+            <div class="d-flex justify-content-center">
+                <ul class="navbar-nav">
+                    <li class="nav-item login-collapse">
+                        <a class="btn btn-custom" href="/login.html">Login Member</a>
+                    </li>
+                </ul>
+                <ul class="navbar-nav">
+                    <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                        <img src="/navbar-toggler.png" width="30px">
+                    </button>
+                    </li>
+                </ul>
+            </div>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <img class="img-fluid" id="logo" src="/Logo.PNG">
+                <ul class="navbar-nav">
+                    <li class="nav-item pr-4"><a class="nav-link" href="/Home.html">Home</a></li>
+                    <li class="nav-item pr-4"><a class="nav-link" href="#">About Us</a></li>
+                    <li class="nav-item dropdown pr-4">
+                        <a class="nav-link" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+                            aria-haspopup="true" aria-expanded="false">
+                            Product
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                            <a class="dropdown-item" href="Brownies.html">Brownies</a>
+                            <a class="dropdown-item" href="Cake.html">Cake</a>
+                            <a class="dropdown-item" href="Dessert.html">Dessert</a>
+                            <a class="dropdown-item" href="Pastry.html">Pastry</a>
+                            <a class="dropdown-item" href="Pizza.html">Pizza</a>
+                            <a class="dropdown-item" href="RotiManis.html">Roti Manis</a>
+                            <a class="dropdown-item" href="RotiManisBox.html">Roti Manis Box</a>
+                            <a class="dropdown-item" href="Snack.html">Snack</a>
+                            <a class="dropdown-item" href="Tart.html">Tar</a>
+                            <a class="dropdown-item" href="Tawar.html">Tawar</a>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown pr-4">
+                        <a class="nav-link" href="/Promo.html">
+                            Info
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                            <a class="dropdown-item" href="/Promo.html">Promo</a>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown pr-4">
+                        <a class="nav-link" href="/Orders.html">
+                            Order
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                            <a class="dropdown-item" href="/Outlet.html">Outlet Valecia Bakery</a>
+                        </div>
+                    </li>
+                    <li class="nav-item pr-4"><a class="nav-link" href="#">Hotline</a></li>
+                    <li class="nav-item login" id="login">
+                        <a class="btn btn-custom" href="/login.html">Login Member</a>
+                    </li>
+                </ul>
+                <img src="/halal.PNG" id="halal">
+            </div>
+        </nav>
 
-        <div class="collapse navbar-collapse" id="navbarNav">
-            <img class="img-fluid" id="logo" src="/Logo.PNG">
-            <ul class="navbar-nav">
-                <li class="nav-item pr-4"><a class="nav-link" href="/Home.html">Home</a></li>
-                <li class="nav-item pr-4"><a class="nav-link" href="#">About Us</a></li>
-                <li class="nav-item dropdown pr-4">
-                    <a class="nav-link" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
-                        aria-haspopup="true" aria-expanded="false">
-                        Product
-                    </a>
-                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                        <a class="dropdown-item" href="Brownies.html">Brownies</a>
-                        <a class="dropdown-item" href="Cake.html">Cake</a>
-                        <a class="dropdown-item" href="Dessert.html">Dessert</a>
-                        <a class="dropdown-item" href="Pastry.html">Pastry</a>
-                        <a class="dropdown-item" href="Pizza.html">Pizza</a>
-                        <a class="dropdown-item" href="RotiManis.html">Roti Manis</a>
-                        <a class="dropdown-item" href="RotiManisBox.html">Roti Manis Box</a>
-                        <a class="dropdown-item" href="Snack.html">Snack</a>
-                        <a class="dropdown-item" href="Tart.html">Tar</a>
-                        <a class="dropdown-item" href="Tawar.html">Tawar</a>
-                    </div>
-                </li>
-                <li class="nav-item dropdown pr-4">
-                    <a class="nav-link" href="/Promo.html">
-                        Info
-                    </a>
-                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                        <a class="dropdown-item" href="/Promo.html">Promo</a>
-                    </div>
-                </li>
-                <li class="nav-item dropdown pr-4">
-                    <a class="nav-link" href="/Orders.html">
-                        Order
-                    </a>
-                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                        <a class="dropdown-item" href="/Outlet.html">Outlet Valecia Bakery</a>
-                    </div>
-                </li>
-                <li class="nav-item pr-4"><a class="nav-link" href="#">Hotline</a></li>
-                <li class="nav-item login">
-                    <a class="btn btn-custom" href="login.html">Login Member</a>
-                </li>
-            </ul>
-
-            <img src="/halal.PNG" id="halal">
-        </div>
-    </nav>
-
-     <!-- Content Section -->
+    <!-- Content Section -->
 <section class="products py-5">
     <div class="container">
         <h2 class="text-center mb-4">Pastry</h2>
