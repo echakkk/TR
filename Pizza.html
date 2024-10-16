@@ -76,42 +76,24 @@
         </div>
     </nav>
 
-  <!-- Content Section -->
+<!-- Content Section -->
 <section class="products py-5">
     <div class="container">
         <h2 class="text-center mb-4">Pizza</h2>
         <div class="d-flex justify-content-center flex-wrap">
             <div class="col-lg-4 mb-4 d-flex justify-content-center">
                 <div class="text-center">
-                    <p class="text-black">Mozzarella.</p>
+                    <p class="text-black">Mozzarella</p>
                     <img src="Pizza.Jpeg" alt="Product 1" class="img-fluid rounded product-img" style="height: 200px; margin-bottom: 15px;">
-                    <div class="d-flex justify-content-center align-items-center mt-2">
-                        <button class="btn btn-outline-secondary" onclick="updateQuantity('mozzarella', -1)">-</button>
-                        <input type="number" id="mozzarella" value="1" min="1" class="mx-2 text-center" style="width: 50px; text-align: center;">
-                        <button class="btn btn-outline-secondary" onclick="updateQuantity('mozzarella', 1)">+</button>
-                    </div>
-                    <button class="btn btn-primary mt-3" onclick="buyProduct('Mozzarella', 'mozzarella')">Beli</button>
+                    <p class="text-black">Rp 50.000</p>
                 </div>
             </div>
         </div>
     </div>
 </section>
 
-<script>
-function updateQuantity(productId, change) {
-    const inputField = document.getElementById(productId);
-    const currentValue = parseInt(inputField.value);
-    const newValue = currentValue + change;
-    if (newValue >= 1) {
-        inputField.value = newValue;
-    }
-}
 
-function buyProduct(productName, productId) {
-    const quantity = document.getElementById(productId).value;
-    alert(`Anda telah membeli ${quantity} ${productName}`);
-}
-</script>
+
 
 
     <footer class="custom-footer text-light d-flex align-items-center flex-column py-4">

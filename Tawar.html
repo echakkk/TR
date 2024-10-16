@@ -83,58 +83,30 @@
         <div class="d-flex justify-content-center flex-wrap">
             <div class="col-lg-4 mb-4 d-flex justify-content-center">
                 <div class="text-center">
-                    <p class="text-black">Gandum.</p>
+                    <p class="text-black">Gandum</p>
                     <img src="Tawar1.Jpeg" alt="Product 1" class="img-fluid rounded product-img" style="height: 200px; margin-bottom: 15px;">
-                    <div class="d-flex justify-content-center align-items-center mt-2">
-                        <button class="btn btn-outline-secondary" onclick="updateQuantity('gandum', -1)">-</button>
-                        <input type="number" id="gandum" value="1" min="1" class="mx-2 text-center" style="width: 50px; text-align: center;">
-                        <button class="btn btn-outline-secondary" onclick="updateQuantity('gandum', 1)">+</button>
-                    </div>
-                    <button class="btn btn-primary mt-3" onclick="buyProduct('gandum')">Beli</button>
+                    <p class="text-black">Rp 17.000</p>
                 </div>
             </div>
             <div class="col-lg-4 mb-4 d-flex justify-content-center">
                 <div class="text-center">
-                    <p class="text-black">Keju.</p>
+                    <p class="text-black">Keju</p>
                     <img src="Tawar2.Jpeg" alt="Product 2" class="img-fluid rounded product-img" style="height: 200px; margin-bottom: 15px;">
-                    <div class="d-flex justify-content-center align-items-center mt-2">
-                        <button class="btn btn-outline-secondary" onclick="updateQuantity('keju', -1)">-</button>
-                        <input type="number" id="keju" value="1" min="1" class="mx-2 text-center" style="width: 50px; text-align: center;">
-                        <button class="btn btn-outline-secondary" onclick="updateQuantity('keju', 1)">+</button>
-                    </div>
-                    <button class="btn btn-primary mt-3" onclick="buyProduct('keju')">Beli</button>
+                    <p class="text-black">Rp 17.000</p>
                 </div>
             </div>
             <div class="col-lg-4 mb-4 d-flex justify-content-center">
                 <div class="text-center">
-                    <p class="text-black">Original.</p>
+                    <p class="text-black">Original</p>
                     <img src="Tawar3.Jpeg" alt="Product 3" class="img-fluid rounded product-img" style="height: 200px; margin-bottom: 15px;">
-                    <div class="d-flex justify-content-center align-items-center mt-2">
-                        <button class="btn btn-outline-secondary" onclick="updateQuantity('original', -1)">-</button>
-                        <input type="number" id="original" value="1" min="1" class="mx-2 text-center" style="width: 50px; text-align: center;">
-                        <button class="btn btn-outline-secondary" onclick="updateQuantity('original', 1)">+</button>
-                    </div>
-                    <button class="btn btn-primary mt-3" onclick="buyProduct('original')">Beli</button>
+                    <p class="text-black">Rp 12.000</p>
                 </div>
             </div>
         </div>
     </div>
 </section>
 
-<script>
-    function updateQuantity(product, change) {
-        const input = document.getElementById(product);
-        let currentValue = parseInt(input.value);
-        currentValue += change;
-        if (currentValue < 1) currentValue = 1; // Prevent going below 1
-        input.value = currentValue;
-    }
 
-    function buyProduct(product) {
-        const quantity = document.getElementById(product).value;
-        alert(`Anda membeli ${quantity} ${product}.`);
-    }
-</script>
 
 
     <footer class="custom-footer text-light d-flex align-items-center flex-column py-4">

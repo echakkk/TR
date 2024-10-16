@@ -4,9 +4,39 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Brownies - Valesca Cake & Bakery</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <title>Valesca Cake & Bakery</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="valescaa.css">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+    <!-- FONT-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@100..900&display=swap" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@300..900&display=swap" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@300..900&family=Paytone+One&display=swap"
+        rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@300..900&family=Markazi+Text:wght@400..700&family=Paytone+One&display=swap"
+        rel="stylesheet">
 </head>
 
 <body>
@@ -83,96 +113,52 @@
         <div class="d-flex justify-content-center flex-wrap">
             <div class="col-lg-4 mb-4 d-flex justify-content-center">
                 <div class="text-center">
-                    <p class="text-black">Coklat Keju.</p>
+                    <p class="text-black">Coklat Keju</p>
                     <img src="Brownies1.Jpeg" alt="Product 1" class="img-fluid rounded product-img" style="height: 200px; margin-bottom: 15px;">
-                    <div class="d-flex justify-content-center align-items-center mt-2">
-                        <button class="btn btn-outline-secondary" onclick="updateQuantity('coklatKeju', -1)">-</button>
-                        <input type="number" id="coklatKeju" value="1" min="1" class="mx-2 text-center" style="width: 50px; text-align: center;">
-                        <button class="btn btn-outline-secondary" onclick="updateQuantity('coklatKeju', 1)">+</button>
-                    </div>
-                    <button class="btn btn-primary mt-3" onclick="buyProduct('Coklat Keju', 'coklatKeju')">Beli</button>
+                    <p class="text-black">Rp 10.000</p>
                 </div>
             </div>
             <div class="col-lg-4 mb-4 d-flex justify-content-center">
                 <div class="text-center">
-                    <p class="text-black">Kukus.</p>
+                    <p class="text-black">Brownies Kukus</p>
                     <img src="Brownies2.Jpeg" alt="Product 2" class="img-fluid rounded product-img" style="height: 200px; margin-bottom: 15px;">
-                    <div class="d-flex justify-content-center align-items-center mt-2">
-                        <button class="btn btn-outline-secondary" onclick="updateQuantity('kukus', -1)">-</button>
-                        <input type="number" id="kukus" value="1" min="1" class="mx-2 text-center" style="width: 50px; text-align: center;">
-                        <button class="btn btn-outline-secondary" onclick="updateQuantity('kukus', 1)">+</button>
-                    </div>
-                    <button class="btn btn-primary mt-3" onclick="buyProduct('Kukus', 'kukus')">Beli</button>
+                    <p class="text-black">Rp 40.000</p>
                 </div>
             </div>
             <div class="col-lg-4 mb-4 d-flex justify-content-center">
                 <div class="text-center">
-                    <p class="text-black">Moist.</p>
+                    <p class="text-black">Moist</p>
                     <img src="Brownies3.Jpeg" alt="Product 3" class="img-fluid rounded product-img" style="height: 200px; margin-bottom: 15px;">
-                    <div class="d-flex justify-content-center align-items-center mt-2">
-                        <button class="btn btn-outline-secondary" onclick="updateQuantity('moist', -1)">-</button>
-                        <input type="number" id="moist" value="1" min="1" class="mx-2 text-center" style="width: 50px; text-align: center;">
-                        <button class="btn btn-outline-secondary" onclick="updateQuantity('moist', 1)">+</button>
-                    </div>
-                    <button class="btn btn-primary mt-3" onclick="buyProduct('Moist', 'moist')">Beli</button>
+                    <p class="text-black">Rp 40.000</p>
                 </div>
             </div>
             <div class="col-12 mb-4"></div>
 
             <div class="col-lg-4 mb-4 d-flex justify-content-center">
                 <div class="text-center">
-                    <p class="text-black">Muffin.</p>
+                    <p class="text-black">Muffin</p>
                     <img src="Brownies4.Jpeg" alt="Product 4" class="img-fluid rounded product-img" style="height: 200px; margin-bottom: 15px;">
-                    <div class="d-flex justify-content-center align-items-center mt-2">
-                        <button class="btn btn-outline-secondary" onclick="updateQuantity('muffin', -1)">-</button>
-                        <input type="number" id="muffin" value="1" min="1" class="mx-2 text-center" style="width: 50px; text-align: center;">
-                        <button class="btn btn-outline-secondary" onclick="updateQuantity('muffin', 1)">+</button>
-                    </div>
-                    <button class="btn btn-primary mt-3" onclick="buyProduct('Muffin', 'muffin')">Beli</button>
+                    <p class="text-black">Rp 6.000</p>
                 </div>
             </div>
             <div class="col-lg-4 mb-4 d-flex justify-content-center">
                 <div class="text-center">
-                    <p class="text-black">Sinny.</p>
+                    <p class="text-black">Sinny</p>
                     <img src="Brownies5.Jpeg" alt="Product 5" class="img-fluid rounded product-img" style="height: 200px; margin-bottom: 15px;">
-                    <div class="d-flex justify-content-center align-items-center mt-2">
-                        <button class="btn btn-outline-secondary" onclick="updateQuantity('sinny', -1)">-</button>
-                        <input type="number" id="sinny" value="1" min="1" class="mx-2 text-center" style="width: 50px; text-align: center;">
-                        <button class="btn btn-outline-secondary" onclick="updateQuantity('sinny', 1)">+</button>
-                    </div>
-                    <button class="btn btn-primary mt-3" onclick="buyProduct('Sinny', 'sinny')">Beli</button>
+                    <p class="text-black">Rp 20.000</p>
                 </div>
             </div>
             <div class="col-lg-4 mb-4 d-flex justify-content-center">
                 <div class="text-center">
-                    <p class="text-black">Topping coklat.</p>
+                    <p class="text-black">Topping coklat</p>
                     <img src="Brownies6.Jpeg" alt="Product 6" class="img-fluid rounded product-img" style="height: 200px; margin-bottom: 15px;">
-                    <div class="d-flex justify-content-center align-items-center mt-2">
-                        <button class="btn btn-outline-secondary" onclick="updateQuantity('toppingCoklat', -1)">-</button>
-                        <input type="number" id="toppingCoklat" value="1" min="1" class="mx-2 text-center" style="width: 50px; text-align: center;">
-                        <button class="btn btn-outline-secondary" onclick="updateQuantity('toppingCoklat', 1)">+</button>
-                    </div>
-                    <button class="btn btn-primary mt-3" onclick="buyProduct('Topping Coklat', 'toppingCoklat')">Beli</button>
+                    <p class="text-black">Rp 5.000</p>
                 </div>
             </div>
         </div>
     </div>
 </section>
 
-<script>
-function updateQuantity(productId, change) {
-    const quantityInput = document.getElementById(productId);
-    let currentValue = parseInt(quantityInput.value);
-    currentValue += change;
-    if (currentValue < 1) currentValue = 1; // Ensure minimum quantity is 1
-    quantityInput.value = currentValue;
-}
-
-function buyProduct(productName, quantityId) {
-    const quantity = document.getElementById(quantityId).value;
-    alert(`Anda membeli ${quantity} ${productName}.`);
-}
-</script>
 
 
 
