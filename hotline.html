@@ -38,8 +38,9 @@
         href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@300..900&family=Markazi+Text:wght@400..700&family=Paytone+One&display=swap"
         rel="stylesheet">
 </head>
+
 <body>
-    <nav class="sticky-top navbar navbar-expand-lg d-flex custom-navbar">
+    <nav class="sticky-top navbar navbar-expand-lg d-flex custom-navbar" style="border-bottom: 2px solid #ffe2df;">
         <img class="img-fluid" id="logo-collapse" src="/Logo.PNG">
         <div class="d-flex justify-content-center">
             <ul class="navbar-nav">
@@ -59,7 +60,7 @@
             <img class="img-fluid" id="logo" src="/Logo.PNG">
             <ul class="navbar-nav">
                 <li class="nav-item pr-4"><a class="nav-link" href="/Home.html">Home</a></li>
-                <li class="nav-item pr-4"><a class="nav-link" href="#">About Us</a></li>
+                <li class="nav-item pr-4"><a class="nav-link" href="/AboutUs.html">About Us</a></li>
                 <li class="nav-item dropdown pr-4">
                     <a class="nav-link" href="/Product.html">
                         Product
@@ -102,48 +103,69 @@
         </div>
     </nav>
 
-    <section class="d-flex justify-content-center align-items-center salam" style="position: relative; padding: 50px;">
+    <section class="d-flex justify-content-center align-items-center flex-column hotline">
         <!-- Gambar di sisi bawah -->
-        <div class="image-container" style="text-align: center;">
-            <img class="align-bottom" src="salam.PNG" style="width: auto; height: auto; max-width: 600px;">
-        </div>
-    
         <!-- Teks dan Tombol "Call Us" di atas gambar -->
-        <div class="text-salam" style="position: relative;  text-align: center;">
-            <h1 class="">Hubungi Kami</h1>
-            <h3>08156799697</h3>
+        <div class="hotline-text">
+            <h2>Hubungi Kami</h2>
             <!-- Tombol Call Us -->
-            <button style="margin-top: 20px; background-color: #ffe2df; border-color: #5f1919; padding: 10px 20px; font-size: 18px; cursor: pointer; border-radius: 5px;">
+            <button>
                 Call Us
             </button>
         </div>
+        <div class="hotline-img">
+            <img src="/hotline.JPG">
+        </div>
     </section>
-    
+    <hr class="hr-hotline">
 
-    <footer class="custom-footer text-light d-flex align-items-center flex-column py-4">
-        <h1>Contact Us</h1>
-        <div class="d-flex justify-content-start flex-column pr-5">
-            <div class="d-flex justify-content-start align-items-center py-1">
-                <img src="/Facebook.webp" id="logo-fb">
-                <h5>@Valesca Valesca</h5>
+    <footer class="custom-footer d-flex justify-content-center flex-column">
+        <h1 class="text-center mt-4">Contact Us</h1>
+        <div class="d-flex align-items-center justify-content-center div-2">
+            <div class="d-flex align-items-center cabang">
+                <img src="/maps.webp">
+                <div class="d-flex flex-column">
+                    <h6>Ambarawa</h6>
+                    <h6>(Sudirman)</h6>
+                </div>
             </div>
-            <div class="d-flex justify-content-start align-items-center py-1">
-                <img src="/Instagram.webp" id="logo-ig">
-                <h5>@valescabakery</h5>
+            <div class="d-flex align-items-center flex-column contact">
+                <div class="d-flex justify-content-start flex-column">
+                    <div class="d-flex justify-content-start align-items-center py-1">
+                        <img src="/Facebook.webp" id="logo-fb">
+                        <h5>@Valesca Valesca</h5>
+                    </div>
+                    <div class="d-flex justify-content-start align-items-center py-1">
+                        <img src="/Instagram.webp" id="logo-ig">
+                        <h5>@valescabakery</h5>
+                    </div>
+                    <div class="d-flex justify-content-start align-items-center py-1">
+                        <img src="/Tiktok.webp" id="logo-tiktok">
+                        <h5>@valescabakery01</h5>
+                    </div>
+                    <div class="d-flex justify-content-start align-items-center py-1">
+                        <img src="/Whatsaap.webp" id="logo-wa">
+                        <h5>08156799697</h5>
+                    </div>
+                </div>
             </div>
-            <div class="d-flex justify-content-start align-items-center py-1">
-                <img src="/Tiktok.webp" id="logo-tiktok">
-                <h5>@valescabakery01</h5>
+            <div class="d-flex align-items-center cabang">
+                <img src="/maps.webp">
+                <div class="d-flex align-items-center justify-content-center flex-column">
+                    <h6>Ambarawa</h6>
+                    <h6>(Kartini)</h6>
+                </div>
             </div>
-            <div class="d-flex justify-content-start align-items-center py-1">
-                <img src="/Whatsaap.webp" id="logo-wa">
-                <h5>08156799697</h5>
-            </div>
+        </div>
+        <div class="d-flex justify-content-center align-items-center div-3">
+            <div class="box"></div>
+            <h6>2024 Valesca Bakery All Right Resereved</h6>
+            <div class="box"></div>
         </div>
     </footer>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="valescaa.js"></script>
-    </body>
+</body>
 
 </html>

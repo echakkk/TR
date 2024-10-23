@@ -1,5 +1,5 @@
 body {
-    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     font-optical-sizing: auto;
     font-weight: 12px;
     font-style: normal;
@@ -306,6 +306,10 @@ footer h5 {
     font-size: clamp(8px, 2vw, 20px);
 }
 
+footer h6 {
+    font-size: clamp(4px, 2vw, 14px);
+}
+
 #halal {
     width: 70px;
 
@@ -336,10 +340,6 @@ footer h5 {
     padding-top: 7px;
 }
 
-footer img {
-    margin-left: 20px;
-}
-
 .outlet iframe {
     width: 600px;
     height: 450px;
@@ -351,8 +351,182 @@ footer img {
     color: #ffe2df;
 }
 
+.contact {
+    margin-left: 300px;
+    margin-right: 300px;
+}
+
+.cabang h6 {
+    margin-bottom: 0px;
+    padding-bottom: 0px;
+}
+
+.cabang img {
+    margin-bottom: 3px;
+    margin-right: 4px;
+}
+
+footer .div-2 {
+    margin-bottom: 30px;
+}
+
+.div-3 {
+    margin-bottom: 20px;
+}
+
+.div-3 h6 {
+    margin-left: 40px;
+    margin-right: 40px;
+    font-size: 14px;
+    text-align: center;
+}
+
+.box {
+    width: 490px;
+    height: 3px;
+    background-color: #ffe2df;
+    margin-bottom: 8px;
+}
+
+.hr-hotline {
+    background-color: #a45850;
+    height: 7px;
+    margin: 0;
+    padding: 0;
+}
+
+.hotline {
+    padding-top: 40px;
+    background-color: #5f1919;
+    padding-bottom: 80px;
+}
+
+.hotline-text {
+    position: relative;
+    text-align: center;
+}
+
+.hotline-text h2 {
+    color: #ffe2df;
+    font-size: clamp(20px, 3vw, 28px);
+}
+
+.hotline-img img {
+    margin-top: 30px;
+    width: auto;
+    height: auto;
+    max-width: 620px;
+}
+
+.hotline-text button {
+    margin-top: 10px;
+    background-color: #ffe2df;
+    border: none;
+    color: #5f1919;
+    padding: 8px 55px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 30px;
+}
+
+.aboutus .div-parent {
+    margin-top: 50px;
+    color: #5f1919;
+    width: 800px;
+    height: 1200px;
+}
+
+.aboutus .div-parent {
+    text-align: justify;
+    text-indent: 60px
+}
+
+.aboutus .box {
+    width: auto;
+    height: 4px;
+    background-color: #5f1919;
+    margin-bottom: 30px;
+}
+
+.div-parent .div-p2 {
+    margin-top: 50px;
+}
+
+.div-p1 {
+    margin-bottom: 60px;
+}
+
+
+#logo-about {
+    background-color: #5f1919;
+    width: 385px;
+    padding-right: 30px;
+    padding-left: 30px;
+    margin-top: 20px;
+    padding-bottom: 20px;
+    border: 6px solid white;
+    border-radius: 8px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+
+}
+
+#roti-about {
+    width: 465px;
+    height: 230px;
+    position: absolute;
+    z-index: 2;
+    margin-left: 310px;
+    margin-top: 135px;
+}
+
+@media (max-width: 1200px) {
+    .contact {
+        margin-left: 230px;
+        margin-right: 230px;
+    }
+
+    footer .div-2 {
+        margin-bottom: 30px;
+    }
+
+    .div-3 {
+        margin-bottom: 20px;
+    }
+
+    .div-3 h6 {
+        margin-left: 40px;
+        margin-right: 40px;
+        font-size: 12px;
+    }
+
+    .box {
+        width: 380px;
+        height: 3px;
+        background-color: #ffe2df;
+        margin-bottom: 8px;
+    }
+
+}
 
 @media (min-width: 991px) {
+    .hotline {
+        padding-top: 40px;
+        background-color: #5f1919;
+        padding-bottom: 80px;
+    }
+
+    .hotline-text {
+        position: relative;
+        text-align: center;
+    }
+
+    .hotline-img img {
+        margin-top: 30px;
+        width: auto;
+        height: auto;
+        max-width: 620px;
+    }
+
     .login-collapse {
         visibility: collapse;
         height: 0px;
@@ -374,6 +548,109 @@ footer img {
 }
 
 @media (max-width: 991px) {
+    .div-p2 h4 {
+        font-size: 20px;
+    }
+    .aboutus .div-parent {
+        margin-top: 50px;
+        color: #5f1919;
+        width: 600px;
+        height: 1050px;
+    }
+
+    .aboutus .div-parent {
+        text-align: justify;
+        text-indent: 60px
+    }
+
+    .aboutus .box {
+        width: auto;
+        height: 4px;
+        background-color: #5f1919;
+        margin-bottom: 30px;
+    }
+
+    .div-parent .div-p2 {
+        margin-top: 50px;
+    }
+
+    .div-p1 {
+        margin-bottom: 60px;
+    }
+
+    #logo-about {
+        background-color: #5f1919;
+        width: 315px;
+        padding-right: 30px;
+        padding-left: 30px;
+        margin-top: 20px;
+        padding-bottom: 20px;
+        border: 6px solid white;
+        border-radius: 8px;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+
+    }
+
+    #roti-about {
+        width: 345px;
+        height: 150px;
+        position: absolute;
+        z-index: 2;
+        margin-left: 250px;
+        margin-top: 145px;
+    }
+
+    .hotline-img img {
+        margin-top: 30px;
+        width: auto;
+        height: auto;
+        max-width: 500px;
+    }
+
+    .hotline-text button {
+        margin-top: 10px;
+        background-color: #ffe2df;
+        border: none;
+        color: #5f1919;
+        padding: 6px 45px;
+        font-size: 12px;
+        cursor: pointer;
+        border-radius: 30px;
+    }
+
+    .hr-hotline {
+        background-color: #a45850;
+        height: 5px;
+        margin: 0;
+        padding: 0;
+    }
+
+    footer .div-2 {
+        margin-bottom: 30px;
+    }
+
+    .div-3 {
+        margin-bottom: 20px;
+    }
+
+    .div-3 h6 {
+        margin-left: 40px;
+        margin-right: 40px;
+        font-size: 10px;
+    }
+
+    .box {
+        width: 300px;
+        height: 3px;
+        background-color: #ffe2df;
+        margin-bottom: 8px;
+    }
+
+    .contact {
+        margin-left: 100px;
+        margin-right: 100px;
+    }
+
     .salam hr {
         margin: 0;
         margin-bottom: 10px;
@@ -517,6 +794,118 @@ footer img {
 }
 
 @media (max-width: 600px) {
+    .div-p2 h4 {
+        font-size: 14px;
+    }
+    .aboutus .div-parent {
+        margin-top: 50px;
+        color: #5f1919;
+        width: 400px;
+        height: 850px;
+    }
+
+    .aboutus .div-parent {
+        text-align: justify;
+        text-indent: 60px
+    }
+
+    .aboutus .box {
+        width: auto;
+        height: 3px;
+        background-color: #5f1919;
+        margin-bottom: 30px;
+    }
+
+    .div-parent .div-p2 {
+        margin-top: 50px;
+    }
+
+    .div-p1 {
+        margin-bottom: 60px;
+    }
+
+    #logo-about {
+        background-color: #5f1919;
+        width: 235px;
+        padding-right: 30px;
+        padding-left: 30px;
+        margin-top: 20px;
+        padding-bottom: 20px;
+        border: 6px solid white;
+        border-radius: 8px;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+
+    }
+
+    #roti-about {
+        width: 225px;
+        height: 110px;
+        position: absolute;
+        z-index: 2;
+        margin-left: 180px;
+        margin-top: 115px;
+    }
+    .hotline-img img {
+        margin-top: 30px;
+        width: auto;
+        height: auto;
+        max-width: 400px;
+    }
+
+    .hotline-text button {
+        margin-top: 10px;
+        background-color: #ffe2df;
+        border: none;
+        color: #5f1919;
+        padding: 6px 45px;
+        font-size: 12px;
+        cursor: pointer;
+        border-radius: 30px;
+    }
+
+    .hr-hotline {
+        background-color: #a45850;
+        height: 3px;
+        margin: 0;
+        padding: 0;
+    }
+
+    footer .div-2 {
+        margin-bottom: 20px;
+    }
+
+    .div-3 {
+        margin-bottom: 15px;
+    }
+
+    .div-3 h6 {
+        margin-left: 20px;
+        margin-right: 20px;
+        font-size: 8px;
+    }
+
+    .box {
+        width: 120px;
+        height: 2px;
+        background-color: #ffe2df;
+        margin-bottom: 8px;
+    }
+
+    .contact {
+        margin-left: 100px;
+        margin-right: 100px;
+    }
+
+    .contact {
+        margin-left: 50px;
+        margin-right: 50px;
+    }
+
+    .cabang img {
+        width: 16px;
+        height: 20px;
+    }
+
     .salam hr {
         margin: 0;
         margin-bottom: 10px;
@@ -697,9 +1086,4 @@ footer img {
         margin-left: 5px;
         padding-top: 7px;
     }
-
-    footer img {
-        margin-left: 25px;
-    }
-
 }
