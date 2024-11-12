@@ -3,12 +3,14 @@
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sign Up | Valesca Cake & Bakery</title>
     <link href="/Logo.PNG" rel="shortcut icon">
-    <!-- Responsive CSS Styling -->
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Heebo:wght@400;600&display=swap');
 
@@ -20,148 +22,100 @@
 
         body {
             font-family: 'Heebo', sans-serif;
-            background-color: #ffe2df;
+            background: linear-gradient(to right, #ffe2df, #ffabab);
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 100vh;
+            min-height: 100vh;
             padding: 20px;
         }
 
-        .container {
-            background-color: #5f1919;
+        .signup-container {
+            background-color: #ffffff;
             padding: 2rem;
-            border-radius: 10px;
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
-            max-width: 400px;
+            border-radius: 15px;
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+            max-width: 450px;
             width: 100%;
-            transition: transform 0.3s ease;
         }
 
-        .container:hover {
-            transform: translateY(-5px);
-        }
-
-        h2 {
-            text-align: center;
-            margin-bottom: 1.5rem;
-            color: #ffe2df;
-        }
-
-        form div {
-            margin-bottom: 1.2rem;
-        }
-
-        label {
-            display: block;
-            margin-bottom: 0.5rem;
-            font-weight: 600;
-            color: #ffe2df;
-        }
-
-        input[type="text"],
-        input[type="password"] {
-            width: 100%;
-            padding: 12px;
-            margin-bottom: 15px;
-            border: 2px solid #a57b7b;
-            border-radius: 5px;
-            font-size: 1rem;
-            background-color: #ffe2df;
+        .signup-container h2 {
             color: #5f1919;
-            transition: border-color 0.3s;
+            text-align: center;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
         }
 
-        input[type="text"]:focus,
-        input[type="password"]:focus {
-            border-color: #f3a3a3;
+        .signup-container .form-control {
+            background-color: #f8f9fa;
+            border: none;
+            border-radius: 8px;
+            box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .signup-container .form-control:focus {
+            box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
             outline: none;
         }
 
-        button {
-            background-color: #ffe2df;
-            color: #5f1919;
-            padding: 12px;
+        .signup-container button {
+            background-color: #5f1919;
+            color: #fff;
             border: none;
-            border-radius: 5px;
-            font-size: 1rem;
-            font-weight: bold;
-            cursor: pointer;
-            transition: all 0.3s ease;
+            border-radius: 8px;
+            padding: 0.75rem;
             width: 100%;
+            margin-top: 1rem;
+            transition: background-color 0.3s ease;
         }
 
-        button:hover {
-            background-color: #f3a3a3;
+        .signup-container button:hover {
+            background-color: #7a2b2b;
         }
 
-        button:active {
-            transform: scale(0.98);
-        }
-
-        .container div a {
-            display: block;
+        .signup-container .back-link {
             text-align: center;
             margin-top: 1rem;
-            color: #f3a3a3;
+        }
+
+        .signup-container a {
+            color: #ff4d4d;
             text-decoration: none;
-            font-size: 0.9rem;
-            font-weight: bold;
             transition: color 0.3s;
         }
 
-        .container div a:hover {
-            color: #ffffff;
-        }
-
-        /* Media Queries for Responsiveness */
-        @media (max-width: 768px) {
-            .container {
-                padding: 1.5rem;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .container {
-                padding: 1.2rem;
-            }
-
-            h2 {
-                font-size: 1.6rem;
-            }
-
-            button {
-                font-size: 0.9rem;
-            }
-
-            input[type="text"],
-            input[type="password"] {
-                font-size: 0.9rem;
-            }
+        .signup-container a:hover {
+            color: #ff7777;
         }
     </style>
 </head>
+
 <body>
-    <div class="container">
-        <h2>Sign Up</h2>
+    <div class="signup-container">
+        <h2>Create Your Account</h2>
         <form action="prosesdb.php" method="POST">
-            <div>
-                <label for="Username">Username</label>
-                <input type="text" name="username" placeholder="Enter your username" required>
+            <div class="mb-3">
+                <label for="Username" class="form-label">Username</label>
+                <input type="text" class="form-control" name="username" placeholder="Enter your username" required>
             </div>
-            <div>
-                <label for="name">Name</label>
-                <input type="text" name="name" placeholder="Enter your name" required>
+            <div class="mb-3">
+                <label for="name" class="form-label">Name</label>
+                <input type="text" class="form-control" name="name" placeholder="Enter your name" required>
             </div>
-            <div>
-                <label for="password">Password</label>
-                <input type="password" name="password" placeholder="Enter your password" required>
+            <div class="mb-3">
+                <label for="password" class="form-label">Password</label>
+                <input type="password" class="form-control" name="password" placeholder="Enter your password" required>
             </div>
-            <button type="submit" name="create">Add Member</button>
+            <button type="submit" class="btn btn-primary" name="create">Sign Up</button>
         </form>
-        <div>
-            <a href="login.php">Already have an account? Login here</a>
+        <div class="back-link mt-3">
+            <p>Already have an account? <a href="login.php">Login here</a></p>
+            <p><a href="Home.php">Back to Home</a></p>
         </div>
     </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
+
 </html>

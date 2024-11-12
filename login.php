@@ -1,14 +1,16 @@
 <?php include 'db_valesca.php'; ?> 
 <?php include 'fungsidb.php'; ?> 
+<?php session_start(); ?>
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login | Valesca Cake & Bakery</title>
     <link href="/Logo.PNG" rel="shortcut icon">
-    <!-- CSS Styling -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Heebo:wght@400;600&display=swap');
 
@@ -20,114 +22,104 @@
 
         body {
             font-family: 'Heebo', sans-serif;
-            background-color: #ffe2df;
+            background: linear-gradient(to right, #ffe2df, #ffabab);
+            min-height: 100vh;
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 100vh;
-            padding: 20px;
         }
 
         .login-container {
-            background-color: #5f1919;
+            background-color: #ffffff;
             padding: 2rem;
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
-            border-radius: 10px;
+            border-radius: 15px;
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+            max-width: 400px;
             width: 100%;
-            max-width: 350px;
-            transition: transform 0.3s ease;
-        }
-
-        .login-container:hover {
-            transform: translateY(-5px);
         }
 
         .login-container h2 {
-            text-align: center;
-            margin-bottom: 1.5rem;
-            color: #ffe2df;
-        }
-
-        input[type="text"],
-        input[type="password"] {
-            width: 100%;
-            padding: 12px;
-            margin-bottom: 15px;
-            border: 2px solid #a57b7b;
-            border-radius: 5px;
-            font-size: 1rem;
-            background-color: #ffe2df;
             color: #5f1919;
-            transition: border-color 0.3s;
+            text-align: center;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
         }
 
-        input[type="text"]:focus,
-        input[type="password"]:focus {
-            border-color: #f3a3a3;
+        .login-container .form-control {
+            background-color: #f8f9fa;
+            border: none;
+            border-radius: 8px;
+            box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .login-container .form-control:focus {
+            box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
             outline: none;
         }
 
-        button {
-            width: 100%;
-            padding: 12px;
-            background-color: #ffe2df;
+        .login-container button {
+            background-color: #5f1919;
+            color: #fff;
             border: none;
-            border-radius: 5px;
-            color: #5f1919;
-            font-size: 1rem;
-            font-weight: bold;
-            cursor: pointer;
-            transition: all 0.3s ease;
+            border-radius: 8px;
+            padding: 0.5rem;
+            width: 100%;
+            margin-top: 1rem;
+            transition: background-color 0.3s ease;
         }
 
-        button:hover {
-            background-color: #f3a3a3;
-        }
-
-        .login-container p {
-            text-align: center;
-            color: #ffe2df;
+        .login-container button:hover {
+            background-color: #7a2b2b;
         }
 
         .login-container a {
-            color: #f3a3a3;
+            color: #ff4d4d;
             text-decoration: none;
-            font-weight: 600;
         }
 
-        .login-container a:hover {
-            color: #ffffff;
+        .login-container .back-link {
+            text-align: center;
+            margin-top: 1rem;
         }
 
         .error-message {
-            color: #ff4d4d;
+            color: #dc3545;
+            background-color: #f8d7da;
+            border: 1px solid #f5c2c7;
+            padding: 0.5rem;
+            border-radius: 8px;
             text-align: center;
             margin-bottom: 1rem;
         }
     </style>
 </head>
+
 <body>
     <div class="login-container">
-        <h2>Login</h2>
-
+        <h2>Welcome Back!</h2>
         <?php 
-        // Pesan error jika login gagal
         if (isset($_GET['error'])) {
             echo '<div class="error-message">Invalid username or password!</div>';
         }
         ?>
-
         <form action="proses_login.php" method="POST">
-            <input type="text" name="username" placeholder="Username" required>
-            <input type="password" name="password" placeholder="Password" required>
-            <button type="submit">Login</button>
+            <div class="mb-3">
+                <input type="text" class="form-control" name="username" placeholder="Username" required>
+            </div>
+            <div class="mb-3">
+                <input type="password" class="form-control" name="password" placeholder="Password" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Login</button>
         </form>
-
-        <p>Don't have an account? <a href="signup.php">Sign Up</a></p>
-
-        <div class="back-link">
-            <p><a href="home.html">Back to Home</a></p>
+        <div class="text-center mt-3">
+            <p>Don't have an account? <a href="signup.php">Sign Up</a></p>
+            <div class="back-link">
+                <a href="Home.html">Back to Home</a>
+            </div>
         </div>
     </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
+
 </html>
