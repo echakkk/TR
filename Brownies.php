@@ -18,46 +18,65 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
         integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
         crossorigin="anonymous"></script>
+    <!-- FONT-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@100..900&display=swap" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@300..900&display=swap" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@300..900&family=Paytone+One&display=swap"
+        rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@300..900&family=Markazi+Text:wght@400..700&family=Paytone+One&display=swap"
+        rel="stylesheet">
 </head>
 
 <body>
     <!-- NAVBAR -->
     <nav class="sticky-top navbar navbar-expand-lg d-flex custom-navbar">
-        <img class="img-fluid" id="logo-collapse" src="/Logo.PNG">
+        <img class="img-fluid" id="logo-collapse" src="./Logo.PNG">
         <div class="d-flex justify-content-center">
             <ul class="navbar-nav">
                 <li class="nav-item login-collapse">
-                    <a class="btn btn-custom" href="/login.html">Login Member</a>
+                    <a class="btn btn-custom" href="./login.html">Login Member</a>
                 </li>
             </ul>
             <ul class="navbar-nav">
                 <button class="navbar-toggler" id="toggler" data-toggle="collapse" data-target="#navbarNav"
                     aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                    <img src="/navbar-toggler.png" width="30px">
+                    <img src="./navbar-toggler.png" width="30px">
                 </button>
                 </li>
             </ul>
         </div>
         <div class="collapse navbar-collapse" id="navbarNav">
-            <img class="img-fluid" id="logo" src="/Logo.PNG">
+            <img class="img-fluid" id="logo" src="./Logo.PNG">
             <ul class="navbar-nav">
-                <li class="nav-item pr-4"><a class="nav-link" href="/Home.html">Home</a></li>
-                <li class="nav-item pr-4"><a class="nav-link" href="/AboutUs.html">About Us</a></li>
+                <li class="nav-item pr-4"><a class="nav-link" href="./Home.html">Home</a></li>
+                <li class="nav-item pr-4"><a class="nav-link" href="./AboutUs.html">About Us</a></li>
                 <li class="nav-item dropdown pr-4">
-                    <a class="nav-link" href="/Product.html">
+                    <a class="nav-link" href="./Product.html">
                         Product
                     </a>
                     <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                        <a class="dropdown-item" href="Brownies.html">Brownies</a>
-                        <a class="dropdown-item" href="Cake.html">Cake</a>
-                        <a class="dropdown-item" href="Dessert.html">Dessert</a>
-                        <a class="dropdown-item" href="Pastry.html">Pastry</a>
-                        <a class="dropdown-item" href="Pizza.html">Pizza</a>
-                        <a class="dropdown-item" href="RotiManis.html">Roti Manis</a>
-                        <a class="dropdown-item" href="RotiManisBox.html">Roti Manis Box</a>
-                        <a class="dropdown-item" href="Snack.html">Snack</a>
-                        <a class="dropdown-item" href="Tart.html">Tar</a>
-                        <a class="dropdown-item" href="Tawar.html">Tawar</a>
+                        <a class="dropdown-item" href="./Brownies.php">Brownies</a>
+                        <a class="dropdown-item" href="./Cake.php">Cake</a>
+                        <a class="dropdown-item" href="./Dessert.php">Dessert</a>
+                        <a class="dropdown-item" href="./Pastry.php">Pastry</a>
+                        <a class="dropdown-item" href="./Pizza.php">Pizza</a>
+                        <a class="dropdown-item" href="./RotiManis.php">Roti Manis</a>
+                        <a class="dropdown-item" href="./RotiManisBox.php">Roti Manis Box</a>
+                        <a class="dropdown-item" href="./Snack.php">Snack</a>
+                        <a class="dropdown-item" href="./Tart.php">Tar</a>
+                        <a class="dropdown-item" href="./Tawar.php">Tawar</a>
                     </div>
                 </li>
                 <li class="nav-item dropdown pr-4">
@@ -81,46 +100,39 @@
                     <a class="btn btn-custom" href="/login.html">Login Member</a>
                 </li>
             </ul>
-            <img src="/halal.PNG" id="halal">
+            <img src="./halal.PNG" id="halal">
         </div>
     </nav>
 
     <!-- Content Section -->
     <section class="products py-5">
         <div class="container">
-            <h2 class="text-center mb-4">Tawar</h2>
+            <h2 class="text-center mb-4">Brownies</h2>
             <div class="d-flex justify-content-center flex-wrap">
+            <?php
+            include 'BrowniesModel.php'; // Menyertakan model
+            foreach ($brownies as $brownie) {
+            ?>
                 <div class="col-lg-4 mb-4 d-flex justify-content-center">
                     <div class="text-center">
-                        <p class="text-black">Gandum</p>
-                        <img src="Tawar1.Jpeg" alt="Product 1" class="img-fluid rounded product-img"
-                            style="height: 200px; margin-bottom: 15px;">
-                        <p class="text-black">Rp 17.000</p>
+                        <p class="text-black"><?php echo htmlspecialchars($brownie['title']); ?></p>
+                        <img src="<?php echo htmlspecialchars($brownie['link']); ?>" alt="<?php echo htmlspecialchars($brownie['title']); ?>" class="img-fluid rounded product-img" style="height: 200px; margin-bottom: 15px;">
+                        <p class="text-black">Rp <?php echo number_format($brownie['price'], 0, ',', '.'); ?></p>
                     </div>
                 </div>
-                <div class="col-lg-4 mb-4 d-flex justify-content-center">
-                    <div class="text-center">
-                        <p class="text-black">Keju</p>
-                        <img src="Tawar2.Jpeg" alt="Product 2" class="img-fluid rounded product-img"
-                            style="height: 200px; margin-bottom: 15px;">
-                        <p class="text-black">Rp 17.000</p>
-                    </div>
-                </div>
-                <div class="col-lg-4 mb-4 d-flex justify-content-center">
-                    <div class="text-center">
-                        <p class="text-black">Original</p>
-                        <img src="Tawar3.Jpeg" alt="Product 3" class="img-fluid rounded product-img"
-                            style="height: 200px; margin-bottom: 15px;">
-                        <p class="text-black">Rp 12.000</p>
-                    </div>
-                </div>
+            <?php
+            }
+            ?>  
+                
             </div>
+        </div>
     </section>
+    <!-- Footer -->
     <footer class="custom-footer d-flex justify-content-center flex-column">
         <h1 class="text-center mt-4">Contact Us</h1>
         <div class="d-flex align-items-center justify-content-center div-2">
             <div class="d-flex align-items-center cabang">
-                <img src="/maps.webp">
+                <img src="./maps.webp">
                 <div class="d-flex flex-column">
                     <h6>Ambarawa</h6>
                     <h6>(Sudirman)</h6>
@@ -129,25 +141,25 @@
             <div class="d-flex align-items-center flex-column contact">
                 <div class="d-flex justify-content-start flex-column">
                     <div class="d-flex justify-content-start align-items-center py-1">
-                        <img src="/Facebook.webp" id="logo-fb">
+                        <img src="./Facebook.webp" id="logo-fb">
                         <h5>@Valesca Valesca</h5>
                     </div>
                     <div class="d-flex justify-content-start align-items-center py-1">
-                        <img src="/Instagram.webp" id="logo-ig">
+                        <img src="./Instagram.webp" id="logo-ig">
                         <h5>@valescabakery</h5>
                     </div>
                     <div class="d-flex justify-content-start align-items-center py-1">
-                        <img src="/Tiktok.webp" id="logo-tiktok">
+                        <img src="./Tiktok.webp" id="logo-tiktok">
                         <h5>@valescabakery01</h5>
                     </div>
                     <div class="d-flex justify-content-start align-items-center py-1">
-                        <img src="/Whatsaap.webp" id="logo-wa">
+                        <img src="./Whatsaap.webp" id="logo-wa">
                         <h5>08156799697</h5>
                     </div>
                 </div>
             </div>
             <div class="d-flex align-items-center cabang">
-                <img src="/maps.webp">
+                <img src="./maps.webp">
                 <div class="d-flex align-items-center justify-content-center flex-column">
                     <h6>Ambarawa</h6>
                     <h6>(Kartini)</h6>
@@ -160,6 +172,8 @@
             <div class="box"></div>
         </div>
     </footer>
+
+    <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 
