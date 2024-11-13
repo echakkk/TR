@@ -1,3 +1,24 @@
+<?php
+// Konfigurasi koneksi ke database
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "db_valesca";
+$port = 3308; // Port MySQL Anda
+
+// Membuat koneksi
+$conn = new mysqli($servername, $username, $password, $dbname, $port);
+
+// Cek koneksi
+if ($conn->connect_error) {
+    die("Koneksi gagal: " . $conn->connect_error);
+}
+
+// Query untuk mengambil semua data dari tabel 'menu'
+$sql = "SELECT * FROM menu8";
+$result = $conn->query($sql);
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -18,6 +39,25 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
         integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
         crossorigin="anonymous"></script>
+    <!-- FONT-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@100..900&display=swap" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@300..900&display=swap" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@300..900&family=Paytone+One&display=swap"
+        rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@300..900&family=Markazi+Text:wght@400..700&family=Paytone+One&display=swap"
+        rel="stylesheet">
 </head>
 
 <body>
@@ -48,16 +88,16 @@
                         Product
                     </a>
                     <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                        <a class="dropdown-item" href="Brownies.html">Brownies</a>
-                        <a class="dropdown-item" href="Cake.html">Cake</a>
-                        <a class="dropdown-item" href="Dessert.html">Dessert</a>
-                        <a class="dropdown-item" href="Pastry.html">Pastry</a>
-                        <a class="dropdown-item" href="Pizza.html">Pizza</a>
-                        <a class="dropdown-item" href="RotiManis.html">Roti Manis</a>
-                        <a class="dropdown-item" href="RotiManisBox.html">Roti Manis Box</a>
-                        <a class="dropdown-item" href="Snack.html">Snack</a>
-                        <a class="dropdown-item" href="Tart.html">Tar</a>
-                        <a class="dropdown-item" href="Tawar.html">Tawar</a>
+                        <a class="dropdown-item" href="http://localhost/TR/Brownies.php">Brownies</a>
+                        <a class="dropdown-item" href="http://localhost/TR/Cake.php">Cake</a>
+                        <a class="dropdown-item" href="http://localhost/TR/Dessert.php">Dessert</a>
+                        <a class="dropdown-item" href="http://localhost/TR/Pastry.php">Pastry</a>
+                        <a class="dropdown-item" href="http://localhost/TR/Pizza.php">Pizza</a>
+                        <a class="dropdown-item" href="http://localhost/TR/RotiManis.php">Roti Manis</a>
+                        <a class="dropdown-item" href="http://localhost/TR/RotiManisBox.php">Roti Manis Box</a>
+                        <a class="dropdown-item" href="http://localhost/TR/Snack.php">Snack</a>
+                        <a class="dropdown-item" href="http://localhost/TR/Tart.php">Tar</a>
+                        <a class="dropdown-item" href="http://localhost/TR/Tawar.php">Tawar</a>
                     </div>
                 </li>
                 <li class="nav-item dropdown pr-4">
@@ -84,77 +124,31 @@
             <img src="/halal.PNG" id="halal">
         </div>
     </nav>
-    <!-- Content Section -->
 
+    <!-- Content Section -->
     <section class="products py-5">
         <div class="container">
-            <h2 class="text-center mb-4">Roti Manis Box</h2>
-
-            <div class="row mb-4">
-                <div class="col-lg-4 d-flex justify-content-center">
-                    <div class="text-center">
-                        <p class="text-black">3 Rasa</p>
-                        <img src="RotiManisBox1.Jpeg" alt="Product 1" class="img-fluid rounded product-img"
-                            style="height: 200px; margin-bottom: 15px;">
-                        <p class="text-black">Rp 14.500</p>
-                    </div>
-                </div>
-                <div class="col-lg-4 d-flex justify-content-center">
-                    <div class="text-center">
-                        <p class="text-black">5 Rasa</p>
-                        <img src="RotiManisBox2.Jpeg" alt="Product 2" class="img-fluid rounded product-img"
-                            style="height: 200px; margin-bottom: 15px;">
-                        <p class="text-black">Rp 17.500</p>
-                    </div>
-                </div>
-                <div class="col-lg-4 d-flex justify-content-center">
-                    <div class="text-center">
-                        <p class="text-black">7 Rasa</p>
-                        <img src="RotiManisBox3.Jpeg" alt="Product 3" class="img-fluid rounded product-img"
-                            style="height: 200px; margin-bottom: 15px;">
-                        <p class="text-black">Rp 20.000</p>
-                    </div>
-                </div>
+            <h2 class="text-center mb-4">Semua Produk</h2>
+            <div class="d-flex justify-content-center flex-wrap">
+                <?php if ($result && $result->num_rows > 0) : ?>
+                    <?php while ($row = $result->fetch_assoc()) : ?>
+                        <div class="col-lg-4 mb-4 d-flex justify-content-center">
+                            <div class="text-center">
+                                <p class="text-black"><?php echo htmlspecialchars($row['nama_menu']); ?></p>
+                                <!-- Menampilkan gambar dari database -->
+                                <img src="<?php echo htmlspecialchars($row['gambar']); ?>" alt="<?php echo htmlspecialchars($row['nama_menu']); ?>" class="img-fluid rounded product-img" style="height: 200px; width: 100%; object-fit: cover; margin-bottom: 15px;">
+                                <p class="text-black">Rp <?php echo number_format($row['harga_menu'], 0, ',', '.'); ?></p>
+                                <p class="text-muted">Persediaan: <?php echo $row['persediaan']; ?></p>
+                            </div>
+                        </div>
+                    <?php endwhile; ?>
+                <?php else : ?>
+                    <p class="text-center">Menu tidak tersedia</p>
+                <?php endif; ?>
             </div>
-
-            <div class="row mb-4">
-                <div class="col-lg-4 d-flex justify-content-center">
-                    <div class="text-center">
-                        <p class="text-black">Cilik</p>
-                        <img src="RotiManisBox4.Jpeg" alt="Product 4" class="img-fluid rounded product-img"
-                            style="height: 200px; margin-bottom: 15px;">
-                        <p class="text-black">Rp 25.000</p>
-                    </div>
-                </div>
-                <div class="col-lg-4 d-flex justify-content-center">
-                    <div class="text-center">
-                        <p class="text-black">Krumpul Gula</p>
-                        <img src="RotiManisBox5.Jpeg" alt="Product 5" class="img-fluid rounded product-img"
-                            style="height: 200px; margin-bottom: 15px;">
-                        <p class="text-black">Rp 12.000</p>
-                    </div>
-                </div>
-                <div class="col-lg-4 d-flex justify-content-center">
-                    <div class="text-center">
-                        <p class="text-black">Krumpul Keju</p>
-                        <img src="RotiManisBox6.Jpeg" alt="Product 6" class="img-fluid rounded product-img"
-                            style="height: 200px; margin-bottom: 15px;">
-                        <p class="text-black">Rp 21.000</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="row mb-4">
-                <div class="col-lg-4 d-flex justify-content-center">
-                    <div class="text-center">
-                        <p class="text-black">Pisang Keju</p>
-                        <img src="RotiManisBox7.Jpeg" alt="Product 7" class="img-fluid rounded product-img"
-                            style="height: 200px; margin-bottom: 15px;">
-                        <p class="text-black">Rp 35.000</p>
-                    </div>
-                </div>
-            </div>
+        </div>
     </section>
+    <?php $conn->close(); ?>
 
     <!-- Footer -->
     <footer class="custom-footer d-flex justify-content-center flex-column">
@@ -202,6 +196,7 @@
         </div>
     </footer>
 
+    <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 

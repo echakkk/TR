@@ -1,11 +1,31 @@
+<?php
+// Konfigurasi koneksi ke database
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "db_valesca";
+$port = 3308; // Port MySQL Anda
+
+// Membuat koneksi
+$conn = new mysqli($servername, $username, $password, $dbname, $port);
+
+// Cek koneksi
+if ($conn->connect_error) {
+    die("Koneksi gagal: " . $conn->connect_error);
+}
+
+// Query untuk mengambil semua data dari tabel 'menu'
+$sql = "SELECT * FROM menu4";
+$result = $conn->query($sql);
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home | Valesca Cake & Bakery</title>
-    <link href="/Logo.PNG" rel="shortcut icon">
+    <title>Valesca Cake & Bakery</title>
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
         integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
@@ -105,122 +125,32 @@
         </div>
     </nav>
 
-    <main>
-        <section class="hero utama">
-            <div class="container py-5">
-                <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
-                    <div class="carousel-inner">
-                        <div class="carousel-item active">
-                            <img class="d-block w-100" src="Carosel2.JPG" alt="First slide">
-                        </div>
-                        <div class="carousel-item">
-                            <img class="d-block w-100" src="Carosel.JPG" alt="Second slide">
-                        </div>
-                    </div>
-                </div>
-                <h1 class="mt-5 text-center">Welcome to Valesca Cake & Bakery</h1>
-
-                <div class="d-flex justify-content-center py-5">
-                    <div class="d-flex align-items-center flex-column pr-3">
-                        <div class="promo d-flex align-items-center flex-column">
-                            <a href="/Promo.html">
-                                <img class="img-fluid" src="Roti 1.jpeg">
-                                <h1 class="py-3">PROMO DAN EVENTS</h1>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="d-flex align-items-center flex-column pr-3">
-                        <div class="promo d-flex align-items-center flex-column">
-                            <a href="/Product.html">
-                                <img class="img-fluid" src="Roti 2.jpeg">
-                                <h1 class="py-3">PRODUK BEST SELLER</h1>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="d-flex align-items-center flex-column pr-3">
-                        <div class="promo d-flex align-items-center flex-column">
-                            <a href="/Orders.html">
-                                <img src="Roti 3.jpeg">
-                                <h1 class="py-3">PEMESANAN PRODUK</h1>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Product Section -->
-        <section class="products py-4 bg-secondary text-light ">
-            <div class="py-4 container">
-                <div class="d-flex justify-content-center">
-                    <div class="col-lg-4">
-                        <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
-                            <div class="carousel-inner img-fluid rounded ">
-                                <div class="carousel-item active">
-                                    <img class="d-block w-100" src="/Home Produk/1/1.jpg" alt="First slide">
-                                </div>
-                                <div class="carousel-item">
-                                    <img class="d-block w-100" src="/Home Produk/1/2.jpg" alt="Second slide">
-                                </div>
-                                <div class="carousel-item">
-                                    <img class="d-block w-100" src="/Home Produk/1/3.jpg" alt="Second slide">
-                                </div>
+    <!-- Content Section -->
+    <section class="products py-5">
+        <div class="container">
+            <h2 class="text-center mb-4">Semua Produk</h2>
+            <div class="d-flex justify-content-center flex-wrap">
+                <?php if ($result && $result->num_rows > 0) : ?>
+                    <?php while ($row = $result->fetch_assoc()) : ?>
+                        <div class="col-lg-4 mb-4 d-flex justify-content-center">
+                            <div class="text-center">
+                                <p class="text-black"><?php echo htmlspecialchars($row['nama_menu']); ?></p>
+                                <!-- Menampilkan gambar dari database -->
+                                <img src="<?php echo htmlspecialchars($row['gambar']); ?>" alt="<?php echo htmlspecialchars($row['nama_menu']); ?>" class="img-fluid rounded product-img" style="height: 200px; width: 100%; object-fit: cover; margin-bottom: 15px;">
+                                <p class="text-black">Rp <?php echo number_format($row['harga_menu'], 0, ',', '.'); ?></p>
+                                <p class="text-muted">Persediaan: <?php echo $row['persediaan']; ?></p>
                             </div>
                         </div>
-                    </div>
-                    <div class="col-lg-4">
-                        <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
-                            <div class="carousel-inner img-fluid rounded ">
-                                <div class="carousel-item active">
-                                    <img class="d-block w-100" src="/Home Produk/2/1.jpg" alt="First slide">
-                                </div>
-                                <div class="carousel-item">
-                                    <img class="d-block w-100" src="/Home Produk/2/2.jpg" alt="Second slide">
-                                </div>
-                                <div class="carousel-item">
-                                    <img class="d-block w-100" src="/Home Produk/2/3.jpg" alt="Second slide">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4">
-                        <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
-                            <div class="carousel-inner img-fluid rounded">
-                                <div class="carousel-item active">
-                                    <img class="d-block w-100" src="/Home Produk/3/1.jpg" alt="First slide">
-                                </div>
-                                <div class="carousel-item">
-                                    <img class="d-block w-100" src="/Home Produk/3/2.jpg" alt="Second slide">
-                                </div>
-                                <div class="carousel-item">
-                                    <img class="d-block w-100" src="/Home Produk/3/3.jpg" alt="Second slide">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                    <?php endwhile; ?>
+                <?php else : ?>
+                    <p class="text-center">Menu tidak tersedia</p>
+                <?php endif; ?>
             </div>
-        </section>
+        </div>
+    </section>
+    <?php $conn->close(); ?>
 
-        <!-- About Section -->
-        <section class="d-flex justify-content-center align-items-center salam">
-            <div class="pl-1">
-                <img class="align-bottom" src="salam.PNG">
-            </div>
-            <div class="align-self-center text-center text-salam">
-                <h1 class="">About Valesca Cake & Bakery</h1>
-                <hr class="">
-                <h5>Valesca Cake & Bakery adalah toko roti yang didirikan pada 12 Agustus 2013 <br>di Kabupaten
-                    Semarang, Ambarawa <br>
-                    Sejak awal berdirinya, Valesca Cake & Bakery telah berkomitmen untuk <br> menghadirkan produk
-                    berkualitas tinggi
-                    dengan berbagai jenis <br> roti manis, kue tart, dan aneka produk bakery lainnya yang menggugah
-                    selera.
-                </h5>
-            </div>
-        </section>
-    </main>
-
+    <!-- Footer -->
     <footer class="custom-footer d-flex justify-content-center flex-column">
         <h1 class="text-center mt-4">Contact Us</h1>
         <div class="d-flex align-items-center justify-content-center div-2">
@@ -266,9 +196,8 @@
         </div>
     </footer>
 
+    <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="valescaa.js"></script>
 </body>
 
 </html>

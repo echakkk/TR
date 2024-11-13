@@ -1,3 +1,24 @@
+<?php
+// Konfigurasi koneksi ke database
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "db_valesca";
+$port = 3308; // Port MySQL Anda
+
+// Membuat koneksi
+$conn = new mysqli($servername, $username, $password, $dbname, $port);
+
+// Cek koneksi
+if ($conn->connect_error) {
+    die("Koneksi gagal: " . $conn->connect_error);
+}
+
+// Query untuk mengambil semua data dari tabel 'menu'
+$sql = "SELECT * FROM menu6";
+$result = $conn->query($sql);
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -67,16 +88,16 @@
                         Product
                     </a>
                     <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                        <a class="dropdown-item" href="Brownies.html">Brownies</a>
-                        <a class="dropdown-item" href="Cake.html">Cake</a>
-                        <a class="dropdown-item" href="Dessert.html">Dessert</a>
-                        <a class="dropdown-item" href="Pastry.html">Pastry</a>
-                        <a class="dropdown-item" href="Pizza.html">Pizza</a>
-                        <a class="dropdown-item" href="RotiManis.html">Roti Manis</a>
-                        <a class="dropdown-item" href="RotiManisBox.html">Roti Manis Box</a>
-                        <a class="dropdown-item" href="Snack.html">Snack</a>
-                        <a class="dropdown-item" href="Tart.html">Tar</a>
-                        <a class="dropdown-item" href="Tawar.html">Tawar</a>
+                        <a class="dropdown-item" href="http://localhost/TR/Brownies.php">Brownies</a>
+                        <a class="dropdown-item" href="http://localhost/TR/Cake.php">Cake</a>
+                        <a class="dropdown-item" href="http://localhost/TR/Dessert.php">Dessert</a>
+                        <a class="dropdown-item" href="http://localhost/TR/Pastry.php">Pastry</a>
+                        <a class="dropdown-item" href="http://localhost/TR/Pizza.php">Pizza</a>
+                        <a class="dropdown-item" href="http://localhost/TR/RotiManis.php">Roti Manis</a>
+                        <a class="dropdown-item" href="http://localhost/TR/RotiManisBox.php">Roti Manis Box</a>
+                        <a class="dropdown-item" href="http://localhost/TR/Snack.php">Snack</a>
+                        <a class="dropdown-item" href="http://localhost/TR/Tart.php">Tar</a>
+                        <a class="dropdown-item" href="http://localhost/TR/Tawar.php">Tawar</a>
                     </div>
                 </li>
                 <li class="nav-item dropdown pr-4">
@@ -107,64 +128,28 @@
     <!-- Content Section -->
     <section class="products py-5">
         <div class="container">
-            <h2 class="text-center mb-4">Brownies</h2>
+            <h2 class="text-center mb-4">Semua Produk</h2>
             <div class="d-flex justify-content-center flex-wrap">
-                <div class="col-lg-4 mb-4 d-flex justify-content-center">
-                    <div class="text-center">
-                        <p class="text-black">Coklat Keju</p>
-                        <img src="Brownies1.Jpeg" alt="Coklat Keju" class="img-fluid rounded product-img"
-                            style="height: 200px; margin-bottom: 15px;">
-                        <p class="text-black">Rp 10.000</p>
-                    </div>
-                </div>
-
-                <div class="col-lg-4 mb-4 d-flex justify-content-center">
-                    <div class="text-center">
-                        <p class="text-black">Brownies Kukus</p>
-                        <img src="Brownies2.Jpeg" alt="Brownies Kukus" class="img-fluid rounded product-img"
-                            style="height: 200px; margin-bottom: 15px;">
-                        <p class="text-black">Rp 40.000</p>
-                    </div>
-                </div>
-
-                <div class="col-lg-4 mb-4 d-flex justify-content-center">
-                    <div class="text-center">
-                        <p class="text-black">Moist</p>
-                        <img src="Brownies3.Jpeg" alt="Moist" class="img-fluid rounded product-img"
-                            style="height: 200px; margin-bottom: 15px;">
-                        <p class="text-black">Rp 40.000</p>
-                    </div>
-                </div>
-
-                <div class="col-lg-4 mb-4 d-flex justify-content-center">
-                    <div class="text-center">
-                        <p class="text-black">Muffin</p>
-                        <img src="Brownies4.Jpeg" alt="Muffin" class="img-fluid rounded product-img"
-                            style="height: 200px; margin-bottom: 15px;">
-                        <p class="text-black">Rp 6.000</p>
-                    </div>
-                </div>
-
-                <div class="col-lg-4 mb-4 d-flex justify-content-center">
-                    <div class="text-center">
-                        <p class="text-black">Sinny</p>
-                        <img src="Brownies5.Jpeg" alt="Sinny" class="img-fluid rounded product-img"
-                            style="height: 200px; margin-bottom: 15px;">
-                        <p class="text-black">Rp 20.000</p>
-                    </div>
-                </div>
-
-                <div class="col-lg-4 mb-4 d-flex justify-content-center">
-                    <div class="text-center">
-                        <p class="text-black">Topping Coklat</p>
-                        <img src="Brownies6.Jpeg" alt="Topping Coklat" class="img-fluid rounded product-img"
-                            style="height: 200px; margin-bottom: 15px;">
-                        <p class="text-black">Rp 5.000</p>
-                    </div>
-                </div>
+                <?php if ($result && $result->num_rows > 0) : ?>
+                    <?php while ($row = $result->fetch_assoc()) : ?>
+                        <div class="col-lg-4 mb-4 d-flex justify-content-center">
+                            <div class="text-center">
+                                <p class="text-black"><?php echo htmlspecialchars($row['nama_menu']); ?></p>
+                                <!-- Menampilkan gambar dari database -->
+                                <img src="<?php echo htmlspecialchars($row['gambar']); ?>" alt="<?php echo htmlspecialchars($row['nama_menu']); ?>" class="img-fluid rounded product-img" style="height: 200px; width: 100%; object-fit: cover; margin-bottom: 15px;">
+                                <p class="text-black">Rp <?php echo number_format($row['harga_menu'], 0, ',', '.'); ?></p>
+                                <p class="text-muted">Persediaan: <?php echo $row['persediaan']; ?></p>
+                            </div>
+                        </div>
+                    <?php endwhile; ?>
+                <?php else : ?>
+                    <p class="text-center">Menu tidak tersedia</p>
+                <?php endif; ?>
             </div>
         </div>
     </section>
+    <?php $conn->close(); ?>
+
     <!-- Footer -->
     <footer class="custom-footer d-flex justify-content-center flex-column">
         <h1 class="text-center mt-4">Contact Us</h1>
