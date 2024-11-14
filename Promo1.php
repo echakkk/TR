@@ -47,16 +47,16 @@
                         Product
                     </a>
                     <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                        <a class="dropdown-item" href="http://localhost/TR/Produk/Brownies/Brownies.php">Brownies</a>
-                        <a class="dropdown-item" href="http://localhost/TR/Produk/Cake/Cake.php">Cake</a>
-                        <a class="dropdown-item" href="http://localhost/TR/Produk/Dessert/Dessert.php">Dessert</a>
-                        <a class="dropdown-item" href="http://localhost/TR/Produk/Pastry/Pastry.php">Pastry</a>
-                        <a class="dropdown-item" href="http://localhost/TR/Produk/Pizza/Pizza.php">Pizza</a>
-                        <a class="dropdown-item" href="http://localhost/TR/Produk/RotiManis/RotiManis.php">Roti Manis</a>
-                        <a class="dropdown-item" href="http://localhost/TR/Produk/RotiManisBox/RotiManisBox.php">Roti Manis Box</a>
-                        <a class="dropdown-item" href="http://localhost/TR/Produk/Snack/Snack.php">Snack</a>
-                        <a class="dropdown-item" href="http://localhost/TR/Produk/Tart/Tart.php">Tar</a>
-                        <a class="dropdown-item" href="http://localhost/TR/Produk/Tawar/Tawar.php">Tawar</a>
+                        <a class="dropdown-item" href="http://localhost/TR/Produk/Brownies/Brownies1.php">Brownies</a>
+                        <a class="dropdown-item" href="http://localhost/TR/Produk/Cake/Cake1.php">Cake</a>
+                        <a class="dropdown-item" href="http://localhost/TR/Produk/Dessert/Dessert1.php">Dessert</a>
+                        <a class="dropdown-item" href="http://localhost/TR/Produk/Pastry/Pastry1.php">Pastry</a>
+                        <a class="dropdown-item" href="http://localhost/TR/Produk/Pizza/Pizza1.php">Pizza</a>
+                        <a class="dropdown-item" href="http://localhost/TR/Produk/RotiManis/RotiManis1.php">Roti Manis</a>
+                        <a class="dropdown-item" href="http://localhost/TR/Produk/RotiManisBox/RotiManisBox1.php">Roti Manis Box</a>
+                        <a class="dropdown-item" href="http://localhost/TR/Produk/Snack/Snack1.php">Snack</a>
+                        <a class="dropdown-item" href="http://localhost/TR/Produk/Tart/Tart1.php">Tar</a>
+                        <a class="dropdown-item" href="http://localhost/TR/Produk/Tawar/Tawar1.php">Tawar</a>
                     </div>
                 </li>
                 <li class="nav-item dropdown pr-4">
