@@ -29,7 +29,7 @@ $result = $conn->query($sql);
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
         integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <link rel="stylesheet" href="valescaa.css">
+    <link rel="stylesheet" href="http://localhost/TR/valescaa.css">
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
         integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
         crossorigin="anonymous"></script>
@@ -88,16 +88,16 @@ $result = $conn->query($sql);
                         Product
                     </a>
                     <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                        <a class="dropdown-item" href="http://localhost/TR/Brownies.php">Brownies</a>
-                        <a class="dropdown-item" href="http://localhost/TR/Cake.php">Cake</a>
-                        <a class="dropdown-item" href="http://localhost/TR/Dessert.php">Dessert</a>
-                        <a class="dropdown-item" href="http://localhost/TR/Pastry.php">Pastry</a>
-                        <a class="dropdown-item" href="http://localhost/TR/Pizza.php">Pizza</a>
-                        <a class="dropdown-item" href="http://localhost/TR/RotiManis.php">Roti Manis</a>
-                        <a class="dropdown-item" href="http://localhost/TR/RotiManisBox.php">Roti Manis Box</a>
-                        <a class="dropdown-item" href="http://localhost/TR/Snack.php">Snack</a>
-                        <a class="dropdown-item" href="http://localhost/TR/Tart.php">Tar</a>
-                        <a class="dropdown-item" href="http://localhost/TR/Tawar.php">Tawar</a>
+                        <a class="dropdown-item" href="http://localhost/TR/Produk/Brownies/Brownies.php">Brownies</a>
+                        <a class="dropdown-item" href="http://localhost/TR/Produk/Cake/Cake.php">Cake</a>
+                        <a class="dropdown-item" href="http://localhost/TR/Produk/Dessert/Dessert.php">Dessert</a>
+                        <a class="dropdown-item" href="http://localhost/TR/Produk/Pastry/Pastry.php">Pastry</a>
+                        <a class="dropdown-item" href="http://localhost/TR/Produk/Pizza/Pizza.php">Pizza</a>
+                        <a class="dropdown-item" href="http://localhost/TR/Produk/RotiManis/RotiManis.php">Roti Manis</a>
+                        <a class="dropdown-item" href="http://localhost/TR/Produk/RotiManisBox/RotiManisBox.php">Roti Manis Box</a>
+                        <a class="dropdown-item" href="http://localhost/TR/Produk/Snack/Snack.php">Snack</a>
+                        <a class="dropdown-item" href="http://localhost/TR/Produk/Tart/Tart.php">Tar</a>
+                        <a class="dropdown-item" href="http://localhost/TR/Produk/Tawar/Tawar.php">Tawar</a>
                     </div>
                 </li>
                 <li class="nav-item dropdown pr-4">
