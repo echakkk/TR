@@ -78,23 +78,23 @@ if($conn->connect_error){
         <div class="collapse navbar-collapse" id="navbarNav">
             <img class="img-fluid" id="logo" src="/Logo.PNG">
             <ul class="navbar-nav">
-                <li class="nav-item pr-4"><a class="nav-link" href="/Home.html">Home</a></li>
-                <li class="nav-item pr-4"><a class="nav-link" href="/AboutUs.html">About Us</a></li>
+                <li class="nav-item pr-4"><a class="nav-link" href="http://localhost/TR/Home.html">Home</a></li>
+                <li class="nav-item pr-4"><a class="nav-link" href="http://localhost/TR/AboutUs.html">About Us</a></li>
                 <li class="nav-item dropdown pr-4">
-                    <a class="nav-link" href="/Product.html">
+                    <a class="nav-link" href="http://localhost/TR/Product.html">
                         Product
                     </a>
                     <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                        <a class="dropdown-item" href="Brownies.html">Brownies</a>
-                        <a class="dropdown-item" href="Cake.html">Cake</a>
-                        <a class="dropdown-item" href="Dessert.html">Dessert</a>
-                        <a class="dropdown-item" href="Pastry.html">Pastry</a>
-                        <a class="dropdown-item" href="Pizza.html">Pizza</a>
-                        <a class="dropdown-item" href="RotiManis.html">Roti Manis</a>
-                        <a class="dropdown-item" href="RotiManisBox.html">Roti Manis Box</a>
-                        <a class="dropdown-item" href="Snack.html">Snack</a>
-                        <a class="dropdown-item" href="Tart.html">Tar</a>
-                        <a class="dropdown-item" href="Tawar.html">Tawar</a>
+                        <a class="dropdown-item" href="http://localhost/TR/Brownies.php">Brownies</a>
+                        <a class="dropdown-item" href="http://localhost/TR/Cake.php">Cake</a>
+                        <a class="dropdown-item" href="http://localhost/TR/Dessert.php">Dessert</a>
+                        <a class="dropdown-item" href="http://localhost/TR/Pastry.php">Pastry</a>
+                        <a class="dropdown-item" href="http://localhost/TR/Pizza.php">Pizza</a>
+                        <a class="dropdown-item" href="http://localhost/TR/RotiManis.php">Roti Manis</a>
+                        <a class="dropdown-item" href="http://localhost/TR/RotiManisBox.php">Roti Manis Box</a>
+                        <a class="dropdown-item" href="http://localhost/TR/Snack.php">Snack</a>
+                        <a class="dropdown-item" href="http://localhost/TR/Tart.php">Tar</a>
+                        <a class="dropdown-item" href="http://localhost/TR/Tawar.php">Tawar</a>
                     </div>
                 </li>
                 <li class="nav-item dropdown pr-4">
