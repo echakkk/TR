@@ -1,3 +1,24 @@
+<?php
+// Konfigurasi koneksi ke database
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "db_valesca";
+$port = 3308; // Port MySQL Anda
+
+// Membuat koneksi
+$conn = new mysqli($servername, $username, $password, $dbname, $port);
+
+// Cek koneksi
+if ($conn->connect_error) {
+    die("Koneksi gagal: " . $conn->connect_error);
+}
+
+// Query untuk mengambil semua data dari tabel 'menu'
+$sql = "SELECT * FROM menu1";
+$result = $conn->query($sql);
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -67,6 +88,7 @@
                         Product
                     </a>
                     <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+<<<<<<< HEAD
                         <a class="dropdown-item" href="./Brownies.php">Brownies</a>
                         <a class="dropdown-item" href="./Cake.php">Cake</a>
                         <a class="dropdown-item" href="./Dessert.php">Dessert</a>
@@ -77,6 +99,18 @@
                         <a class="dropdown-item" href="./Snack.php">Snack</a>
                         <a class="dropdown-item" href="./Tart.php">Tar</a>
                         <a class="dropdown-item" href="./Tawar.php">Tawar</a>
+=======
+                        <a class="dropdown-item" href="http://localhost/TR/Brownies.php">Brownies</a>
+                        <a class="dropdown-item" href="http://localhost/TR/Cake.php">Cake</a>
+                        <a class="dropdown-item" href="http://localhost/TR/Dessert.php">Dessert</a>
+                        <a class="dropdown-item" href="http://localhost/TR/Pastry.php">Pastry</a>
+                        <a class="dropdown-item" href="http://localhost/TR/Pizza.php">Pizza</a>
+                        <a class="dropdown-item" href="http://localhost/TR/RotiManis.php">Roti Manis</a>
+                        <a class="dropdown-item" href="http://localhost/TR/RotiManisBox.php">Roti Manis Box</a>
+                        <a class="dropdown-item" href="http://localhost/TR/Snack.php">Snack</a>
+                        <a class="dropdown-item" href="http://localhost/TR/Tart.php">Tar</a>
+                        <a class="dropdown-item" href="http://localhost/TR/Tawar.php">Tawar</a>
+>>>>>>> e4692a1f5ad558f0f04f49ba6b9e1e0cbf414863
                     </div>
                 </li>
                 <li class="nav-item dropdown pr-4">
@@ -97,7 +131,7 @@
                 </li>
                 <li class="nav-item pr-4"><a class="nav-link" href="/hotline.html">Hotline</a></li>
                 <li class="nav-item login" id="login">
-                    <a class="btn btn-custom" href="/login.html">Login Member</a>
+                    <a class="btn btn-custom" href="http://localhost/TR/login.php">Login Member</a>
                 </li>
             </ul>
             <img src="./halal.PNG" id="halal">
@@ -107,8 +141,9 @@
     <!-- Content Section -->
     <section class="products py-5">
         <div class="container">
-            <h2 class="text-center mb-4">Brownies</h2>
+            <h2 class="text-center mb-4">Semua Produk</h2>
             <div class="d-flex justify-content-center flex-wrap">
+<<<<<<< HEAD
             <?php
             include 'BrowniesModel.php'; // Menyertakan model
             foreach ($brownies as $brownie) {
@@ -124,9 +159,28 @@
             }
             ?>  
                 
+=======
+                <?php if ($result && $result->num_rows > 0) : ?>
+                    <?php while ($row = $result->fetch_assoc()) : ?>
+                        <div class="col-lg-4 mb-4 d-flex justify-content-center">
+                            <div class="text-center">
+                                <p class="text-black"><?php echo htmlspecialchars($row['nama_menu']); ?></p>
+                                <!-- Menampilkan gambar dari database -->
+                                <img src="<?php echo htmlspecialchars($row['gambar']); ?>" alt="<?php echo htmlspecialchars($row['nama_menu']); ?>" class="img-fluid rounded product-img" style="height: 200px; width: 100%; object-fit: cover; margin-bottom: 15px;">
+                                <p class="text-black">Rp <?php echo number_format($row['harga_menu'], 0, ',', '.'); ?></p>
+                                <p class="text-muted">Persediaan: <?php echo $row['persediaan']; ?></p>
+                            </div>
+                        </div>
+                    <?php endwhile; ?>
+                <?php else : ?>
+                    <p class="text-center">Menu tidak tersedia</p>
+                <?php endif; ?>
+>>>>>>> e4692a1f5ad558f0f04f49ba6b9e1e0cbf414863
             </div>
         </div>
     </section>
+    <?php $conn->close(); ?>
+
     <!-- Footer -->
     <footer class="custom-footer d-flex justify-content-center flex-column">
         <h1 class="text-center mt-4">Contact Us</h1>

@@ -110,7 +110,7 @@ if($conn->connect_error){
                         Order
                     </a>
                     <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                        <a class="dropdown-item" href="/Outlet.html">Outlet Valecia Bakery</a>
+                        <a class="dropdown-item" href="http://localhost/TR/Outlet.php">Outlet Valecia Bakery</a>
                     </div>
                 </li>
                 <li class="nav-item pr-4"><a class="nav-link" href="/hotline.html">Hotline</a></li>

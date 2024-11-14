@@ -1,3 +1,27 @@
+<<<<<<< HEAD
+=======
+<?php
+// Konfigurasi koneksi ke database
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "db_valesca";
+$port = 3308; // Port MySQL Anda
+
+// Membuat koneksi
+$conn = new mysqli($servername, $username, $password, $dbname, $port);
+
+// Cek koneksi
+if ($conn->connect_error) {
+    die("Koneksi gagal: " . $conn->connect_error);
+}
+
+// Query untuk mengambil semua data dari tabel 'menu'
+$sql = "SELECT * FROM menu2";
+$result = $conn->query($sql);
+?>
+
+>>>>>>> e4692a1f5ad558f0f04f49ba6b9e1e0cbf414863
 <!DOCTYPE html>
 <html lang="en">
 
@@ -18,6 +42,28 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
         integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
         crossorigin="anonymous"></script>
+<<<<<<< HEAD
+=======
+    <!-- FONT-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@100..900&display=swap" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@300..900&display=swap" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@300..900&family=Paytone+One&display=swap"
+        rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@300..900&family=Markazi+Text:wght@400..700&family=Paytone+One&display=swap"
+        rel="stylesheet">
+>>>>>>> e4692a1f5ad558f0f04f49ba6b9e1e0cbf414863
 </head>
 
 <body>
@@ -48,6 +94,10 @@
                         Product
                     </a>
                     <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+<<<<<<< HEAD
+=======
+<<<<<<<< HEAD:Dessert.php
+>>>>>>> e4692a1f5ad558f0f04f49ba6b9e1e0cbf414863
                         <a class="dropdown-item" href="./Brownies.php">Brownies</a>
                         <a class="dropdown-item" href="./Cake.php">Cake</a>
                         <a class="dropdown-item" href="./Dessert.php">Dessert</a>
@@ -58,6 +108,21 @@
                         <a class="dropdown-item" href="./Snack.php">Snack</a>
                         <a class="dropdown-item" href="./Tart.php">Tar</a>
                         <a class="dropdown-item" href="./Tawar.php">Tawar</a>
+<<<<<<< HEAD
+=======
+========
+                        <a class="dropdown-item" href="http://localhost/TR/Brownies.php">Brownies</a>
+                        <a class="dropdown-item" href="http://localhost/TR/Cake.php">Cake</a>
+                        <a class="dropdown-item" href="http://localhost/TR/Dessert.php">Dessert</a>
+                        <a class="dropdown-item" href="http://localhost/TR/Pastry.php">Pastry</a>
+                        <a class="dropdown-item" href="http://localhost/TR/Pizza.php">Pizza</a>
+                        <a class="dropdown-item" href="http://localhost/TR/RotiManis.php">Roti Manis</a>
+                        <a class="dropdown-item" href="http://localhost/TR/RotiManisBox.php">Roti Manis Box</a>
+                        <a class="dropdown-item" href="http://localhost/TR/Snack.php">Snack</a>
+                        <a class="dropdown-item" href="http://localhost/TR/Tart.php">Tar</a>
+                        <a class="dropdown-item" href="http://localhost/TR/Tawar.php">Tawar</a>
+>>>>>>>> e4692a1f5ad558f0f04f49ba6b9e1e0cbf414863:Cake.php
+>>>>>>> e4692a1f5ad558f0f04f49ba6b9e1e0cbf414863
                     </div>
                 </li>
                 <li class="nav-item dropdown pr-4">
@@ -78,7 +143,11 @@
                 </li>
                 <li class="nav-item pr-4"><a class="nav-link" href="/hotline.html">Hotline</a></li>
                 <li class="nav-item login" id="login">
+<<<<<<< HEAD
                     <a class="btn btn-custom" href="/login.html">Login Member</a>
+=======
+                    <a class="btn btn-custom" href="http://localhost/TR/login.php">Login Member</a>
+>>>>>>> e4692a1f5ad558f0f04f49ba6b9e1e0cbf414863
                 </li>
             </ul>
             <img src="./halal.PNG" id="halal">
@@ -86,6 +155,7 @@
     </nav>
 
     <!-- Content Section -->
+<<<<<<< HEAD
 
     <section class="products py-5">
         <div class="container">
@@ -93,6 +163,15 @@
             <div class="d-flex justify-content-center flex-wrap">
             <?php
             include 'CakeModel.php'; // Menyertakan model
+=======
+    <section class="products py-5">
+        <div class="container">
+            <h2 class="text-center mb-4">Semua Produk</h2>
+            <div class="d-flex justify-content-center flex-wrap">
+<<<<<<<< HEAD:Dessert.php
+            <?php
+            include 'DessertModel.php'; // Menyertakan model
+>>>>>>> e4692a1f5ad558f0f04f49ba6b9e1e0cbf414863
             foreach ($brownies as $brownie) {
             ?>
                 <div class="col-lg-4 mb-4 d-flex justify-content-center">
@@ -105,10 +184,36 @@
             <?php
             }
             ?>
+<<<<<<< HEAD
             </div>
     </section>
 
 
+=======
+========
+                <?php if ($result && $result->num_rows > 0) : ?>
+                    <?php while ($row = $result->fetch_assoc()) : ?>
+                        <div class="col-lg-4 mb-4 d-flex justify-content-center">
+                            <div class="text-center">
+                                <p class="text-black"><?php echo htmlspecialchars($row['nama_menu']); ?></p>
+                                <!-- Menampilkan gambar dari database -->
+                                <img src="<?php echo htmlspecialchars($row['gambar']); ?>" alt="<?php echo htmlspecialchars($row['nama_menu']); ?>" class="img-fluid rounded product-img" style="height: 200px; width: 100%; object-fit: cover; margin-bottom: 15px;">
+                                <p class="text-black">Rp <?php echo number_format($row['harga_menu'], 0, ',', '.'); ?></p>
+                                <p class="text-muted">Persediaan: <?php echo $row['persediaan']; ?></p>
+                            </div>
+                        </div>
+                    <?php endwhile; ?>
+                <?php else : ?>
+                    <p class="text-center">Menu tidak tersedia</p>
+                <?php endif; ?>
+>>>>>>>> e4692a1f5ad558f0f04f49ba6b9e1e0cbf414863:Cake.php
+            </div>
+        </div>
+    </section>
+    <?php $conn->close(); ?>
+
+    <!-- Footer -->
+>>>>>>> e4692a1f5ad558f0f04f49ba6b9e1e0cbf414863
     <footer class="custom-footer d-flex justify-content-center flex-column">
         <h1 class="text-center mt-4">Contact Us</h1>
         <div class="d-flex align-items-center justify-content-center div-2">
@@ -154,6 +259,10 @@
         </div>
     </footer>
 
+<<<<<<< HEAD
+=======
+    <!-- Bootstrap JS -->
+>>>>>>> e4692a1f5ad558f0f04f49ba6b9e1e0cbf414863
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 
