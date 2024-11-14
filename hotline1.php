@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Us | Valesca Cake & Bakery</title>
+    <title>Hotline | Valesca Cake & Bakery</title>
     <link href="/Logo.PNG" rel="shortcut icon">
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
@@ -19,11 +19,29 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
         integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
         crossorigin="anonymous"></script>
+    <!-- FONT-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@100..900&display=swap" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@300..900&display=swap" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@300..900&family=Paytone+One&display=swap"
+        rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@300..900&family=Markazi+Text:wght@400..700&family=Paytone+One&display=swap"
+        rel="stylesheet">
 </head>
 
 <body>
-    <!-- NAVBAR -->
-    <nav class="sticky-top navbar navbar-expand-lg d-flex custom-navbar">
+<nav class="sticky-top navbar navbar-expand-lg d-flex custom-navbar">
         <img class="img-fluid" id="logo-collapse" src="http://localhost/TR/Logo.PNG">
         <div class="d-flex justify-content-center">
             <ul class="navbar-nav">
@@ -37,10 +55,10 @@
         <div class="collapse navbar-collapse" id="navbarNav">
             <img class="img-fluid" id="logo" src="http://localhost/TR/Logo.PNG">
             <ul class="navbar-nav">
-                <li class="nav-item pr-4"><a class="nav-link" href="http://localhost/TR/Home.php">Home</a></li>
-                <li class="nav-item pr-4"><a class="nav-link" href="http://localhost/TR/AboutUs.php">About Us</a></li>
+                <li class="nav-item pr-4"><a class="nav-link" href="http://localhost/TR/Home1.php">Home</a></li>
+                <li class="nav-item pr-4"><a class="nav-link" href="http://localhost/TR/AboutUs1.php">About Us</a></li>
                 <li class="nav-item dropdown pr-4">
-                    <a class="nav-link" href="http://localhost/TR/Product.php">
+                    <a class="nav-link" href="http://localhost/TR/Product1.php">
                         Product
                     </a>
                     <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
@@ -57,64 +75,45 @@
                     </div>
                 </li>
                 <li class="nav-item dropdown pr-4">
-                    <a class="nav-link" href="http://localhost/TR/Promo.php">
+                    <a class="nav-link" href="http://localhost/TR/Promo1.php">
                         Info
                     </a>
                     <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                        <a class="dropdown-item" href="http://localhost/TR/Promo.php">Promo</a>
+                        <a class="dropdown-item" href="http://localhost/TR/Promo1.php">Promo</a>
                     </div>
                 </li>
                 <li class="nav-item dropdown pr-4">
-                    <a class="nav-link" href="http://localhost/TR/Orders.php">
+                    <a class="nav-link" href="http://localhost/TR/Orders1.php">
                         Order
                     </a>
                     <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                        <a class="dropdown-item" href="http://localhost/TR/Outlet.php">Outlet Valecia Bakery</a>
+                        <a class="dropdown-item" href="http://localhost/TR/Outlet1.php">Outlet Valecia Bakery</a>
                     </div>
                 </li>
-                <li class="nav-item pr-4"><a class="nav-link" href="http://localhost/TR/hotline.php">Hotline</a></li>
+                <li class="nav-item pr-4"><a class="nav-link" href="http://localhost/TR/hotline1.php">Hotline</a></li>
                 <li class="nav-item login" id="login">
-                    <a class="btn btn-custom" href="http://localhost/TR/logout.php">Log out</a>
+                    <a class="btn btn-custom" href="http://localhost/TR/login.php">Login Member</a>
                 </li>
             </ul>
             <img src="http://localhost/TR/halal.PNG" id="halal">
         </div>
     </nav>
-    <!-- Content Section -->
 
-    <section class="d-flex justify-content-center aboutus">
-        <div class="div-parent">
-            <div class="d-flex justify-content-start div-p1">
-                <img src="http://localhost/TR/Logo-AboutUs.png" id="logo-about">
-                <img src="http://localhost/TR/RotiAboutUs.png" id="roti-about">
-            </div>
-            <div class="div-p2">
-                <div class="box"></div>
-                <h4>Valesca Bakery adalah toko roti yang merupakan bagian dari Cokro Group yang berdiri pada 21 Mei 2012
-                    di
-                    Kota Madiun. Toko roti ini menjual berbagai jenis roti manis dan tart serta bluder cokro. Bless
-                    bakery memberikan layanan terbaik dengan terbuat dari bahan - bahan pilihan, dibuat oleh tangan
-                    berpengalaman, serta telah dipercaya oleh banyak kalangan
-                </h4>
-                <br>
-                <h4>
-                    Berawal outlet pertama di JL. dr. sutomo no. 69 A-B, kini Bless Bakery memiliki cabang di beberapa
-                    kota yaitu Kota Madiun, Kabupaten Madiun, Magetan, Ngawi, Ponorogo, Surabaya dan Malang. Dengan
-                    semakin besarnya kepercayaan masyarakat kepada kami, sehingga dari tahun ke tahun kami terus
-                    berinovasi untuk memberikan produk dan pelayanan terbaik.
-                </h4>
-                <br>
-                <h4>
-                    Dengan kesadaran bahwa pelayanan terbaik menjadi modal utama Bless Bakery, maka pada tahun 2020 kami
-                    berinovasi untuk memudahkan pembelian kami melalui Mitra Bless Bakery Point (BBP). BBP merupakan
-                    program kami untuk mendekatkan dan memudahkan pembeli dengan menghadirkan produk kami langung
-                    kedepan rumah anda dan anda bisa membeli secara langsung tanpa harus datang ke outlet kami. Program
-                    ini juga ikut serta menyerap tenaga kerja karena mengajak mitra – mitra untuk ikut serta berjualan
-                    produk kami dan mendapatkan berbagai keuntungan menarik.
-                    Bless Bakery hadir untuk memberikan produk roti yang berkualitas dengan harga terjangkau.</h4>
-            </div>
+    <section class="d-flex justify-content-center align-items-center flex-column hotline">
+        <!-- Gambar di sisi bawah -->
+        <!-- Teks dan Tombol "Call Us" di atas gambar -->
+        <div class="hotline-text">
+            <h2>Hubungi Kami</h2>
+            <!-- Tombol Call Us -->
+            <button>
+                Call Us
+            </button>
+        </div>
+        <div class="hotline-img">
+            <img src="http://localhost/TR/hotline.JPG">
         </div>
     </section>
+    <hr class="hr-hotline">
 
     <footer class="custom-footer d-flex justify-content-center flex-column">
         <h1 class="text-center mt-4">Contact Us</h1>
@@ -162,6 +161,8 @@
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="valescaa.js"></script>
 </body>
 
 </html>

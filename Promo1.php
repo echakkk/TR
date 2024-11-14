@@ -27,13 +27,8 @@
 <body>
     <!-- NAVBAR -->
     <nav class="sticky-top navbar navbar-expand-lg d-flex custom-navbar">
-        <img class="img-fluid" id="logo-collapse" src="/Logo.PNG">
+        <img class="img-fluid" id="logo-collapse" src="http://localhost/TR/Logo.PNG">
         <div class="d-flex justify-content-center">
-            <ul class="navbar-nav">
-                <li class="nav-item login-collapse">
-                    <a class="btn btn-custom" href="/login.html">Login Member</a>
-                </li>
-            </ul>
             <ul class="navbar-nav">
                 <button class="navbar-toggler" id="toggler" data-toggle="collapse" data-target="#navbarNav"
                     aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -43,12 +38,12 @@
             </ul>
         </div>
         <div class="collapse navbar-collapse" id="navbarNav">
-            <img class="img-fluid" id="logo" src="/Logo.PNG">
+            <img class="img-fluid" id="logo" src="http://localhost/TR/Logo.PNG">
             <ul class="navbar-nav">
-                <li class="nav-item pr-4"><a class="nav-link" href="/Home.html">Home</a></li>
-                <li class="nav-item pr-4"><a class="nav-link" href="/AboutUs.html">About Us</a></li>
+                <li class="nav-item pr-4"><a class="nav-link" href="http://localhost/TR/Home1.php">Home</a></li>
+                <li class="nav-item pr-4"><a class="nav-link" href="http://localhost/TR/AboutUs1.php">About Us</a></li>
                 <li class="nav-item dropdown pr-4">
-                    <a class="nav-link" href="/Product.html">
+                    <a class="nav-link" href="http://localhost/TR/Product1.php">
                         Product
                     </a>
                     <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
@@ -65,38 +60,38 @@
                     </div>
                 </li>
                 <li class="nav-item dropdown pr-4">
-                    <a class="nav-link" href="/Promo.html">
+                    <a class="nav-link" href="http://localhost/TR/Promo1.php">
                         Info
                     </a>
                     <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                        <a class="dropdown-item" href="/Promo.html">Promo</a>
+                        <a class="dropdown-item" href="http://localhost/TR/Promo1.php">Promo</a>
                     </div>
                 </li>
                 <li class="nav-item dropdown pr-4">
-                    <a class="nav-link" href="/Orders.html">
+                    <a class="nav-link" href="http://localhost/TR/Orders1.php">
                         Order
                     </a>
                     <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                        <a class="dropdown-item" href="/Outlet.html">Outlet Valecia Bakery</a>
+                        <a class="dropdown-item" href="http://localhost/TR/Outlet1.php">Outlet Valecia Bakery</a>
                     </div>
                 </li>
-                <li class="nav-item pr-4"><a class="nav-link" href="/hotline.html">Hotline</a></li>
+                <li class="nav-item pr-4"><a class="nav-link" href="http://localhost/TR/hotline1.php">Hotline</a></li>
                 <li class="nav-item login" id="login">
                     <a class="btn btn-custom" href="http://localhost/TR/login.php">Login Member</a>
                 </li>
             </ul>
-            <img src="/halal.PNG" id="halal">
+            <img src="http://localhost/TR/halal.PNG" id="halal">
         </div>
     </nav>
 
     <section class="hero utama align-items-start flex-column">
         <div class="container py-5 d-flex justify-content-center">
-            <img src="/Promo/1.jpg" class="mr-4 promoimg">
-            <img src="/Promo/2.jpg" class="ml-4 promoimg">
+            <img src="http://localhost/TR/Promo/1.jpg" class="mr-4 promoimg">
+            <img src="http://localhost/TR/Promo/2.jpg" class="ml-4 promoimg">
         </div>
         <div class="container py-5 d-flex justify-content-center">
-            <img src="/Promo/3.jpg" class="mr-4 promoimg">
-            <img src="/Promo/4.jpg" class="ml-4 promoimg">
+            <img src="http://localhost/TR/Promo/3.jpg" class="mr-4 promoimg">
+            <img src="http://localhost/TR/Promo/4.jpg" class="ml-4 promoimg">
         </div>
     </section>
 
@@ -104,7 +99,7 @@
         <h1 class="text-center mt-4">Contact Us</h1>
         <div class="d-flex align-items-center justify-content-center div-2">
             <div class="d-flex align-items-center cabang">
-                <img src="/maps.webp">
+                <img src="http://localhost/TR//maps.webp">
                 <div class="d-flex flex-column">
                     <h6>Ambarawa</h6>
                     <h6>(Sudirman)</h6>
@@ -113,25 +108,25 @@
             <div class="d-flex align-items-center flex-column contact">
                 <div class="d-flex justify-content-start flex-column">
                     <div class="d-flex justify-content-start align-items-center py-1">
-                        <img src="/Facebook.webp" id="logo-fb">
+                        <img src="http://localhost/TR//Facebook.webp" id="logo-fb">
                         <h5>@Valesca Valesca</h5>
                     </div>
                     <div class="d-flex justify-content-start align-items-center py-1">
-                        <img src="/Instagram.webp" id="logo-ig">
+                        <img src="http://localhost/TR//Instagram.webp" id="logo-ig">
                         <h5>@valescabakery</h5>
                     </div>
                     <div class="d-flex justify-content-start align-items-center py-1">
-                        <img src="/Tiktok.webp" id="logo-tiktok">
+                        <img src="http://localhost/TR//Tiktok.webp" id="logo-tiktok">
                         <h5>@valescabakery01</h5>
                     </div>
                     <div class="d-flex justify-content-start align-items-center py-1">
-                        <img src="/Whatsaap.webp" id="logo-wa">
+                        <img src="http://localhost/TR//Whatsaap.webp" id="logo-wa">
                         <h5>08156799697</h5>
                     </div>
                 </div>
             </div>
             <div class="d-flex align-items-center cabang">
-                <img src="/maps.webp">
+                <img src="http://localhost/TR//maps.webp">
                 <div class="d-flex align-items-center justify-content-center flex-column">
                     <h6>Ambarawa</h6>
                     <h6>(Kartini)</h6>

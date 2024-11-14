@@ -43,9 +43,8 @@ if($conn->connect_error){
 <body>
     <!-- NAVBAR -->
     <nav class="sticky-top navbar navbar-expand-lg d-flex custom-navbar">
-        <img class="img-fluid" id="logo-collapse" src="/Logo.PNG">
+        <img class="img-fluid" id="logo-collapse" src="http://localhost/TR/Logo.PNG">
         <div class="d-flex justify-content-center">
-        
             <ul class="navbar-nav">
                 <button class="navbar-toggler" id="toggler" data-toggle="collapse" data-target="#navbarNav"
                     aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -55,51 +54,49 @@ if($conn->connect_error){
             </ul>
         </div>
         <div class="collapse navbar-collapse" id="navbarNav">
-            <img class="img-fluid" id="logo" src="/Logo.PNG">
+            <img class="img-fluid" id="logo" src="http://localhost/TR/Logo.PNG">
             <ul class="navbar-nav">
                 <li class="nav-item pr-4"><a class="nav-link" href="http://localhost/TR/Home.php">Home</a></li>
-                <li class="nav-item pr-4"><a class="nav-link" href="/AboutUs.html">About Us</a></li>
+                <li class="nav-item pr-4"><a class="nav-link" href="http://localhost/TR/AboutUs.php">About Us</a></li>
                 <li class="nav-item dropdown pr-4">
-                    <a class="nav-link" href="/Product.html">
+                    <a class="nav-link" href="http://localhost/TR/Product.php">
                         Product
                     </a>
                     <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                        <a class="dropdown-item" href="Brownies.html">Brownies</a>
-                        <a class="dropdown-item" href="Cake.html">Cake</a>
-                        <a class="dropdown-item" href="Dessert.html">Dessert</a>
-                        <a class="dropdown-item" href="Pastry.html">Pastry</a>
-                        <a class="dropdown-item" href="Pizza.html">Pizza</a>
-                        <a class="dropdown-item" href="RotiManis.html">Roti Manis</a>
-                        <a class="dropdown-item" href="RotiManisBox.html">Roti Manis Box</a>
-                        <a class="dropdown-item" href="Snack.html">Snack</a>
-                        <a class="dropdown-item" href="Tart.html">Tar</a>
-                        <a class="dropdown-item" href="Tawar.html">Tawar</a>
+                        <a class="dropdown-item" href="http://localhost/TR/Produk/Brownies/Brownies.php">Brownies</a>
+                        <a class="dropdown-item" href="http://localhost/TR/Produk/Cake/Cake.php">Cake</a>
+                        <a class="dropdown-item" href="http://localhost/TR/Produk/Dessert/Dessert.php">Dessert</a>
+                        <a class="dropdown-item" href="http://localhost/TR/Produk/Pastry/Pastry.php">Pastry</a>
+                        <a class="dropdown-item" href="http://localhost/TR/Produk/Pizza/Pizza.php">Pizza</a>
+                        <a class="dropdown-item" href="http://localhost/TR/Produk/RotiManis/RotiManis.php">Roti Manis</a>
+                        <a class="dropdown-item" href="http://localhost/TR/Produk/RotiManisBox/RotiManisBox.php">Roti Manis Box</a>
+                        <a class="dropdown-item" href="http://localhost/TR/Produk/Snack/Snack.php">Snack</a>
+                        <a class="dropdown-item" href="http://localhost/TR/Produk/Tart/Tart.php">Tar</a>
+                        <a class="dropdown-item" href="http://localhost/TR/Produk/Tawar/Tawar.php">Tawar</a>
                     </div>
                 </li>
                 <li class="nav-item dropdown pr-4">
-                    <a class="nav-link" href="/Promo.html">
+                    <a class="nav-link" href="http://localhost/TR/Promo.php">
                         Info
                     </a>
                     <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                        <a class="dropdown-item" href="/Promo.html">Promo</a>
+                        <a class="dropdown-item" href="http://localhost/TR/Promo.php">Promo</a>
                     </div>
                 </li>
                 <li class="nav-item dropdown pr-4">
-                    <a class="nav-link" href="/Orders.html">
+                    <a class="nav-link" href="http://localhost/TR/Orders.php">
                         Order
                     </a>
                     <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                         <a class="dropdown-item" href="http://localhost/TR/Outlet.php">Outlet Valecia Bakery</a>
                     </div>
                 </li>
-                <li class="nav-item pr-4"><a class="nav-link" href="/hotline.html">Hotline</a></li>
-
+                <li class="nav-item pr-4"><a class="nav-link" href="http://localhost/TR/hotline.php">Hotline</a></li>
                 <li class="nav-item login" id="login">
                     <a class="btn btn-custom" href="http://localhost/TR/logout.php">Log out</a>
                 </li>
-
             </ul>
-            <img src="/halal.PNG" id="halal">
+            <img src="http://localhost/TR/halal.PNG" id="halal">
         </div>
     </nav>
 
@@ -154,7 +151,7 @@ if($conn->connect_error){
         <h1 class="text-center mt-4">Contact Us</h1>
         <div class="d-flex align-items-center justify-content-center div-2">
             <div class="d-flex align-items-center cabang">
-                <img src="/maps.webp">
+                <img src="http://localhost/TR//maps.webp">
                 <div class="d-flex flex-column">
                     <h6>Ambarawa</h6>
                     <h6>(Sudirman)</h6>
@@ -163,25 +160,25 @@ if($conn->connect_error){
             <div class="d-flex align-items-center flex-column contact">
                 <div class="d-flex justify-content-start flex-column">
                     <div class="d-flex justify-content-start align-items-center py-1">
-                        <img src="/Facebook.webp" id="logo-fb">
+                        <img src="http://localhost/TR//Facebook.webp" id="logo-fb">
                         <h5>@Valesca Valesca</h5>
                     </div>
                     <div class="d-flex justify-content-start align-items-center py-1">
-                        <img src="/Instagram.webp" id="logo-ig">
+                        <img src="http://localhost/TR//Instagram.webp" id="logo-ig">
                         <h5>@valescabakery</h5>
                     </div>
                     <div class="d-flex justify-content-start align-items-center py-1">
-                        <img src="/Tiktok.webp" id="logo-tiktok">
+                        <img src="http://localhost/TR//Tiktok.webp" id="logo-tiktok">
                         <h5>@valescabakery01</h5>
                     </div>
                     <div class="d-flex justify-content-start align-items-center py-1">
-                        <img src="/Whatsaap.webp" id="logo-wa">
+                        <img src="http://localhost/TR//Whatsaap.webp" id="logo-wa">
                         <h5>08156799697</h5>
                     </div>
                 </div>
             </div>
             <div class="d-flex align-items-center cabang">
-                <img src="/maps.webp">
+                <img src="http://localhost/TR//maps.webp">
                 <div class="d-flex align-items-center justify-content-center flex-column">
                     <h6>Ambarawa</h6>
                     <h6>(Kartini)</h6>
@@ -194,6 +191,7 @@ if($conn->connect_error){
             <div class="box"></div>
         </div>
     </footer>
+
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>

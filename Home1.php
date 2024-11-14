@@ -59,7 +59,7 @@
                 <li class="nav-item pr-4"><a class="nav-link" href="http://localhost/TR/Home1.php">Home</a></li>
                 <li class="nav-item pr-4"><a class="nav-link" href="http://localhost/TR/AboutUs1.php">About Us</a></li>
                 <li class="nav-item dropdown pr-4">
-                    <a class="nav-link" href="http://localhost/TR/Product.php">
+                    <a class="nav-link" href="http://localhost/TR/Product1.php">
                         Product
                     </a>
                     <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
@@ -76,22 +76,22 @@
                     </div>
                 </li>
                 <li class="nav-item dropdown pr-4">
-                    <a class="nav-link" href="http://localhost/TR/Promo.php">
+                    <a class="nav-link" href="http://localhost/TR/Promo1.php">
                         Info
                     </a>
                     <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                        <a class="dropdown-item" href="http://localhost/TR/Promo.php">Promo</a>
+                        <a class="dropdown-item" href="http://localhost/TR/Promo1.php">Promo</a>
                     </div>
                 </li>
                 <li class="nav-item dropdown pr-4">
-                    <a class="nav-link" href="http://localhost/TR/Orders.php">
+                    <a class="nav-link" href="http://localhost/TR/Orders1.php">
                         Order
                     </a>
                     <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                        <a class="dropdown-item" href="http://localhost/TR/Outlet.php">Outlet Valecia Bakery</a>
+                        <a class="dropdown-item" href="http://localhost/TR/Outlet1.php">Outlet Valecia Bakery</a>
                     </div>
                 </li>
-                <li class="nav-item pr-4"><a class="nav-link" href="http://localhost/TR/hotline.php">Hotline</a></li>
+                <li class="nav-item pr-4"><a class="nav-link" href="http://localhost/TR/hotline1.php">Hotline</a></li>
                 <li class="nav-item login" id="login">
                     <a class="btn btn-custom" href="http://localhost/TR/login.php">Login Member</a>
                 </li>
