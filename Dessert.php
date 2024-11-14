@@ -81,10 +81,10 @@ $result = $conn->query($sql);
         <div class="collapse navbar-collapse" id="navbarNav">
             <img class="img-fluid" id="logo" src="/Logo.PNG">
             <ul class="navbar-nav">
-                <li class="nav-item pr-4"><a class="nav-link" href="/Home.html">Home</a></li>
-                <li class="nav-item pr-4"><a class="nav-link" href="/AboutUs.html">About Us</a></li>
+                <li class="nav-item pr-4"><a class="nav-link" href="http://localhost/TR/Home.html">Home</a></li>
+                <li class="nav-item pr-4"><a class="nav-link" href="http://localhost/TR/AboutUs.html">About Us</a></li>
                 <li class="nav-item dropdown pr-4">
-                    <a class="nav-link" href="/Product.html">
+                    <a class="nav-link" href="http://localhost/TR/Product.html">
                         Product
                     </a>
                     <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
