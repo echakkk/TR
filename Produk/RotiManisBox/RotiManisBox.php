@@ -63,11 +63,11 @@ $result = $conn->query($sql);
 <body>
     <!-- NAVBAR -->
     <nav class="sticky-top navbar navbar-expand-lg d-flex custom-navbar">
-        <img class="img-fluid" id="logo-collapse" src="/Logo.PNG">
+        <img class="img-fluid" id="logo-collapse" src="http://localhost/TR/Logo.PNG">
         <div class="d-flex justify-content-center">
             <ul class="navbar-nav">
                 <li class="nav-item login-collapse">
-                    <a class="btn btn-custom" href="/login.html">Login Member</a>
+                    <a class="btn btn-custom" href="http://localhost/TR/login.html">Login Member</a>
                 </li>
             </ul>
             <ul class="navbar-nav">

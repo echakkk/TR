@@ -45,9 +45,14 @@
         <img class="img-fluid" id="logo-collapse" src="http://localhost/TR/Logo.PNG">
         <div class="d-flex justify-content-center">
             <ul class="navbar-nav">
+                <li class="nav-item login-collapse">
+                    <a class="btn btn-custom" href="http://localhost/TR/login.html">Login Member</a>
+                </li>
+            </ul>
+            <ul class="navbar-nav">
                 <button class="navbar-toggler" id="toggler" data-toggle="collapse" data-target="#navbarNav"
                     aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                    <img src="/navbar-toggler.png" width="30px">
+                    <img src="http://localhost/TR/navbar-toggler.png" width="30px">
                 </button>
                 </li>
             </ul>

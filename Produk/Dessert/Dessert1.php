@@ -1,3 +1,24 @@
+<?php
+// Konfigurasi koneksi ke database
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "db_valesca";
+$port = 3308; // Port MySQL Anda
+
+// Membuat koneksi
+$conn = new mysqli($servername, $username, $password, $dbname, $port);
+
+// Cek koneksi
+if ($conn->connect_error) {
+    die("Koneksi gagal: " . $conn->connect_error);
+}
+
+// Query untuk mengambil semua data dari tabel 'menu'
+$sql = "SELECT * FROM menu3";
+$result = $conn->query($sql);
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -104,6 +125,32 @@
         </div>
     </nav>
 
+    <!-- Content Section -->
+    <section class="products py-5">
+        <div class="container">
+            <h2 class="text-center mb-4">Semua Produk</h2>
+            <div class="d-flex justify-content-center flex-wrap">
+                <?php if ($result && $result->num_rows > 0) : ?>
+                    <?php while ($row = $result->fetch_assoc()) : ?>
+                        <div class="col-lg-4 mb-4 d-flex justify-content-center">
+                            <div class="text-center">
+                                <p class="text-black"><?php echo htmlspecialchars($row['nama_menu']); ?></p>
+                                <!-- Menampilkan gambar dari database -->
+                                <img src="<?php echo htmlspecialchars($row['gambar']); ?>" alt="<?php echo htmlspecialchars($row['nama_menu']); ?>" class="img-fluid rounded product-img" style="height: 200px; width: 100%; object-fit: cover; margin-bottom: 15px;">
+                                <p class="text-black">Rp <?php echo number_format($row['harga_menu'], 0, ',', '.'); ?></p>
+                                <p class="text-muted">Persediaan: <?php echo $row['persediaan']; ?></p>
+                            </div>
+                        </div>
+                    <?php endwhile; ?>
+                <?php else : ?>
+                    <p class="text-center">Menu tidak tersedia</p>
+                <?php endif; ?>
+            </div>
+        </div>
+    </section>
+    <?php $conn->close(); ?>
+
+    <!-- Footer -->
     <footer class="custom-footer d-flex justify-content-center flex-column">
         <h1 class="text-center mt-4">Contact Us</h1>
         <div class="d-flex align-items-center justify-content-center div-2">
@@ -152,4 +199,5 @@
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
 </body>
+
 </html>

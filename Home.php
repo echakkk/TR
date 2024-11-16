@@ -63,6 +63,11 @@ if($conn->connect_error){
         <img class="img-fluid" id="logo-collapse" src="http://localhost/TR/Logo.PNG">
         <div class="d-flex justify-content-center">
             <ul class="navbar-nav">
+                <li class="nav-item login-collapse">
+                    <a class="btn btn-custom" href="http://localhost/TR/login.html">Login Member</a>
+                </li>
+            </ul>
+            <ul class="navbar-nav">
                 <button class="navbar-toggler" id="toggler" data-toggle="collapse" data-target="#navbarNav"
                     aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <img src="/navbar-toggler.png" width="30px">
@@ -76,7 +81,7 @@ if($conn->connect_error){
                 <li class="nav-item pr-4"><a class="nav-link" href="http://localhost/TR/Home.php">Home</a></li>
                 <li class="nav-item pr-4"><a class="nav-link" href="http://localhost/TR/AboutUs.php">About Us</a></li>
                 <li class="nav-item dropdown pr-4">
-                    <a class="nav-link" href="http://localhost/TR/Product.php">
+                    <a class="nav-link" href="http://localhost/TR/Product1.php">
                         Product
                     </a>
                     <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
