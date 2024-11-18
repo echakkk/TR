@@ -1,19 +1,3 @@
-<?php
-
-$host = 'localhost';
-$username = 'root';
-$password = '';
-$dbname = 'db_valesca';
-$port = 3308;
-
-//Create conncetion to MySQL
-$conn = new mysqli ($host, $username, $password, $dbname, $port);
-
-//Ngecek koneksi
-if($conn->connect_error){
-    die("Failed to connect".$conn->connect_error);
-}?>
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -46,9 +30,14 @@ if($conn->connect_error){
         <img class="img-fluid" id="logo-collapse" src="http://localhost/TR/Logo.PNG">
         <div class="d-flex justify-content-center">
             <ul class="navbar-nav">
+                <li class="nav-item login-collapse">
+                    <a class="btn btn-custom" href="http://localhost/TR/login.html">Login Member</a>
+                </li>
+            </ul>
+            <ul class="navbar-nav">
                 <button class="navbar-toggler" id="toggler" data-toggle="collapse" data-target="#navbarNav"
                     aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                    <img src="/navbar-toggler.png" width="30px">
+                    <img src="http://localhost/TR/navbar-toggler.png" width="30px">
                 </button>
                 </li>
             </ul>
@@ -56,44 +45,44 @@ if($conn->connect_error){
         <div class="collapse navbar-collapse" id="navbarNav">
             <img class="img-fluid" id="logo" src="http://localhost/TR/Logo.PNG">
             <ul class="navbar-nav">
-                <li class="nav-item pr-4"><a class="nav-link" href="http://localhost/TR/Home.php">Home</a></li>
-                <li class="nav-item pr-4"><a class="nav-link" href="http://localhost/TR/AboutUs.php">About Us</a></li>
+                <li class="nav-item pr-4"><a class="nav-link" href="http://localhost/TR/Home1.php">Home</a></li>
+                <li class="nav-item pr-4"><a class="nav-link" href="http://localhost/TR/AboutUs1.php">About Us</a></li>
                 <li class="nav-item dropdown pr-4">
-                    <a class="nav-link" href="http://localhost/TR/Product.php">
+                    <a class="nav-link" href="http://localhost/TR/Product1.php">
                         Product
                     </a>
                     <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                        <a class="dropdown-item" href="http://localhost/TR/Produk/Brownies/Brownies.php">Brownies</a>
-                        <a class="dropdown-item" href="http://localhost/TR/Produk/Cake/Cake.php">Cake</a>
-                        <a class="dropdown-item" href="http://localhost/TR/Produk/Dessert/Dessert.php">Dessert</a>
-                        <a class="dropdown-item" href="http://localhost/TR/Produk/Pastry/Pastry.php">Pastry</a>
-                        <a class="dropdown-item" href="http://localhost/TR/Produk/Pizza/Pizza.php">Pizza</a>
-                        <a class="dropdown-item" href="http://localhost/TR/Produk/RotiManis/RotiManis.php">Roti Manis</a>
-                        <a class="dropdown-item" href="http://localhost/TR/Produk/RotiManisBox/RotiManisBox.php">Roti Manis Box</a>
-                        <a class="dropdown-item" href="http://localhost/TR/Produk/Snack/Snack.php">Snack</a>
-                        <a class="dropdown-item" href="http://localhost/TR/Produk/Tart/Tart.php">Tar</a>
-                        <a class="dropdown-item" href="http://localhost/TR/Produk/Tawar/Tawar.php">Tawar</a>
+                        <a class="dropdown-item" href="http://localhost/TR/Produk/Brownies/Brownies1.php">Brownies</a>
+                        <a class="dropdown-item" href="http://localhost/TR/Produk/Cake/Cake1.php">Cake</a>
+                        <a class="dropdown-item" href="http://localhost/TR/Produk/Dessert/Dessert1.php">Dessert</a>
+                        <a class="dropdown-item" href="http://localhost/TR/Produk/Pastry/Pastry1.php">Pastry</a>
+                        <a class="dropdown-item" href="http://localhost/TR/Produk/Pizza/Pizza1.php">Pizza</a>
+                        <a class="dropdown-item" href="http://localhost/TR/Produk/RotiManis/RotiManis1.php">Roti Manis</a>
+                        <a class="dropdown-item" href="http://localhost/TR/Produk/RotiManisBox/RotiManisBox1.php">Roti Manis Box</a>
+                        <a class="dropdown-item" href="http://localhost/TR/Produk/Snack/Snack1.php">Snack</a>
+                        <a class="dropdown-item" href="http://localhost/TR/Produk/Tart/Tart1.php">Tar</a>
+                        <a class="dropdown-item" href="http://localhost/TR/Produk/Tawar/Tawar1.php">Tawar</a>
                     </div>
                 </li>
                 <li class="nav-item dropdown pr-4">
-                    <a class="nav-link" href="http://localhost/TR/Promo.php">
+                    <a class="nav-link" href="http://localhost/TR/Promo1.php">
                         Info
                     </a>
                     <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                        <a class="dropdown-item" href="http://localhost/TR/Promo.php">Promo</a>
+                        <a class="dropdown-item" href="http://localhost/TR/Promo1.php">Promo</a>
                     </div>
                 </li>
                 <li class="nav-item dropdown pr-4">
-                    <a class="nav-link" href="http://localhost/TR/Orders.php">
+                    <a class="nav-link" href="http://localhost/TR/Orders1.php">
                         Order
                     </a>
                     <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                        <a class="dropdown-item" href="http://localhost/TR/Outlet.php">Outlet Valecia Bakery</a>
+                        <a class="dropdown-item" href="http://localhost/TR/Outlet1.php">Outlet Valecia Bakery</a>
                     </div>
                 </li>
-                <li class="nav-item pr-4"><a class="nav-link" href="http://localhost/TR/hotline.php">Hotline</a></li>
+                <li class="nav-item pr-4"><a class="nav-link" href="http://localhost/TR/hotline1.php">Hotline</a></li>
                 <li class="nav-item login" id="login">
-                    <a class="btn btn-custom" href="http://localhost/TR/logout.php">Log out</a>
+                    <a class="btn btn-custom" href="http://localhost/TR/login.php">Login Member</a>
                 </li>
             </ul>
             <img src="http://localhost/TR/halal.PNG" id="halal">

@@ -1,26 +1,10 @@
-<?php
-
-$host = 'localhost';
-$username = 'root';
-$password = '';
-$dbname = 'db_valesca';
-$port = 3308;
-
-//Create conncetion to MySQL
-$conn = new mysqli ($host, $username, $password, $dbname, $port);
-
-//Ngecek koneksi
-if($conn->connect_error){
-    die("Failed to connect".$conn->connect_error);
-}?>
-
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Outlet | Valesca Cake & Bakery</title>
+    <title>Promo | Valesca Cake & Bakery</title>
     <link href="/Logo.PNG" rel="shortcut icon">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
@@ -100,53 +84,17 @@ if($conn->connect_error){
         </div>
     </nav>
 
-    <section class="hero utama align-items-center flex-column">
-        <h1 class="text-center py-4">Lokasi</h1>
-        <div class="container-outlet">
-            <div class="d-flex justify-content-center outlet">
-                <iframe
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15831.387562651764!2d110.40045069481812!3d-7.2582602339741555!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e708147e2901039%3A0xb9c301ec2484360b!2sValesca%20bakery!5e0!3m2!1sid!2sid!4v1727677459344!5m2!1sid!2sid"
-                    style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
-                </iframe>
-                <div class="maps d-flex justify-content-start">
-                    <div class="p-4">
-                        <h4 class="font-weight-bold">Ambarawa ( Jendral Sudirman )</h4>
-                        <h6 class="pt-3 font-weight-bold">ALAMAT</h6>
-                        <p>Jl. Jend. Sudirman, Kupang Dalangan, Kupang, Kec. Ambarawa, Kabupaten Semarang, Jawa Tengah
-                            50612</p>
-                        <h6 class="pt-3 font-weight-bold">No. Telepon</h6>
-                        <p>+62 898-9632-007</p>
-                        <h6 class="pt-3 font-weight-bold">JAM BUKA</h6>
-                        <p>Setiap Hari, 08.00 - 21.00</p>
-                        <h6 class="pt-3 font-weight-bold">MAPS</h6>
-                        <a href="https://maps.app.goo.gl/jEEP6rAybbiMjEoZ6">Dapatkan Lokasinya</a>
-                    </div>
-                </div>
-            </div>
+    <section class="hero utama align-items-start flex-column">
+        <div class="container py-5 d-flex justify-content-center">
+            <img src="http://localhost/TR/Promo/1.jpg" class="mr-4 promoimg">
+            <img src="http://localhost/TR/Promo/2.jpg" class="ml-4 promoimg">
         </div>
-        <div class="container-outlet">
-            <div class="d-flex justify-content-center py-5 outlet">
-                <iframe
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15831.387562651764!2d110.40045069481812!3d-7.2582602339741555!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e70819be19cb21b%3A0x6766268172385167!2sValesca%20Bakery!5e0!3m2!1sid!2sid!4v1727677499074!5m2!1sid!2sid"
-                    style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
-                </iframe>
-                <div class="maps d-flex justify-content-start">
-                    <div class="p-4">
-                        <h4 class="font-weight-bold">Ambarawa ( Kartini )</h4>
-                        <h6 class="pt-3 font-weight-bold">ALAMAT</h6>
-                        <p>Jl. Kartini, Warunglanang, Lodoyong, Kec. Ambarawa, Kabupaten Semarang, Jawa Tengah 50612</p>
-                        <h6 class="pt-3 font-weight-bold">No. Telepon</h6>
-                        <p>+62 898-9632-007</p>
-                        <h6 class="pt-3 font-weight-bold">JAM BUKA</h6>
-                        <p>Setiap Hari, 08.00 - 21.00</p>
-                        <h6 class="pt-3 font-weight-bold">MAPS</h6>
-                        <a href="https://maps.app.goo.gl/rw5G48hg4nkxZaYy8">Dapatkan Lokasinya</a>
-                    </div>
-                </div>
-            </div>
+        <div class="container py-5 d-flex justify-content-center">
+            <img src="http://localhost/TR/Promo/3.jpg" class="mr-4 promoimg">
+            <img src="http://localhost/TR/Promo/4.jpg" class="ml-4 promoimg">
         </div>
     </section>
-    <!-- Footer -->
+
     <footer class="custom-footer d-flex justify-content-center flex-column">
         <h1 class="text-center mt-4">Contact Us</h1>
         <div class="d-flex align-items-center justify-content-center div-2">

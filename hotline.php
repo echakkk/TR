@@ -1,31 +1,11 @@
-<?php
-// Konfigurasi koneksi ke database
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "db_valesca";
-$port = 3308; // Port MySQL Anda
-
-// Membuat koneksi
-$conn = new mysqli($servername, $username, $password, $dbname, $port);
-
-// Cek koneksi
-if ($conn->connect_error) {
-    die("Koneksi gagal: " . $conn->connect_error);
-}
-
-// Query untuk mengambil semua data dari tabel 'menu'
-$sql = "SELECT * FROM menu7";
-$result = $conn->query($sql);
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Valesca Cake & Bakery</title>
+    <title>Hotline | Valesca Cake & Bakery</title>
+    <link href="/Logo.PNG" rel="shortcut icon">
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
         integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
@@ -61,15 +41,9 @@ $result = $conn->query($sql);
 </head>
 
 <body>
-    <!-- NAVBAR -->
-    <nav class="sticky-top navbar navbar-expand-lg d-flex custom-navbar">
-        <img class="img-fluid" id="logo-collapse" src="/Logo.PNG">
+<nav class="sticky-top navbar navbar-expand-lg d-flex custom-navbar">
+        <img class="img-fluid" id="logo-collapse" src="http://localhost/TR/Logo.PNG">
         <div class="d-flex justify-content-center">
-            <ul class="navbar-nav">
-                <li class="nav-item login-collapse">
-                    <a class="btn btn-custom" href="/login.html">Login Member</a>
-                </li>
-            </ul>
             <ul class="navbar-nav">
                 <button class="navbar-toggler" id="toggler" data-toggle="collapse" data-target="#navbarNav"
                     aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -79,83 +53,73 @@ $result = $conn->query($sql);
             </ul>
         </div>
         <div class="collapse navbar-collapse" id="navbarNav">
-            <img class="img-fluid" id="logo" src="/Logo.PNG">
+            <img class="img-fluid" id="logo" src="http://localhost/TR/Logo.PNG">
             <ul class="navbar-nav">
-                <li class="nav-item pr-4"><a class="nav-link" href="http://localhost/TR/Home.html">Home</a></li>
-                <li class="nav-item pr-4"><a class="nav-link" href="http://localhost/TR/AboutUs.html">About Us</a></li>
+                <li class="nav-item pr-4"><a class="nav-link" href="http://localhost/TR/Home.php">Home</a></li>
+                <li class="nav-item pr-4"><a class="nav-link" href="http://localhost/TR/AboutUs.php">About Us</a></li>
                 <li class="nav-item dropdown pr-4">
-                    <a class="nav-link" href="http://localhost/TR/Product.html">
+                    <a class="nav-link" href="http://localhost/TR/Product.php">
                         Product
                     </a>
                     <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                        <a class="dropdown-item" href="http://localhost/TR/Brownies.php">Brownies</a>
-                        <a class="dropdown-item" href="http://localhost/TR/Cake.php">Cake</a>
-                        <a class="dropdown-item" href="http://localhost/TR/Dessert.php">Dessert</a>
-                        <a class="dropdown-item" href="http://localhost/TR/Pastry.php">Pastry</a>
-                        <a class="dropdown-item" href="http://localhost/TR/Pizza.php">Pizza</a>
-                        <a class="dropdown-item" href="http://localhost/TR/RotiManis.php">Roti Manis</a>
-                        <a class="dropdown-item" href="http://localhost/TR/RotiManisBox.php">Roti Manis Box</a>
-                        <a class="dropdown-item" href="http://localhost/TR/Snack.php">Snack</a>
-                        <a class="dropdown-item" href="http://localhost/TR/Tart.php">Tar</a>
-                        <a class="dropdown-item" href="http://localhost/TR/Tawar.php">Tawar</a>
+                        <a class="dropdown-item" href="http://localhost/TR/Produk/Brownies/Brownies.php">Brownies</a>
+                        <a class="dropdown-item" href="http://localhost/TR/Produk/Cake/Cake.php">Cake</a>
+                        <a class="dropdown-item" href="http://localhost/TR/Produk/Dessert/Dessert.php">Dessert</a>
+                        <a class="dropdown-item" href="http://localhost/TR/Produk/Pastry/Pastry.php">Pastry</a>
+                        <a class="dropdown-item" href="http://localhost/TR/Produk/Pizza/Pizza.php">Pizza</a>
+                        <a class="dropdown-item" href="http://localhost/TR/Produk/RotiManis/RotiManis.php">Roti Manis</a>
+                        <a class="dropdown-item" href="http://localhost/TR/Produk/RotiManisBox/RotiManisBox.php">Roti Manis Box</a>
+                        <a class="dropdown-item" href="http://localhost/TR/Produk/Snack/Snack.php">Snack</a>
+                        <a class="dropdown-item" href="http://localhost/TR/Produk/Tart/Tart.php">Tar</a>
+                        <a class="dropdown-item" href="http://localhost/TR/Produk/Tawar/Tawar.php">Tawar</a>
                     </div>
                 </li>
                 <li class="nav-item dropdown pr-4">
-                    <a class="nav-link" href="/Promo.html">
+                    <a class="nav-link" href="http://localhost/TR/Promo.php">
                         Info
                     </a>
                     <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                        <a class="dropdown-item" href="/Promo.html">Promo</a>
+                        <a class="dropdown-item" href="http://localhost/TR/Promo.php">Promo</a>
                     </div>
                 </li>
                 <li class="nav-item dropdown pr-4">
-                    <a class="nav-link" href="/Orders.html">
+                    <a class="nav-link" href="http://localhost/TR/Orders.php">
                         Order
                     </a>
                     <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                        <a class="dropdown-item" href="/Outlet.html">Outlet Valecia Bakery</a>
+                        <a class="dropdown-item" href="http://localhost/TR/Outlet.php">Outlet Valecia Bakery</a>
                     </div>
                 </li>
-                <li class="nav-item pr-4"><a class="nav-link" href="/hotline.html">Hotline</a></li>
+                <li class="nav-item pr-4"><a class="nav-link" href="http://localhost/TR/hotline.php">Hotline</a></li>
                 <li class="nav-item login" id="login">
-                    <a class="btn btn-custom" href="http://localhost/TR/login.php">Login Member</a>
+                    <a class="btn btn-custom" href="http://localhost/TR/logout.php">Log out</a>
                 </li>
             </ul>
-            <img src="/halal.PNG" id="halal">
+            <img src="http://localhost/TR/halal.PNG" id="halal">
         </div>
     </nav>
 
-    <!-- Content Section -->
-    <section class="products py-5">
-        <div class="container">
-            <h2 class="text-center mb-4">Semua Produk</h2>
-            <div class="d-flex justify-content-center flex-wrap">
-                <?php if ($result && $result->num_rows > 0) : ?>
-                    <?php while ($row = $result->fetch_assoc()) : ?>
-                        <div class="col-lg-4 mb-4 d-flex justify-content-center">
-                            <div class="text-center">
-                                <p class="text-black"><?php echo htmlspecialchars($row['nama_menu']); ?></p>
-                                <!-- Menampilkan gambar dari database -->
-                                <img src="<?php echo htmlspecialchars($row['gambar']); ?>" alt="<?php echo htmlspecialchars($row['nama_menu']); ?>" class="img-fluid rounded product-img" style="height: 200px; width: 100%; object-fit: cover; margin-bottom: 15px;">
-                                <p class="text-black">Rp <?php echo number_format($row['harga_menu'], 0, ',', '.'); ?></p>
-                                <p class="text-muted">Persediaan: <?php echo $row['persediaan']; ?></p>
-                            </div>
-                        </div>
-                    <?php endwhile; ?>
-                <?php else : ?>
-                    <p class="text-center">Menu tidak tersedia</p>
-                <?php endif; ?>
-            </div>
+    <section class="d-flex justify-content-center align-items-center flex-column hotline">
+        <!-- Gambar di sisi bawah -->
+        <!-- Teks dan Tombol "Call Us" di atas gambar -->
+        <div class="hotline-text">
+            <h2>Hubungi Kami</h2>
+            <!-- Tombol Call Us -->
+            <button>
+                Call Us
+            </button>
+        </div>
+        <div class="hotline-img">
+            <img src="http://localhost/TR/hotline.JPG">
         </div>
     </section>
-    <?php $conn->close(); ?>
+    <hr class="hr-hotline">
 
-    <!-- Footer -->
     <footer class="custom-footer d-flex justify-content-center flex-column">
         <h1 class="text-center mt-4">Contact Us</h1>
         <div class="d-flex align-items-center justify-content-center div-2">
             <div class="d-flex align-items-center cabang">
-                <img src="/maps.webp">
+                <img src="http://localhost/TR//maps.webp">
                 <div class="d-flex flex-column">
                     <h6>Ambarawa</h6>
                     <h6>(Sudirman)</h6>
@@ -164,25 +128,25 @@ $result = $conn->query($sql);
             <div class="d-flex align-items-center flex-column contact">
                 <div class="d-flex justify-content-start flex-column">
                     <div class="d-flex justify-content-start align-items-center py-1">
-                        <img src="/Facebook.webp" id="logo-fb">
+                        <img src="http://localhost/TR//Facebook.webp" id="logo-fb">
                         <h5>@Valesca Valesca</h5>
                     </div>
                     <div class="d-flex justify-content-start align-items-center py-1">
-                        <img src="/Instagram.webp" id="logo-ig">
+                        <img src="http://localhost/TR//Instagram.webp" id="logo-ig">
                         <h5>@valescabakery</h5>
                     </div>
                     <div class="d-flex justify-content-start align-items-center py-1">
-                        <img src="/Tiktok.webp" id="logo-tiktok">
+                        <img src="http://localhost/TR//Tiktok.webp" id="logo-tiktok">
                         <h5>@valescabakery01</h5>
                     </div>
                     <div class="d-flex justify-content-start align-items-center py-1">
-                        <img src="/Whatsaap.webp" id="logo-wa">
+                        <img src="http://localhost/TR//Whatsaap.webp" id="logo-wa">
                         <h5>08156799697</h5>
                     </div>
                 </div>
             </div>
             <div class="d-flex align-items-center cabang">
-                <img src="/maps.webp">
+                <img src="http://localhost/TR//maps.webp">
                 <div class="d-flex align-items-center justify-content-center flex-column">
                     <h6>Ambarawa</h6>
                     <h6>(Kartini)</h6>
@@ -196,8 +160,9 @@ $result = $conn->query($sql);
         </div>
     </footer>
 
-    <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="valescaa.js"></script>
 </body>
 
 </html>
