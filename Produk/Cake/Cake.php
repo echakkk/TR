@@ -113,7 +113,7 @@ $result = $conn->query($sql);
                         <a class="dropdown-item" href="http://localhost/TR/Produk/RotiManisBox/RotiManisBox.php">Roti
                             Manis Box</a>
                         <a class="dropdown-item" href="http://localhost/TR/Produk/Snack/Snack.php">Snack</a>
-                        <a class="dropdown-item" href="http://localhost/TR/Produk/Tart/Tart.php">Tar</a>
+                        <a class="dropdown-item" href="http://localhost/TR/Produk/Tart/Tart.php">Tart</a>
                         <a class="dropdown-item" href="http://localhost/TR/Produk/Tawar/Tawar.php">Tawar</a>
                     </div>
                 </li>
@@ -157,7 +157,7 @@ $result = $conn->query($sql);
     <!-- Content Section -->
     <section class="products py-5">
         <div class="container">
-            <h2 class="text-center mb-4">Brownies</h2>
+            <h2 class="text-center mb-4">Cake</h2>
             <div class="d-flex justify-content-center flex-wrap">
                 <?php if ($result && $result->num_rows > 0) : ?>
                     <?php while ($row = $result->fetch_assoc()) : ?>

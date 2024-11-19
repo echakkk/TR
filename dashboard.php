@@ -1,18 +1,31 @@
 <?php
-// dashboard.php
 session_start();
 include 'db_valesca.php';
+
+// Daftar tabel yang valid sesuai kategori
+$valid_categories = [
+    'brownies' => 'brownies',
+    'cake' => 'cake',
+    'dessert' => 'dessert',
+    'pastry' => 'pastry',
+    'pizza' => 'pizza',
+    'roti manis' => 'rotimanis',
+    'roti manis box' => 'rotimanisbox',
+    'snack' => 'snack',
+    'tart' => 'tart',
+    'tawar' => 'tawar',
+];
+
+// Fungsi untuk menampilkan pesan
+function showMessage($message, $type = 'success') {
+    echo "<div class='bg-".($type === 'success' ? "green" : "red")."-500 text-white p-4 mb-4'>{$message}</div>";
+}
 
 // Cek apakah user sudah login, jika tidak redirect ke login
 if (!isset($_SESSION['username'])) {
     header("Location: login.php");
     exit();
 }
-
-// Ambil data dari tabel yang dipilih
-$kategori = isset($_GET['kategori']) ? $_GET['kategori'] : 'brownies';
-$query = "SELECT * FROM $kategori";
-$result = $conn->query($query);
 
 // Logout
 if (isset($_GET['logout'])) {
@@ -21,74 +34,61 @@ if (isset($_GET['logout'])) {
     exit();
 }
 
-//UPLOAD
-if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+// Upload data
+if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['title'], $_POST['kategori'], $_POST['link'], $_POST['price'])) {
     $title = $_POST['title'];
     $kategori = $_POST['kategori'];
     $link = $_POST['link'];
     $price = $_POST['price'];
 
-    // Daftar tabel yang valid sesuai kategori
-    $valid_tables = [
-        'brownies' => 'brownies',
-        'cake' => 'cake',
-        'dessert' => 'dessert',
-        'pastry' => 'pastry',
-        'pizza' => 'pizza',
-        'roti manis' => 'roti_manis',
-        'roti manis box' => 'roti_manis_box',
-        'snack' => 'snack',
-        'tart' => 'tart',
-        'tawar' => 'tawar',
-    ];
-
-    // Validasi kategori untuk memastikan tabel tujuan valid
-    if (!array_key_exists($kategori, $valid_tables)) {
-        echo "<div class='bg-red-500 text-white p-4 mb-4'>Kategori tidak valid!</div>";
+    if (!array_key_exists($kategori, $valid_categories)) {
+        showMessage("Kategori tidak valid!", 'error');
         exit();
     }
 
-    // Pilih tabel berdasarkan kategori
-    $table_name = $valid_tables[$kategori];
-
-    // Menyimpan data ke tabel yang sesuai
+    $table_name = $valid_categories[$kategori];
     $sql = "INSERT INTO $table_name (title, kategori, link, price) VALUES (?, ?, ?, ?)";
     $stmt = $conn->prepare($sql);
     $stmt->bind_param("sssi", $title, $kategori, $link, $price);
 
     if ($stmt->execute()) {
-        echo "<div class='bg-green-500 text-white p-4 mb-4'>Menu berhasil di-upload ke tabel $table_name!</div>";
+        showMessage("Menu berhasil di-upload ke tabel {$table_name}!");
     } else {
-        echo "<div class='bg-red-500 text-white p-4 mb-4'>Error: " . $stmt->error . "</div>";
+        showMessage("Error: " . $stmt->error, 'error');
     }
-    $stmt->close();  
+    $stmt->close();
 }
 
-//DELETE
-$kategori = $_GET['kategori'] ?? 'brownies'; // Default kategori
-$valid_categories = ['brownies', 'cake', 'dessert', 'pastry', 'pizza', 'roti', 'roti manis', 'roti manis box', 'snack', 'tart', 'tawar'];
-
-if (!in_array($kategori, $valid_categories)) {
-    echo "<div class='bg-red-500 text-white p-4 mb-4'>Kategori tidak valid!</div>";
-    exit();
-}
-
-// Fungsi delete
-if (isset($_GET['delete_id'])) {
+// DELETE data
+if (isset($_GET['delete_id'], $_GET['kategori'])) {
     $id = $_GET['delete_id'];
-    $sql = "DELETE FROM $kategori WHERE id = ?";
+    $kategori = $_GET['kategori'];
+
+    if (!array_key_exists($kategori, $valid_categories)) {
+        showMessage("Kategori tidak valid!", 'error');
+        exit();
+    }
+
+    $table_name = $valid_categories[$kategori];
+    $sql = "DELETE FROM $table_name WHERE id = ?";
     $stmt = $conn->prepare($sql);
     $stmt->bind_param("i", $id);
 
     if ($stmt->execute()) {
-        $message = "Data berhasil dihapus!";
+        showMessage("Data berhasil dihapus!");
     } else {
-        $message = "Error: " . $stmt->error;
+        showMessage("Error: " . $stmt->error, 'error');
     }
-
     $stmt->close();
 }
 
+// Ambil data kategori yang dipilih
+$kategori = $_GET['kategori'] ?? 'brownies';
+if (!array_key_exists($kategori, $valid_categories)) {
+    $kategori = 'brownies';
+}
+$query = "SELECT * FROM {$valid_categories[$kategori]}";
+$result = $conn->query($query);
 ?>
 
 <!DOCTYPE html>
@@ -99,162 +99,165 @@ if (isset($_GET['delete_id'])) {
     <title>Dashboard Admin</title>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
 </head>
+<header class="bg-blue-600 py-4 shadow-lg">
+    <div class="container mx-auto flex justify-between items-center px-6">
+        <h1 class="text-3xl font-bold text-white">Dashboard</h1>
+        <a href="?logout=true" 
+           class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded transition duration-300">
+            Logout
+        </a>
+    </div>
+    </header>
 <body class="bg-gray-50">
-    <div class="container mx-auto py-6">
-        <h1 class="text-4xl font-extrabold text-center text-gray-800 mb-10">Dashboard Admin</h1>
-        
+    
         <!-- Menu Kategori -->
-        <div class="flex flex-wrap justify-center gap-4 mb-10">
-            <a href="?kategori=brownies" class="btn-category">Brownies</a>
-            <a href="?kategori=cake" class="btn-category">Cake</a>
-            <a href="?kategori=dessert" class="btn-category">Dessert</a>
-            <a href="?kategori=pastry" class="btn-category">Pastry</a>
-            <a href="?kategori=pizza" class="btn-category">Pizza</a>
-            <a href="?kategori=roti manis" class="btn-category">Roti Manis</a>
-            <a href="?kategori=roti manis box" class="btn-category">Roti Manis Box</a>
-            <a href="?kategori=snack" class="btn-category">Snack</a>
-            <a href="?kategori=tart" class="btn-category">Tart</a>
-            <a href="?kategori=tawar" class="btn-category">Tawar</a>
-        </div>
+        <div class="container mx-auto py-6">
+    <h1 class="text-4xl font-extrabold text-center text-gray-800 mb-10">
+        <span class="bg-gradient-to-r from-blue-500 to-blue-700 text-transparent bg-clip-text">Admin</span>
+    </h1>
 
-        <!-- Form Upload -->
-        <div class="bg-white shadow-md rounded-lg px-10 py-8 mb-10">
-            <h2 class="text-2xl font-bold text-center mb-6 text-gray-700">Upload Menu</h2>
-            <form action="upload.php" method="post" enctype="multipart/form-data">
-                <div class="mb-6">
-                    <label for="title" class="block text-gray-700 font-semibold mb-2">Judul:</label>
-                    <input type="text" id="title" name="title" required class="form-input" placeholder="Masukkan judul brownies">
-                </div>
-                <div class="mb-6">
-                    <label for="kategori" class="block text-gray-700 font-semibold mb-2">Kategori:</label>
-                    <select id="kategori" name="kategori" required class="form-input">
-                        <option value="brownies">Brownies</option>
-                        <option value="cake">Cake</option>
-                        <option value="dessert">Dessert</option>
-                        <option value="pastry">Pastry</option>
-                        <option value="pizza">Pizza</option>
-                        <option value="roti manis">Roti Manis</option>
-                        <option value="roti manis box">Roti Manis Box</option>
-                        <option value="snack">Snack</option>
-                        <option value="tart">Tart</option>
-                        <option value="tawar">Tawar</option>
-                    </select>
-                </div>
-                <div class="mb-6">
-                    <label for="link" class="block text-gray-700 font-semibold mb-2">Upload Gambar:</label>
-                    <input type="file" id="link" name="link" required class="form-input">
-                </div>
-                <div class="mb-6">
-                    <label for="price" class="block text-gray-700 font-semibold mb-2">Harga:</label>
-                    <input type="number" id="price" name="price" required class="form-input" placeholder="Masukkan harga brownies">
-                </div>
-                <div class="flex justify-end">
-                    <input type="submit" value="Upload" class="btn-blue">
-                </div>
-            </form>
-        </div>
-
-        <!-- Notifikasi -->
-        <?php if (isset($message)): ?>
-            <div class="bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded mb-4">
-                <?= $message ?>
-            </div>
-        <?php endif; ?>
-
-        <!-- Tabel Data -->
-        <div class="bg-white shadow-md rounded-lg px-10 py-8">
-            <h2 class="text-2xl font-bold mb-6 text-gray-700">Data <?= ucfirst($kategori) ?></h2>
-            <table class="table-auto w-full text-left">
-                <thead>
-                    <tr class="bg-gray-200 text-gray-700">
-                        <th class="px-4 py-2">ID</th>
-                        <th class="px-4 py-2">Judul</th>
-                        <th class="px-4 py-2">Gambar</th>
-                        <th class="px-4 py-2">Harga</th>
-                        <th class="px-4 py-2">Aksi</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <?php while ($row = $result->fetch_assoc()): ?>
-                    <tr class="border-t text-gray-600">
-                        <td class="border px-4 py-2"><?= $row['id'] ?></td>
-                        <td class="border px-4 py-2"><?= $row['title'] ?></td>
-                        <td class="border px-4 py-2">
-                            <img src="<?= $row['link'] ?>" alt="<?= $row['title'] ?>" class="h-12 w-auto">
-                        </td>
-                        <td class="border px-4 py-2">Rp <?= number_format($row['price'], 0, ',', '.') ?></td>
-                        <td class="border px-4 py-2">
-                            <a href="update.php?id=<?= $row['id'] ?>&kategori=<?= $kategori ?>" class="btn-yellow">Update</a>
-                            <a href="?kategori=<?= $kategori ?>&delete_id=<?= $row['id'] ?>" class="btn-red" onclick="return confirm('Yakin ingin menghapus data ini?')">Delete</a>
-                        </td>
-                    </tr>
-                    <?php endwhile; ?>
-                </tbody>
-            </table>
-        </div>
-
-        <!-- Tombol Logout -->
-        <div class="flex justify-center mt-10">
-            <a href="?logout=true" class="btn-red">Logout</a>
-        </div>
+    <!-- Menu Kategori -->
+    <div class="flex flex-wrap justify-center gap-4 mb-10">
+        <?php foreach ($valid_categories as $key => $table): ?>
+            <a href="?kategori=<?= $key ?>" 
+               class="bg-gradient-to-r from-green-400 to-blue-500 text-white text-lg font-semibold py-3 px-6 rounded-full shadow-lg hover:shadow-xl transition duration-300 hover:scale-105">
+                <?= ucfirst($key) ?>
+            </a>
+        <?php endforeach; ?>
     </div>
 
+
+
+        <!-- Form Upload -->
+        <div class="container mx-auto p-6">
+        <h2 class="text-2xl font-bold text-center mb-6">Upload Menu </h2>
+        <form action="dashboard.php" method="post" class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
+            <div class="mb-4">
+                <label for="title" class="block text-gray-700 text-sm font-bold mb-2">Judul:</label>
+                <input type="text" id="title" name="title" required class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" placeholder="Masukkan judul brownies">
+            </div>
+            <div class="mb-4">
+                <label for="kategori" class="block text-gray-700 text-sm font-bold mb-2">Kategori:</label>
+                <select id="kategori" name="kategori" required class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"> 
+                    <option value="brownies">Brownies</option>
+                    <option value="cake">Cake</option>
+                    <option value="dessert">Dessert</option>
+                    <option value="pastry">Pastry</option>
+                    <option value="roti">Roti</option>
+                    <option value="roti manis">Roti Manis</option>
+                    <option value="roti manis box">Roti Manis Box</option>
+                    <option value="snack">Snack</option>
+                    <option value="tart">Tart</option>
+                    <option value="tawar">Tawar</option>
+                </select>
+            </div>
+            <div class="mb-4">
+                <label for="link" class="block text-gray-700 text-sm font-bold mb-2">Link Gambar:</label>
+                <input type="file" id="link" name="link" required class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" placeholder="Masukkan link gambar brownies">
+            </div>
+            <div class="mb-4">
+                <label for="price" class="block text-gray-700 text-sm font-bold mb-2">Harga:</label>
+                <input type="number" id="price" name="price" required class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" placeholder="Masukkan harga brownies">
+            </div>
+            <div class="flex items-center justify-between">
+                <input type="submit" value="Upload" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">
+            </div>
+        </form>
+    </div>
+
+        <!-- Tabel Data -->
+        <div class="bg-white shadow-lg rounded-lg px-10 py-8">
+    <h2 class="text-3xl font-bold mb-6 text-gray-800 border-b pb-4"><?= ucfirst($kategori) ?> Data</h2>
+    <table class="w-full border-collapse bg-gray-50 overflow-hidden rounded-lg shadow-sm">
+        <thead class="bg-gradient-to-r from-blue-500 to-blue-700 text-white">
+            <tr>
+                <th class="px-4 py-3 text-left font-semibold">ID</th>
+                <th class="px-4 py-3 text-left font-semibold">Judul</th>
+                <th class="px-4 py-3 text-left font-semibold">Gambar</th>
+                <th class="px-4 py-3 text-left font-semibold">Harga</th>
+                <th class="px-4 py-3 text-center font-semibold">Aksi</th>
+            </tr>
+        </thead>
+        <tbody>
+            <?php while ($row = $result->fetch_assoc()): ?>
+            <tr class="border-t hover:bg-gray-100 transition duration-200">
+                <td class="border px-4 py-3 text-gray-700"><?= $row['id'] ?></td>
+                <td class="border px-4 py-3 text-gray-700"><?= $row['title'] ?></td>
+                <td class="border px-4 py-3">
+                    <img src="<?= $row['link'] ?>" alt="<?= $row['title'] ?>" class="h-16 w-16 object-cover rounded-md shadow-sm">
+                </td>
+                <td class="border px-4 py-3 text-gray-700">Rp <?= number_format($row['price'], 0, ',', '.') ?></td>
+                <td class="border px-4 py-3 text-center flex justify-center gap-2">
+                    <a href="?kategori=<?= $kategori ?>&delete_id=<?= $row['id'] ?>" 
+                       class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded shadow-sm transition duration-300"
+                       onclick="return confirm('Yakin ingin menghapus data ini?')">Delete</a>
+                    <a href="?kategori=<?= $kategori ?>&edit_id=<?= $row['id'] ?>" 
+                       class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded shadow-sm transition duration-300">Edit</a>
+                </td>
+            </tr>
+            <?php endwhile; ?>
+        </tbody>
+    </table>
+</div>
+
+
+<!-- Form untuk Edit -->
+<?php
+if (isset($_GET['edit_id'])) {
+    $edit_id = $_GET['edit_id'];
+    $edit_query = "SELECT * FROM $table WHERE id = $edit_id";
+    $edit_result = $conn->query($edit_query);
+    $edit_data = $edit_result->fetch_assoc();
+?>
+<div class="bg-white shadow-md rounded-lg px-10 py-8 mt-10">
+    <h2 class="text-2xl font-bold mb-6 text-gray-700">Edit Data</h2>
+    <form action="dashboard.php" method="post" class="space-y-4">
+        <input type="hidden" name="id" value="<?= $edit_data['id'] ?>">
+        <div>
+            <label for="title" class="block text-sm font-medium text-gray-700">Judul:</label>
+            <input type="text" id="title" name="title" value="<?= $edit_data['title'] ?>" 
+                   required class="form-input w-full">
+        </div>
+        <div>
+            <label for="link" class="block text-sm font-medium text-gray-700">Link Gambar:</label>
+            <input type="text" id="link" name="link" value="<?= $edit_data['link'] ?>" 
+                   required class="form-input w-full">
+        </div>
+        <div>
+            <label for="price" class="block text-sm font-medium text-gray-700">Harga:</label>
+            <input type="number" id="price" name="price" value="<?= $edit_data['price'] ?>" 
+                   required class="form-input w-full">
+        </div>
+        <div>
+            <button type="submit" name="update" 
+                    class="bg-blue-500 hover:bg-blue-700 text-white py-2 px-4 rounded">Update</button>
+        </div>
+    </form>
+</div>
+<?php } ?>
+
+<!-- Logika Update -->
+<?php
+if (isset($_POST['update'])) {
+    $id = $_POST['id'];
+    $title = $_POST['title'];
+    $link = $_POST['link'];
+    $price = $_POST['price'];
+
+    $update_query = "UPDATE $table SET title = '$title', link = '$link', price = '$price' WHERE id = $id";
+    if ($conn->query($update_query)) {
+        echo "<script>alert('Data berhasil diperbarui!'); window.location = 'dashboard.php?kategori=$kategori';</script>";
+    } else {
+        echo "<script>alert('Gagal memperbarui data!');</script>";
+    }
+}
+?>
+
+
     <style>
-        .btn-blue {
-            background-color: #4299e1;
-            color: white;
-            padding: 10px 20px;
-            border-radius: 6px;
-            font-weight: bold;
-            transition: background-color 0.3s;
-        }
-        .btn-blue:hover {
-            background-color: #2b6cb0;
-        }
-        .btn-yellow {
-            background-color: #ecc94b;
-            color: white;
-            padding: 6px 12px;
-            border-radius: 6px;
-            font-weight: bold;
-            transition: background-color 0.3s;
-        }
-        .btn-yellow:hover {
-            background-color: #d69e2e;
-        }
-        .btn-red {
-            background-color: #f56565;
-            color: white;
-            padding: 10px 20px;
-            border-radius: 6px;
-            font-weight: bold;
-            transition: background-color 0.3s;
-        }
-        .btn-red:hover {
-            background-color: #c53030;
-        }
-        .btn-category {
-            background-color: #edf2f7;
-            color: #4a5568;
-            padding: 10px 20px;
-            border-radius: 6px;
-            font-weight: bold;
-            transition: background-color 0.3s;
-        }
-        .btn-category:hover {
-            background-color: #cbd5e0;
-        }
-        .form-input {
-            width: 100%;
-            padding: 10px;
-            border: 1px solid #cbd5e0;
-            border-radius: 6px;
-            transition: border-color 0.3s;
-        }
-        .form-input:focus {
-            border-color: #4299e1;
-            outline: none;
-        }
+        /* CSS Styles */
+        .btn-blue, .btn-red, .btn-category { /* Styles here */ }
+        .form-input { /* Styles here */ }
     </style>
 </body>
 </html>

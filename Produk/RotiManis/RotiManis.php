@@ -1,13 +1,13 @@
 <?php
 // Konfigurasi koneksi ke database
-$host = 'localhost';
-$username = 'root';
-$password = '';
-$dbname = 'db_valesca';
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "db_valesca";
 $port = 3308; // Port MySQL Anda
 
 // Membuat koneksi
-$conn = new mysqli($host, $username, $password, $dbname, $port);
+$conn = new mysqli($servername, $username, $password, $dbname, $port);
 
 // Cek koneksi
 if ($conn->connect_error) {
@@ -18,7 +18,7 @@ session_start();
 $login = isset($_SESSION['username']); // Periksa apakah pengguna sudah login
 
 // Query untuk mengambil semua data dari tabel 'menu'
-$sql = "SELECT * FROM menu6";
+$sql = "SELECT * FROM rotimanis";
 $result = $conn->query($sql);
 ?>
 
@@ -29,17 +29,43 @@ $result = $conn->query($sql);
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Valesca Cake & Bakery</title>
-    <link href="/Logo.PNG" rel="shortcut icon">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="http://localhost/TR/valescaa.css">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+    <!-- FONT-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@100..900&display=swap" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@300..900&display=swap" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@300..900&family=Paytone+One&display=swap"
+        rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@300..900&family=Markazi+Text:wght@400..700&family=Paytone+One&display=swap"
+        rel="stylesheet">
 </head>
 
 <body>
-    <!-- NAVBAR -->
-    <nav class="sticky-top navbar navbar-expand-lg d-flex custom-navbar">
-        <img class="img-fluid" id="logo-collapse" src="/Logo.PNG">
+<nav class="sticky-top navbar navbar-expand-lg d-flex custom-navbar">
+        <img class="img-fluid" id="logo-collapse" src="http://localhost/TR/Logo.PNG">
         <div class="d-flex justify-content-center">
             <ul class="navbar-nav">
                 <?php
@@ -64,6 +90,7 @@ $result = $conn->query($sql);
                     aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <img src="http://localhost/TR/navbar-toggler.png" width="30px">
                 </button>
+                </li>
             </ul>
         </div>
         <div class="collapse navbar-collapse" id="navbarNav">
@@ -86,7 +113,7 @@ $result = $conn->query($sql);
                         <a class="dropdown-item" href="http://localhost/TR/Produk/RotiManisBox/RotiManisBox.php">Roti
                             Manis Box</a>
                         <a class="dropdown-item" href="http://localhost/TR/Produk/Snack/Snack.php">Snack</a>
-                        <a class="dropdown-item" href="http://localhost/TR/Produk/Tart/Tart.php">Tar</a>
+                        <a class="dropdown-item" href="http://localhost/TR/Produk/Tart/Tart.php">Tart</a>
                         <a class="dropdown-item" href="http://localhost/TR/Produk/Tawar/Tawar.php">Tawar</a>
                     </div>
                 </li>
@@ -126,7 +153,7 @@ $result = $conn->query($sql);
             <img src="http://localhost/TR/halal.PNG" id="halal">
         </div>
     </nav>
-
+    
     <!-- Content Section -->
     <section class="products py-5">
         <div class="container">
@@ -136,10 +163,10 @@ $result = $conn->query($sql);
                     <?php while ($row = $result->fetch_assoc()) : ?>
                         <div class="col-lg-4 mb-4 d-flex justify-content-center">
                             <div class="text-center">
-                                <p class="text-black"><?php echo htmlspecialchars($row['nama_menu']); ?></p>
-                                <img src="<?php echo htmlspecialchars($row['gambar']); ?>" alt="<?php echo htmlspecialchars($row['nama_menu']); ?>" class="img-fluid rounded product-img" style="height: 200px; object-fit: cover; margin-bottom: 15px;">
-                                <p class="text-black">Rp <?php echo number_format($row['harga_menu'], 0, ',', '.'); ?></p>
-                                <p class="text-muted">Persediaan: <?php echo $row['persediaan']; ?></p>
+                                <p class="text-black"><?php echo htmlspecialchars($row['title']); ?></p>
+                                <!-- Menampilkan gambar dari database -->
+                                <img src="<?php echo htmlspecialchars($row['link']); ?>" alt="<?php echo htmlspecialchars($row['title']); ?>" class="img-fluid rounded product-img" style="height: 200px; width: 100%; object-fit: cover; margin-bottom: 15px;">
+                                <p class="text-black">Rp <?php echo number_format($row['price'], 0, ',', '.'); ?></p>
                             </div>
                         </div>
                     <?php endwhile; ?>

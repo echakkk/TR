@@ -18,9 +18,10 @@ session_start();
 $login = isset($_SESSION['username']); // Periksa apakah pengguna sudah login
 
 // Query untuk mengambil semua data dari tabel 'menu'
-$sql = "SELECT * FROM menu9";
+$sql = "SELECT * FROM tart";
 $result = $conn->query($sql);
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -45,13 +46,16 @@ $result = $conn->query($sql);
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@100..900&display=swap" rel="stylesheet">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@300..900&display=swap" rel="stylesheet">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@300..900&family=Paytone+One&display=swap"
         rel="stylesheet">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -60,8 +64,7 @@ $result = $conn->query($sql);
 </head>
 
 <body>
-    <!-- NAVBAR -->
-    <nav class="sticky-top navbar navbar-expand-lg d-flex custom-navbar">
+<nav class="sticky-top navbar navbar-expand-lg d-flex custom-navbar">
         <img class="img-fluid" id="logo-collapse" src="http://localhost/TR/Logo.PNG">
         <div class="d-flex justify-content-center">
             <ul class="navbar-nav">
@@ -87,6 +90,7 @@ $result = $conn->query($sql);
                     aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <img src="http://localhost/TR/navbar-toggler.png" width="30px">
                 </button>
+                </li>
             </ul>
         </div>
         <div class="collapse navbar-collapse" id="navbarNav">
@@ -149,7 +153,7 @@ $result = $conn->query($sql);
             <img src="http://localhost/TR/halal.PNG" id="halal">
         </div>
     </nav>
-
+    
     <!-- Content Section -->
     <section class="products py-5">
         <div class="container">
@@ -159,11 +163,10 @@ $result = $conn->query($sql);
                     <?php while ($row = $result->fetch_assoc()) : ?>
                         <div class="col-lg-4 mb-4 d-flex justify-content-center">
                             <div class="text-center">
-                                <p class="text-black"><?php echo htmlspecialchars($row['nama_menu']); ?></p>
+                                <p class="text-black"><?php echo htmlspecialchars($row['title']); ?></p>
                                 <!-- Menampilkan gambar dari database -->
-                                <img src="<?php echo htmlspecialchars($row['gambar']); ?>" alt="<?php echo htmlspecialchars($row['nama_menu']); ?>" class="img-fluid rounded product-img" style="height: 200px; width: 100%; object-fit: cover; margin-bottom: 15px;">
-                                <p class="text-black">Rp <?php echo number_format($row['harga_menu'], 0, ',', '.'); ?></p>
-                                <p class="text-muted">Persediaan: <?php echo $row['persediaan']; ?></p>
+                                <img src="<?php echo htmlspecialchars($row['link']); ?>" alt="<?php echo htmlspecialchars($row['title']); ?>" class="img-fluid rounded product-img" style="height: 200px; width: 100%; object-fit: cover; margin-bottom: 15px;">
+                                <p class="text-black">Rp <?php echo number_format($row['price'], 0, ',', '.'); ?></p>
                             </div>
                         </div>
                     <?php endwhile; ?>
@@ -173,6 +176,7 @@ $result = $conn->query($sql);
             </div>
         </div>
     </section>
+    <?php $conn->close(); ?>
 
     <!-- Footer -->
     <footer class="custom-footer d-flex justify-content-center flex-column">
@@ -220,8 +224,8 @@ $result = $conn->query($sql);
         </div>
     </footer>
 
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
 </body>
+
 </html>

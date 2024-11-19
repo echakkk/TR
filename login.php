@@ -115,7 +115,7 @@ $login = isset($_SESSION['username']); // Periksa apakah pengguna sudah login
         <div class="text-center mt-3">
             <p>Don't have an account? <a href="signup.php">Sign Up</a></p>
             <div class="back-link">
-                <a href="http://localhost/TR/Home.html">Back to Home</a>
+                <a href="http://localhost/TR/Home.php">Back to Home</a>
             </div>
         </div>
     </div>

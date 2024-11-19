@@ -9,17 +9,16 @@ $port = 3308; // Port MySQL Anda
 // Membuat koneksi
 $conn = new mysqli($servername, $username, $password, $dbname, $port);
 
-session_start();
-$login = isset($_SESSION['username']); // Periksa apakah pengguna sudah login
-
-
 // Cek koneksi
 if ($conn->connect_error) {
     die("Koneksi gagal: " . $conn->connect_error);
 }
 
+session_start();
+$login = isset($_SESSION['username']); // Periksa apakah pengguna sudah login
+
 // Query untuk mengambil semua data dari tabel 'menu'
-$sql = "SELECT * FROM menu5";
+$sql = "SELECT * FROM pizza";
 $result = $conn->query($sql);
 ?>
 
@@ -65,8 +64,7 @@ $result = $conn->query($sql);
 </head>
 
 <body>
-    <!-- NAVBAR -->
-    <nav class="sticky-top navbar navbar-expand-lg d-flex custom-navbar">
+<nav class="sticky-top navbar navbar-expand-lg d-flex custom-navbar">
         <img class="img-fluid" id="logo-collapse" src="http://localhost/TR/Logo.PNG">
         <div class="d-flex justify-content-center">
             <ul class="navbar-nav">
@@ -115,7 +113,7 @@ $result = $conn->query($sql);
                         <a class="dropdown-item" href="http://localhost/TR/Produk/RotiManisBox/RotiManisBox.php">Roti
                             Manis Box</a>
                         <a class="dropdown-item" href="http://localhost/TR/Produk/Snack/Snack.php">Snack</a>
-                        <a class="dropdown-item" href="http://localhost/TR/Produk/Tart/Tart.php">Tar</a>
+                        <a class="dropdown-item" href="http://localhost/TR/Produk/Tart/Tart.php">Tart</a>
                         <a class="dropdown-item" href="http://localhost/TR/Produk/Tawar/Tawar.php">Tawar</a>
                     </div>
                 </li>
@@ -155,6 +153,7 @@ $result = $conn->query($sql);
             <img src="http://localhost/TR/halal.PNG" id="halal">
         </div>
     </nav>
+    
     <!-- Content Section -->
     <section class="products py-5">
         <div class="container">
@@ -164,11 +163,10 @@ $result = $conn->query($sql);
                     <?php while ($row = $result->fetch_assoc()) : ?>
                         <div class="col-lg-4 mb-4 d-flex justify-content-center">
                             <div class="text-center">
-                                <p class="text-black"><?php echo htmlspecialchars($row['nama_menu']); ?></p>
+                                <p class="text-black"><?php echo htmlspecialchars($row['title']); ?></p>
                                 <!-- Menampilkan gambar dari database -->
-                                <img src="<?php echo htmlspecialchars($row['gambar']); ?>" alt="<?php echo htmlspecialchars($row['nama_menu']); ?>" class="img-fluid rounded product-img" style="height: 200px; width: 100%; object-fit: cover; margin-bottom: 15px;">
-                                <p class="text-black">Rp <?php echo number_format($row['harga_menu'], 0, ',', '.'); ?></p>
-                                <p class="text-muted">Persediaan: <?php echo $row['persediaan']; ?></p>
+                                <img src="<?php echo htmlspecialchars($row['link']); ?>" alt="<?php echo htmlspecialchars($row['title']); ?>" class="img-fluid rounded product-img" style="height: 200px; width: 100%; object-fit: cover; margin-bottom: 15px;">
+                                <p class="text-black">Rp <?php echo number_format($row['price'], 0, ',', '.'); ?></p>
                             </div>
                         </div>
                     <?php endwhile; ?>
