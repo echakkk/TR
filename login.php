@@ -1,6 +1,7 @@
-<?php include 'db_valesca.php'; ?> 
-<?php include 'fungsidb.php'; ?> 
-<?php session_start(); ?>
+<?php
+session_start();
+$login = isset($_SESSION['username']); // Periksa apakah pengguna sudah login
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -97,7 +98,7 @@
 <body>
     <div class="login-container">
         <h2>Welcome Back!</h2>
-        <?php 
+        <?php
         if (isset($_GET['error'])) {
             echo '<div class="error-message">Invalid username or password!</div>';
         }
