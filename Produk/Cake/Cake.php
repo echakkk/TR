@@ -38,21 +38,14 @@ $result = $conn->query($sql);
 </head>
 
 <body>
-<<<<<<< HEAD
 <nav class="sticky-top navbar navbar-expand-lg d-flex custom-navbar">
         <img class="img-fluid" id="logo-collapse" src="http://localhost/TR/Logo.PNG">
-=======
-    <!-- NAVBAR -->
-    <nav class="sticky-top navbar navbar-expand-lg custom-navbar">
-        <img class="img-fluid" id="logo-collapse" src="./Logo.PNG">
->>>>>>> ae1354af515dee7c5bc7e6d83f79753924240462
         <div class="d-flex justify-content-center">
             <ul class="navbar-nav">
                 <?php
                     if($login){
                 ?>
                 <li class="nav-item login-collapse">
-<<<<<<< HEAD
                     <a class="btn btn-custom" href="http://localhost/TR/logout.php">Logout</a>
                 </li>
                 <?php
@@ -71,17 +64,10 @@ $result = $conn->query($sql);
                     aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <img src="http://localhost/TR/navbar-toggler.png" width="30px">
                 </button>
-=======
-                    <a class="btn btn-custom" href="./login.html">Login Member</a>
->>>>>>> ae1354af515dee7c5bc7e6d83f79753924240462
                 </li>
             </ul>
-            <button class="navbar-toggler" id="toggler" data-toggle="collapse" data-target="#navbarNav">
-                <img src="./navbar-toggler.png" width="30px">
-            </button>
         </div>
         <div class="collapse navbar-collapse" id="navbarNav">
-<<<<<<< HEAD
             <img class="img-fluid" id="logo" src="http://localhost/TR/Logo.PNG">
             <ul class="navbar-nav">
                 <li class="nav-item pr-4"><a class="nav-link" href="http://localhost/TR/Home.php">Home</a></li>
@@ -139,23 +125,6 @@ $result = $conn->query($sql);
                 ?>
             </ul>
             <img src="http://localhost/TR/halal.PNG" id="halal">
-=======
-            <img class="img-fluid" id="logo" src="./Logo.PNG">
-            <ul class="navbar-nav">
-                <li class="nav-item"><a class="nav-link" href="http://localhost/TR/Home.html">Home</a></li>
-                <li class="nav-item"><a class="nav-link" href="http://localhost/TR/AboutUs.html">About Us</a></li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link" href="http://localhost/TR/Product.html">Product</a>
-                    <div class="dropdown-menu">
-                        <a class="dropdown-item" href="http://localhost/TR/Produk/Brownies/Brownies.php">Brownies</a>
-                        <a class="dropdown-item" href="http://localhost/TR/Produk/Cake/Cake.php">Cake</a>
-                        <a class="dropdown-item" href="http://localhost/TR/Produk/Dessert/Dessert.php">Dessert</a>
-                    </div>
-                </li>
-                <li class="nav-item"><a class="nav-link" href="/Orders.html">Order</a></li>
-                <li class="nav-item login"><a class="btn btn-custom" href="/login.html">Login Member</a></li>
-            </ul>
->>>>>>> ae1354af515dee7c5bc7e6d83f79753924240462
         </div>
     </nav>
 
@@ -183,8 +152,6 @@ $result = $conn->query($sql);
     </section>
     <?php $conn->close(); ?>
 
-    <!-- Footer -->
-<<<<<<< HEAD
     <footer class="custom-footer d-flex justify-content-center flex-column">
         <h1 class="text-center mt-4">Contact Us</h1>
         <div class="d-flex align-items-center justify-content-center div-2">
@@ -227,16 +194,7 @@ $result = $conn->query($sql);
             <div class="box"></div>
             <h6>2024 Valesca Bakery All Right Resereved</h6>
             <div class="box"></div>
-=======
-    <footer class="custom-footer">
-        <h1>Contact Us</h1>
-        <div class="d-flex justify-content-around">
-            <div>Ambarawa Sudirman</div>
-            <div>@valescabakery</div>
-            <div>Ambarawa Kartini</div>
->>>>>>> ae1354af515dee7c5bc7e6d83f79753924240462
         </div>
-        <p>2024 Valesca Bakery All Right Reserved</p>
     </footer>
 </body>
 

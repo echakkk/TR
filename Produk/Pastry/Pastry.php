@@ -19,7 +19,7 @@ $login = isset($_SESSION['username']); // Periksa apakah pengguna sudah login
 
 
 // Query untuk mengambil semua data dari tabel 'menu'
-$sql = "SELECT * FROM menu3"; // Ubah sesuai kebutuhan
+$sql = "SELECT * FROM menu4"; // Ubah sesuai kebutuhan
 $result = $conn->query($sql);
 ?>
 
@@ -36,22 +36,14 @@ $result = $conn->query($sql);
     <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@100..900&display=swap" rel="stylesheet">
 </head>
 
-<body>
-<<<<<<< HEAD
-<nav class="sticky-top navbar navbar-expand-lg d-flex custom-navbar">
+<body><nav class="sticky-top navbar navbar-expand-lg d-flex custom-navbar">
         <img class="img-fluid" id="logo-collapse" src="http://localhost/TR/Logo.PNG">
-=======
-    <!-- NAVBAR -->
-    <nav class="sticky-top navbar navbar-expand-lg d-flex custom-navbar">
-        <img class="img-fluid" id="logo-collapse" src="./Logo.PNG">
->>>>>>> ae1354af515dee7c5bc7e6d83f79753924240462
         <div class="d-flex justify-content-center">
             <ul class="navbar-nav">
                 <?php
                     if($login){
                 ?>
                 <li class="nav-item login-collapse">
-<<<<<<< HEAD
                     <a class="btn btn-custom" href="http://localhost/TR/logout.php">Logout</a>
                 </li>
                 <?php
@@ -70,17 +62,10 @@ $result = $conn->query($sql);
                     aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <img src="http://localhost/TR/navbar-toggler.png" width="30px">
                 </button>
-=======
-                    <a class="btn btn-custom" href="./login.html">Login Member</a>
->>>>>>> ae1354af515dee7c5bc7e6d83f79753924240462
                 </li>
             </ul>
-            <button class="navbar-toggler" id="toggler" data-toggle="collapse" data-target="#navbarNav">
-                <img src="./navbar-toggler.png" width="30px">
-            </button>
         </div>
         <div class="collapse navbar-collapse" id="navbarNav">
-<<<<<<< HEAD
             <img class="img-fluid" id="logo" src="http://localhost/TR/Logo.PNG">
             <ul class="navbar-nav">
                 <li class="nav-item pr-4"><a class="nav-link" href="http://localhost/TR/Home.php">Home</a></li>
@@ -138,26 +123,9 @@ $result = $conn->query($sql);
                 ?>
             </ul>
             <img src="http://localhost/TR/halal.PNG" id="halal">
-=======
-            <img class="img-fluid" id="logo" src="./Logo.PNG">
-            <ul class="navbar-nav">
-                <li class="nav-item pr-4"><a class="nav-link" href="./Home.html">Home</a></li>
-                <li class="nav-item pr-4"><a class="nav-link" href="./AboutUs.html">About Us</a></li>
-                <li class="nav-item dropdown pr-4">
-                    <a class="nav-link" href="./Product.html">Product</a>
-                    <div class="dropdown-menu">
-                        <a class="dropdown-item" href="./Brownies.php">Brownies</a>
-                        <a class="dropdown-item" href="./Cake.php">Cake</a>
-                        <a class="dropdown-item" href="./Dessert.php">Dessert</a>
-                        <a class="dropdown-item" href="./Pastry.php">Pastry</a>
-                        <a class="dropdown-item" href="./Pizza.php">Pizza</a>
-                    </div>
-                </li>
-                <li class="nav-item pr-4"><a class="nav-link" href="./Hotline.html">Hotline</a></li>
-            </ul>
->>>>>>> ae1354af515dee7c5bc7e6d83f79753924240462
         </div>
     </nav>
+
     <!-- Content Section -->
     <section class="products py-5">
         <div class="container">
@@ -181,12 +149,10 @@ $result = $conn->query($sql);
     </section>
     <?php $conn->close(); ?>
 
-    <!-- Footer -->
-    <footer class="custom-footer d-flex justify-content-center flex-column">
+    <!-- Footer -->    <footer class="custom-footer d-flex justify-content-center flex-column">
         <h1 class="text-center mt-4">Contact Us</h1>
-        <div class="d-flex align-items-center justify-content-center">
+        <div class="d-flex align-items-center justify-content-center div-2">
             <div class="d-flex align-items-center cabang">
-<<<<<<< HEAD
                 <img src="http://localhost/TR//maps.webp">
                 <div class="d-flex flex-column">
                     <h6>Ambarawa</h6>
@@ -219,25 +185,16 @@ $result = $conn->query($sql);
                     <h6>Ambarawa</h6>
                     <h6>(Kartini)</h6>
                 </div>
-=======
-                <img src="./maps.webp">
-                <h6>Ambarawa (Sudirman)</h6>
-            </div>
-            <div class="d-flex align-items-center cabang">
-                <img src="./maps.webp">
-                <h6>Ambarawa (Kartini)</h6>
->>>>>>> ae1354af515dee7c5bc7e6d83f79753924240462
             </div>
         </div>
-        <div class="text-center py-3">
-            <h6>&copy; 2024 Valesca Bakery All Rights Reserved</h6>
+        <div class="d-flex justify-content-center align-items-center div-3">
+            <div class="box"></div>
+            <h6>2024 Valesca Bakery All Right Resereved</h6>
+            <div class="box"></div>
         </div>
     </footer>
-<<<<<<< HEAD
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
-=======
->>>>>>> ae1354af515dee7c5bc7e6d83f79753924240462
 </body>
 
 </html>

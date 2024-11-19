@@ -17,7 +17,7 @@ session_start();
 $login = isset($_SESSION['username']); // Periksa apakah pengguna sudah login
 
 // Query untuk mengambil semua data dari tabel 'menu'
-$sql = "SELECT * FROM menu";
+$sql = "SELECT * FROM menu3";
 $result = $conn->query($sql);
 ?>
 
@@ -37,7 +37,6 @@ $result = $conn->query($sql);
 
 <body>
     <!-- NAVBAR -->
-<<<<<<< HEAD
     <nav class="sticky-top navbar navbar-expand-lg d-flex custom-navbar">
         <img class="img-fluid" id="logo-collapse" src="http://localhost/TR/Logo.PNG">
         <div class="d-flex justify-content-center">
@@ -125,21 +124,9 @@ $result = $conn->query($sql);
                 ?>
             </ul>
             <img src="http://localhost/TR/halal.PNG" id="halal">
-=======
-    <nav class="sticky-top navbar navbar-expand-lg custom-navbar">
-        <img class="img-fluid" id="logo-collapse" src="./Logo.PNG">
-        <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav">
-                <li class="nav-item pr-4"><a class="nav-link" href="./Home.html">Home</a></li>
-                <li class="nav-item pr-4"><a class="nav-link" href="./AboutUs.html">About Us</a></li>
-                <li class="nav-item pr-4"><a class="nav-link" href="./Product.html">Product</a></li>
-                <li class="nav-item pr-4"><a class="nav-link" href="./Orders.html">Order</a></li>
-                <li class="nav-item pr-4"><a class="nav-link" href="./hotline.html">Hotline</a></li>
-            </ul>
-            <img src="./halal.PNG" id="halal">
->>>>>>> ae1354af515dee7c5bc7e6d83f79753924240462
         </div>
     </nav>
+
     <!-- Content Section -->
     <section class="products py-5">
         <div class="container">
@@ -165,9 +152,8 @@ $result = $conn->query($sql);
     <?php $conn->close(); ?>
 
     <!-- Footer -->
-    <footer class="custom-footer">
+    <footer class="custom-footer d-flex justify-content-center flex-column">
         <h1 class="text-center mt-4">Contact Us</h1>
-<<<<<<< HEAD
         <div class="d-flex align-items-center justify-content-center div-2">
             <div class="d-flex align-items-center cabang">
                 <img src="http://localhost/TR//maps.webp">
@@ -202,15 +188,13 @@ $result = $conn->query($sql);
                     <h6>Ambarawa</h6>
                     <h6>(Kartini)</h6>
                 </div>
-=======
-        <div class="d-flex justify-content-center">
-            <div>
-                <h5>@ValescaBakery</h5>
-                <p>08156799697</p>
->>>>>>> ae1354af515dee7c5bc7e6d83f79753924240462
             </div>
         </div>
-        <p class="text-center">&copy; 2024 Valesca Bakery. All Rights Reserved.</p>
+        <div class="d-flex justify-content-center align-items-center div-3">
+            <div class="box"></div>
+            <h6>2024 Valesca Bakery All Right Resereved</h6>
+            <div class="box"></div>
+        </div>
     </footer>
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"></script>
