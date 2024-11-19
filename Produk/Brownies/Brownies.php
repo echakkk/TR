@@ -18,7 +18,7 @@ session_start();
 $login = isset($_SESSION['username']); // Periksa apakah pengguna sudah login
 
 // Query untuk mengambil semua data dari tabel 'menu'
-$sql = "SELECT * FROM menu";
+$sql = "SELECT * FROM brownies";
 $result = $conn->query($sql);
 ?>
 
@@ -163,11 +163,10 @@ $result = $conn->query($sql);
                     <?php while ($row = $result->fetch_assoc()) : ?>
                         <div class="col-lg-4 mb-4 d-flex justify-content-center">
                             <div class="text-center">
-                                <p class="text-black"><?php echo htmlspecialchars($row['nama_menu']); ?></p>
+                                <p class="text-black"><?php echo htmlspecialchars($row['title']); ?></p>
                                 <!-- Menampilkan gambar dari database -->
-                                <img src="<?php echo htmlspecialchars($row['gambar']); ?>" alt="<?php echo htmlspecialchars($row['nama_menu']); ?>" class="img-fluid rounded product-img" style="height: 200px; width: 100%; object-fit: cover; margin-bottom: 15px;">
-                                <p class="text-black">Rp <?php echo number_format($row['harga_menu'], 0, ',', '.'); ?></p>
-                                <p class="text-muted">Persediaan: <?php echo $row['persediaan']; ?></p>
+                                <img src="<?php echo htmlspecialchars($row['link']); ?>" alt="<?php echo htmlspecialchars($row['title']); ?>" class="img-fluid rounded product-img" style="height: 200px; width: 100%; object-fit: cover; margin-bottom: 15px;">
+                                <p class="text-black">Rp <?php echo number_format($row['price'], 0, ',', '.'); ?></p>
                             </div>
                         </div>
                     <?php endwhile; ?>
