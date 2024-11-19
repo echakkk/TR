@@ -144,9 +144,11 @@ $login = isset($_SESSION['username']); // Periksa apakah pengguna sudah login
         <div class="hotline-text">
             <h2>Hubungi Kami</h2>
             <!-- Tombol Call Us -->
+            <a href="https://wa.me/628156749697" target="_blank" style="text-decoration: none;">
             <button>
                 Call Us
             </button>
+            </a>
         </div>
         <div class="hotline-img">
             <img src="http://localhost/TR/hotline.JPG">
