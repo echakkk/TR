@@ -1,18 +1,7 @@
 <?php
-
-$host = 'localhost';
-$username = 'root';
-$password = '';
-$dbname = 'db_valesca';
-$port = 3308;
-
-//Create conncetion to MySQL
-$conn = new mysqli ($host, $username, $password, $dbname, $port);
-
-//Ngecek koneksi
-if($conn->connect_error){
-    die("Failed to connect".$conn->connect_error);
-}?>
+session_start();
+$login = isset($_SESSION['username']); // Periksa apakah pengguna sudah login
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -41,14 +30,32 @@ if($conn->connect_error){
 </head>
 
 <body>
-    <!-- NAVBAR -->
-    <nav class="sticky-top navbar navbar-expand-lg d-flex custom-navbar">
+<!-- NAVBAR -->
+<nav class="sticky-top navbar navbar-expand-lg d-flex custom-navbar">
         <img class="img-fluid" id="logo-collapse" src="http://localhost/TR/Logo.PNG">
         <div class="d-flex justify-content-center">
             <ul class="navbar-nav">
+                <?php
+                    if($login){
+                ?>
+                <li class="nav-item login-collapse">
+                    <a class="btn btn-custom" href="http://localhost/TR/logout.php">Logout</a>
+                </li>
+                <?php
+                    }else {
+                ?>
+                <li class="nav-item login-collapse">
+                    <a class="btn btn-custom" href="http://localhost/TR/login.php">Login Member</a>
+                </li>
+                <?php
+                    }
+                ?>
+                
+            </ul>
+            <ul class="navbar-nav">
                 <button class="navbar-toggler" id="toggler" data-toggle="collapse" data-target="#navbarNav"
                     aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                    <img src="/navbar-toggler.png" width="30px">
+                    <img src="http://localhost/TR/navbar-toggler.png" width="30px">
                 </button>
                 </li>
             </ul>
@@ -68,8 +75,10 @@ if($conn->connect_error){
                         <a class="dropdown-item" href="http://localhost/TR/Produk/Dessert/Dessert.php">Dessert</a>
                         <a class="dropdown-item" href="http://localhost/TR/Produk/Pastry/Pastry.php">Pastry</a>
                         <a class="dropdown-item" href="http://localhost/TR/Produk/Pizza/Pizza.php">Pizza</a>
-                        <a class="dropdown-item" href="http://localhost/TR/Produk/RotiManis/RotiManis.php">Roti Manis</a>
-                        <a class="dropdown-item" href="http://localhost/TR/Produk/RotiManisBox/RotiManisBox.php">Roti Manis Box</a>
+                        <a class="dropdown-item" href="http://localhost/TR/Produk/RotiManis/RotiManis.php">Roti
+                            Manis</a>
+                        <a class="dropdown-item" href="http://localhost/TR/Produk/RotiManisBox/RotiManisBox.php">Roti
+                            Manis Box</a>
                         <a class="dropdown-item" href="http://localhost/TR/Produk/Snack/Snack.php">Snack</a>
                         <a class="dropdown-item" href="http://localhost/TR/Produk/Tart/Tart.php">Tar</a>
                         <a class="dropdown-item" href="http://localhost/TR/Produk/Tawar/Tawar.php">Tawar</a>
@@ -92,9 +101,21 @@ if($conn->connect_error){
                     </div>
                 </li>
                 <li class="nav-item pr-4"><a class="nav-link" href="http://localhost/TR/hotline.php">Hotline</a></li>
-                <li class="nav-item login" id="login">
-                    <a class="btn btn-custom" href="http://localhost/TR/logout.php">Log out</a>
-                </li>
+                <?php
+                if ($login) {
+                    ?>
+                    <li class="nav-item login" id="login">
+                        <a class="btn btn-custom" href="http://localhost/TR/logout.php">Log Out</a>
+                    </li>
+                    <?php
+                } else {
+                    ?>
+                    <li class="nav-item login" id="logout">
+                        <a class="btn btn-custom" href="http://localhost/TR/login.php">Login Member</a>
+                    </li>
+                    <?php
+                }
+                ?>
             </ul>
             <img src="http://localhost/TR/halal.PNG" id="halal">
         </div>
