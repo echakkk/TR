@@ -30,7 +30,7 @@ if (mysqli_num_rows($result) > 0) {
     // Cek role user
     if ($user['id_role'] == 1) { // 1 adalah ID role untuk admin
         // Redirect ke halaman dashboard jika admin
-        header("Location: dashboard.php");
+        header("Location: upload.php");
     } else {
         // Redirect ke halaman Home.php jika bukan admin
         header("Location: Home.php");

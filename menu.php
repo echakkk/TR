@@ -1,5 +1,5 @@
 <?php
-include 'db_connect.php';
+include 'db_valesca.php';
 
 $query = "SELECT nama_menu, harga_menu FROM menu";
 $result = $conn->query($query);

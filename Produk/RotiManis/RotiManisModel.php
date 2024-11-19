@@ -1,8 +1,8 @@
 <?php
 // BrowniesModel.php
-include 'koneksi.php';
+include 'db_valesca.php';
 
-class PastryModel {
+class RotiManisModel {
     private $conn;
 
     public function __construct($connection) {
@@ -10,7 +10,7 @@ class PastryModel {
     }
 
     public function getBrownies() {
-        $sql = "SELECT id, title, link, price FROM brownies WHERE kategori = 'pastry'"; // Mengambil field yang sesuai
+        $sql = "SELECT id, title, link, price FROM brownies WHERE kategori = 'roti manis'"; // Mengambil field yang sesuai
         $result = $this->conn->query($sql);
         $brownies = [];
 
@@ -24,5 +24,5 @@ class PastryModel {
 }
 
 // Menggunakan model
-$model = new PastryModel($conn);
+$model = new RotiManisModel($conn);
 $brownies = $model->getBrownies();

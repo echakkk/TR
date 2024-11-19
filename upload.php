@@ -1,17 +1,17 @@
 <?php
 // upload.php
-include 'koneksi.php';
+include 'db_valesca.php';
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    $title = $_POST['title'];
-    $kategori = $_POST['kategori']; // Menambahkan kategori
-    $link = $_POST['link'];
-    $price = $_POST['price'];
+    $title = $_POST['nama_menu'];
+    $stok = $_POST['persediaan']; // Menambahkan kategori
+    $price = $_POST['harga_menu'];
+    $link = $_POST['gambar'];
 
     // Menyimpan data ke database
-    $sql = "INSERT INTO brownies (title, kategori, link, price) VALUES (?, ?, ?, ?)"; // Memperbarui query SQL
+    $sql = "INSERT INTO menu (nama_menu, persediaan, harga_menu, gambar) VALUES (?, ?, ?, ?)"; // Memperbarui query SQL
     $stmt = $conn->prepare($sql);
-    $stmt->bind_param("sssi", $title, $kategori, $link, $price); // Memperbarui binding parameter
+    $stmt->bind_param("sssi", $title, $stok ,$price, $link); // Memperbarui binding parameter
 
     if ($stmt->execute()) {
         echo "<div class='bg-green-500 text-white p-4 mb-4'>Menu berhasil di-upload!</div>";

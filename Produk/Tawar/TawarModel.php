@@ -1,6 +1,6 @@
 <?php
 // BrowniesModel.php
-include 'koneksi.php';
+include 'db_valesca.php';
 
 class TawarModel {
     private $conn;
