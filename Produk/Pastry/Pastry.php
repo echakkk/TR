@@ -19,7 +19,7 @@ $login = isset($_SESSION['username']); // Periksa apakah pengguna sudah login
 
 
 // Query untuk mengambil semua data dari tabel 'menu'
-$sql = "SELECT * FROM menu4";
+$sql = "SELECT * FROM menu3"; // Ubah sesuai kebutuhan
 $result = $conn->query($sql);
 ?>
 
@@ -31,48 +31,27 @@ $result = $conn->query($sql);
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Valesca Cake & Bakery</title>
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
-        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="http://localhost/TR/valescaa.css">
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
-        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
-        crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
-        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
-        crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
-        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
-        crossorigin="anonymous"></script>
-    <!-- FONT-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@100..900&display=swap" rel="stylesheet">
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@300..900&display=swap" rel="stylesheet">
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@300..900&family=Paytone+One&display=swap"
-        rel="stylesheet">
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@300..900&family=Markazi+Text:wght@400..700&family=Paytone+One&display=swap"
-        rel="stylesheet">
 </head>
 
 <body>
+<<<<<<< HEAD
 <nav class="sticky-top navbar navbar-expand-lg d-flex custom-navbar">
         <img class="img-fluid" id="logo-collapse" src="http://localhost/TR/Logo.PNG">
+=======
+    <!-- NAVBAR -->
+    <nav class="sticky-top navbar navbar-expand-lg d-flex custom-navbar">
+        <img class="img-fluid" id="logo-collapse" src="./Logo.PNG">
+>>>>>>> ae1354af515dee7c5bc7e6d83f79753924240462
         <div class="d-flex justify-content-center">
             <ul class="navbar-nav">
                 <?php
                     if($login){
                 ?>
                 <li class="nav-item login-collapse">
+<<<<<<< HEAD
                     <a class="btn btn-custom" href="http://localhost/TR/logout.php">Logout</a>
                 </li>
                 <?php
@@ -91,10 +70,17 @@ $result = $conn->query($sql);
                     aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <img src="http://localhost/TR/navbar-toggler.png" width="30px">
                 </button>
+=======
+                    <a class="btn btn-custom" href="./login.html">Login Member</a>
+>>>>>>> ae1354af515dee7c5bc7e6d83f79753924240462
                 </li>
             </ul>
+            <button class="navbar-toggler" id="toggler" data-toggle="collapse" data-target="#navbarNav">
+                <img src="./navbar-toggler.png" width="30px">
+            </button>
         </div>
         <div class="collapse navbar-collapse" id="navbarNav">
+<<<<<<< HEAD
             <img class="img-fluid" id="logo" src="http://localhost/TR/Logo.PNG">
             <ul class="navbar-nav">
                 <li class="nav-item pr-4"><a class="nav-link" href="http://localhost/TR/Home.php">Home</a></li>
@@ -152,6 +138,24 @@ $result = $conn->query($sql);
                 ?>
             </ul>
             <img src="http://localhost/TR/halal.PNG" id="halal">
+=======
+            <img class="img-fluid" id="logo" src="./Logo.PNG">
+            <ul class="navbar-nav">
+                <li class="nav-item pr-4"><a class="nav-link" href="./Home.html">Home</a></li>
+                <li class="nav-item pr-4"><a class="nav-link" href="./AboutUs.html">About Us</a></li>
+                <li class="nav-item dropdown pr-4">
+                    <a class="nav-link" href="./Product.html">Product</a>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item" href="./Brownies.php">Brownies</a>
+                        <a class="dropdown-item" href="./Cake.php">Cake</a>
+                        <a class="dropdown-item" href="./Dessert.php">Dessert</a>
+                        <a class="dropdown-item" href="./Pastry.php">Pastry</a>
+                        <a class="dropdown-item" href="./Pizza.php">Pizza</a>
+                    </div>
+                </li>
+                <li class="nav-item pr-4"><a class="nav-link" href="./Hotline.html">Hotline</a></li>
+            </ul>
+>>>>>>> ae1354af515dee7c5bc7e6d83f79753924240462
         </div>
     </nav>
     <!-- Content Section -->
@@ -164,10 +168,8 @@ $result = $conn->query($sql);
                         <div class="col-lg-4 mb-4 d-flex justify-content-center">
                             <div class="text-center">
                                 <p class="text-black"><?php echo htmlspecialchars($row['nama_menu']); ?></p>
-                                <!-- Menampilkan gambar dari database -->
-                                <img src="<?php echo htmlspecialchars($row['gambar']); ?>" alt="<?php echo htmlspecialchars($row['nama_menu']); ?>" class="img-fluid rounded product-img" style="height: 200px; width: 100%; object-fit: cover; margin-bottom: 15px;">
+                                <img src="<?php echo htmlspecialchars($row['gambar']); ?>" alt="<?php echo htmlspecialchars($row['nama_menu']); ?>" class="img-fluid rounded product-img" style="height: 200px; object-fit: cover;">
                                 <p class="text-black">Rp <?php echo number_format($row['harga_menu'], 0, ',', '.'); ?></p>
-                                <p class="text-muted">Persediaan: <?php echo $row['persediaan']; ?></p>
                             </div>
                         </div>
                     <?php endwhile; ?>
@@ -182,8 +184,9 @@ $result = $conn->query($sql);
     <!-- Footer -->
     <footer class="custom-footer d-flex justify-content-center flex-column">
         <h1 class="text-center mt-4">Contact Us</h1>
-        <div class="d-flex align-items-center justify-content-center div-2">
+        <div class="d-flex align-items-center justify-content-center">
             <div class="d-flex align-items-center cabang">
+<<<<<<< HEAD
                 <img src="http://localhost/TR//maps.webp">
                 <div class="d-flex flex-column">
                     <h6>Ambarawa</h6>
@@ -216,16 +219,25 @@ $result = $conn->query($sql);
                     <h6>Ambarawa</h6>
                     <h6>(Kartini)</h6>
                 </div>
+=======
+                <img src="./maps.webp">
+                <h6>Ambarawa (Sudirman)</h6>
+            </div>
+            <div class="d-flex align-items-center cabang">
+                <img src="./maps.webp">
+                <h6>Ambarawa (Kartini)</h6>
+>>>>>>> ae1354af515dee7c5bc7e6d83f79753924240462
             </div>
         </div>
-        <div class="d-flex justify-content-center align-items-center div-3">
-            <div class="box"></div>
-            <h6>2024 Valesca Bakery All Right Resereved</h6>
-            <div class="box"></div>
+        <div class="text-center py-3">
+            <h6>&copy; 2024 Valesca Bakery All Rights Reserved</h6>
         </div>
     </footer>
+<<<<<<< HEAD
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+=======
+>>>>>>> ae1354af515dee7c5bc7e6d83f79753924240462
 </body>
 
 </html>

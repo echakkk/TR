@@ -46,16 +46,13 @@ $result = $conn->query($sql);
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@100..900&display=swap" rel="stylesheet">
-
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@300..900&display=swap" rel="stylesheet">
-
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@300..900&family=Paytone+One&display=swap"
         rel="stylesheet">
-
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -91,7 +88,6 @@ $result = $conn->query($sql);
                     aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <img src="http://localhost/TR/navbar-toggler.png" width="30px">
                 </button>
-                </li>
             </ul>
         </div>
         <div class="collapse navbar-collapse" id="navbarNav">
@@ -100,9 +96,13 @@ $result = $conn->query($sql);
                 <li class="nav-item pr-4"><a class="nav-link" href="http://localhost/TR/Home.php">Home</a></li>
                 <li class="nav-item pr-4"><a class="nav-link" href="http://localhost/TR/AboutUs.php">About Us</a></li>
                 <li class="nav-item dropdown pr-4">
+<<<<<<< HEAD
                     <a class="nav-link" href="http://localhost/TR/Product.php">
                         Product
                     </a>
+=======
+                    <a class="nav-link" href="http://localhost/TR/Product.html">Product</a>
+>>>>>>> ae1354af515dee7c5bc7e6d83f79753924240462
                     <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                         <a class="dropdown-item" href="http://localhost/TR/Produk/Brownies/Brownies.php">Brownies</a>
                         <a class="dropdown-item" href="http://localhost/TR/Produk/Cake/Cake.php">Cake</a>
@@ -119,17 +119,25 @@ $result = $conn->query($sql);
                     </div>
                 </li>
                 <li class="nav-item dropdown pr-4">
+<<<<<<< HEAD
                     <a class="nav-link" href="http://localhost/TR/Promo.php">
                         Info
                     </a>
+=======
+                    <a class="nav-link" href="/Promo.html">Info</a>
+>>>>>>> ae1354af515dee7c5bc7e6d83f79753924240462
                     <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                         <a class="dropdown-item" href="http://localhost/TR/Promo.php">Promo</a>
                     </div>
                 </li>
                 <li class="nav-item dropdown pr-4">
+<<<<<<< HEAD
                     <a class="nav-link" href="http://localhost/TR/Orders.php">
                         Order
                     </a>
+=======
+                    <a class="nav-link" href="/Orders.html">Order</a>
+>>>>>>> ae1354af515dee7c5bc7e6d83f79753924240462
                     <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                         <a class="dropdown-item" href="http://localhost/TR/Outlet.php">Outlet Valecia Bakery</a>
                     </div>
@@ -164,7 +172,6 @@ $result = $conn->query($sql);
                         <div class="col-lg-4 mb-4 d-flex justify-content-center">
                             <div class="text-center">
                                 <p class="text-black"><?php echo htmlspecialchars($row['nama_menu']); ?></p>
-                                <!-- Menampilkan gambar dari database -->
                                 <img src="<?php echo htmlspecialchars($row['gambar']); ?>" alt="<?php echo htmlspecialchars($row['nama_menu']); ?>" class="img-fluid rounded product-img" style="height: 200px; width: 100%; object-fit: cover; margin-bottom: 15px;">
                                 <p class="text-black">Rp <?php echo number_format($row['harga_menu'], 0, ',', '.'); ?></p>
                                 <p class="text-muted">Persediaan: <?php echo $row['persediaan']; ?></p>
@@ -177,8 +184,8 @@ $result = $conn->query($sql);
             </div>
         </div>
     </section>
-    <?php $conn->close(); ?>
 
+<<<<<<< HEAD
     <!-- Footer -->
     <footer class="custom-footer d-flex justify-content-center flex-column">
         <h1 class="text-center mt-4">Contact Us</h1>
@@ -226,6 +233,16 @@ $result = $conn->query($sql);
     </footer>
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+=======
+    <footer class="text-center py-3">
+        <p>&copy; 2024 Valesca Cake & Bakery</p>
+    </footer>
+>>>>>>> ae1354af515dee7c5bc7e6d83f79753924240462
 </body>
 
 </html>
+
+<?php
+// Menutup koneksi
+$conn->close();
+?>

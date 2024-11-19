@@ -31,37 +31,10 @@ $result = $conn->query($sql);
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Valesca Cake & Bakery</title>
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
-        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <link rel="stylesheet" href="http://localhost/TR/valescaa.css">
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
-        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
-        crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
-        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
-        crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
-        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
-        crossorigin="anonymous"></script>
-    <!-- FONT-->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@100..900&display=swap" rel="stylesheet">
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@300..900&display=swap" rel="stylesheet">
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@300..900&family=Paytone+One&display=swap"
-        rel="stylesheet">
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@300..900&family=Markazi+Text:wght@400..700&family=Paytone+One&display=swap"
-        rel="stylesheet">
+    <link rel="stylesheet" href="/valescaa.css">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"></script>
 </head>
 
 <body>
@@ -92,12 +65,12 @@ $result = $conn->query($sql);
                     aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <img src="http://localhost/TR/navbar-toggler.png" width="30px">
                 </button>
-                </li>
             </ul>
         </div>
         <div class="collapse navbar-collapse" id="navbarNav">
             <img class="img-fluid" id="logo" src="http://localhost/TR/Logo.PNG">
             <ul class="navbar-nav">
+<<<<<<< HEAD
                 <li class="nav-item pr-4"><a class="nav-link" href="http://localhost/TR/Home.php">Home</a></li>
                 <li class="nav-item pr-4"><a class="nav-link" href="http://localhost/TR/AboutUs.php">About Us</a></li>
                 <li class="nav-item dropdown pr-4">
@@ -151,6 +124,41 @@ $result = $conn->query($sql);
                     <?php
                 }
                 ?>
+=======
+                <li class="nav-item pr-4"><a class="nav-link" href="/Home.html">Home</a></li>
+                <li class="nav-item pr-4"><a class="nav-link" href="/AboutUs.html">About Us</a></li>
+                <li class="nav-item dropdown pr-4">
+                    <a class="nav-link" href="/Product.html">Product</a>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item" href="/Brownies.php">Brownies</a>
+                        <a class="dropdown-item" href="/Cake.php">Cake</a>
+                        <a class="dropdown-item" href="/Dessert.php">Dessert</a>
+                        <a class="dropdown-item" href="/Pastry.php">Pastry</a>
+                        <a class="dropdown-item" href="/Pizza.php">Pizza</a>
+                        <a class="dropdown-item" href="/RotiManis.php">Roti Manis</a>
+                        <a class="dropdown-item" href="/RotiManisBox.php">Roti Manis Box</a>
+                        <a class="dropdown-item" href="/Snack.php">Snack</a>
+                        <a class="dropdown-item" href="/Tart.php">Tart</a>
+                        <a class="dropdown-item" href="/Tawar.php">Tawar</a>
+                    </div>
+                </li>
+                <li class="nav-item dropdown pr-4">
+                    <a class="nav-link" href="/Promo.html">Info</a>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item" href="/Promo.html">Promo</a>
+                    </div>
+                </li>
+                <li class="nav-item dropdown pr-4">
+                    <a class="nav-link" href="/Orders.html">Order</a>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item" href="/Outlet.html">Outlet Valecia Bakery</a>
+                    </div>
+                </li>
+                <li class="nav-item pr-4"><a class="nav-link" href="/hotline.html">Hotline</a></li>
+                <li class="nav-item login" id="login">
+                    <a class="btn btn-custom" href="/login.html">Login Member</a>
+                </li>
+>>>>>>> ae1354af515dee7c5bc7e6d83f79753924240462
             </ul>
             <img src="http://localhost/TR/halal.PNG" id="halal">
         </div>
@@ -166,7 +174,6 @@ $result = $conn->query($sql);
                         <div class="col-lg-4 mb-4 d-flex justify-content-center">
                             <div class="text-center">
                                 <p class="text-black"><?php echo htmlspecialchars($row['nama_menu']); ?></p>
-                                <!-- Menampilkan gambar dari database -->
                                 <img src="<?php echo htmlspecialchars($row['gambar']); ?>" alt="<?php echo htmlspecialchars($row['nama_menu']); ?>" class="img-fluid rounded product-img" style="height: 200px; width: 100%; object-fit: cover; margin-bottom: 15px;">
                                 <p class="text-black">Rp <?php echo number_format($row['harga_menu'], 0, ',', '.'); ?></p>
                                 <p class="text-muted">Persediaan: <?php echo $row['persediaan']; ?></p>
@@ -222,11 +229,14 @@ $result = $conn->query($sql);
         </div>
         <div class="d-flex justify-content-center align-items-center div-3">
             <div class="box"></div>
-            <h6>2024 Valesca Bakery All Right Resereved</h6>
+            <h6>2024 Valesca Bakery All Right Reserved</h6>
             <div class="box"></div>
         </div>
     </footer>
+<<<<<<< HEAD
     <!-- Bootstrap JS -->
+=======
+>>>>>>> ae1354af515dee7c5bc7e6d83f79753924240462
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 

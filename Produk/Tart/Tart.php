@@ -21,7 +21,6 @@ $login = isset($_SESSION['username']); // Periksa apakah pengguna sudah login
 $sql = "SELECT * FROM menu9";
 $result = $conn->query($sql);
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -46,16 +45,13 @@ $result = $conn->query($sql);
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@100..900&display=swap" rel="stylesheet">
-
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@300..900&display=swap" rel="stylesheet">
-
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@300..900&family=Paytone+One&display=swap"
         rel="stylesheet">
-
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -91,7 +87,6 @@ $result = $conn->query($sql);
                     aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <img src="http://localhost/TR/navbar-toggler.png" width="30px">
                 </button>
-                </li>
             </ul>
         </div>
         <div class="collapse navbar-collapse" id="navbarNav">
@@ -100,9 +95,13 @@ $result = $conn->query($sql);
                 <li class="nav-item pr-4"><a class="nav-link" href="http://localhost/TR/Home.php">Home</a></li>
                 <li class="nav-item pr-4"><a class="nav-link" href="http://localhost/TR/AboutUs.php">About Us</a></li>
                 <li class="nav-item dropdown pr-4">
+<<<<<<< HEAD
                     <a class="nav-link" href="http://localhost/TR/Product.php">
                         Product
                     </a>
+=======
+                    <a class="nav-link" href="http://localhost/TR/Product.html">Product</a>
+>>>>>>> ae1354af515dee7c5bc7e6d83f79753924240462
                     <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                         <a class="dropdown-item" href="http://localhost/TR/Produk/Brownies/Brownies.php">Brownies</a>
                         <a class="dropdown-item" href="http://localhost/TR/Produk/Cake/Cake.php">Cake</a>
@@ -114,22 +113,30 @@ $result = $conn->query($sql);
                         <a class="dropdown-item" href="http://localhost/TR/Produk/RotiManisBox/RotiManisBox.php">Roti
                             Manis Box</a>
                         <a class="dropdown-item" href="http://localhost/TR/Produk/Snack/Snack.php">Snack</a>
-                        <a class="dropdown-item" href="http://localhost/TR/Produk/Tart/Tart.php">Tar</a>
+                        <a class="dropdown-item" href="http://localhost/TR/Produk/Tart/Tart.php">Tart</a>
                         <a class="dropdown-item" href="http://localhost/TR/Produk/Tawar/Tawar.php">Tawar</a>
                     </div>
                 </li>
                 <li class="nav-item dropdown pr-4">
+<<<<<<< HEAD
                     <a class="nav-link" href="http://localhost/TR/Promo.php">
                         Info
                     </a>
+=======
+                    <a class="nav-link" href="/Promo.html">Info</a>
+>>>>>>> ae1354af515dee7c5bc7e6d83f79753924240462
                     <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                         <a class="dropdown-item" href="http://localhost/TR/Promo.php">Promo</a>
                     </div>
                 </li>
                 <li class="nav-item dropdown pr-4">
+<<<<<<< HEAD
                     <a class="nav-link" href="http://localhost/TR/Orders.php">
                         Order
                     </a>
+=======
+                    <a class="nav-link" href="/Orders.html">Order</a>
+>>>>>>> ae1354af515dee7c5bc7e6d83f79753924240462
                     <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                         <a class="dropdown-item" href="http://localhost/TR/Outlet.php">Outlet Valecia Bakery</a>
                     </div>
@@ -178,8 +185,8 @@ $result = $conn->query($sql);
             </div>
         </div>
     </section>
-    <?php $conn->close(); ?>
 
+<<<<<<< HEAD
     <!-- Footer -->
     <footer class="custom-footer d-flex justify-content-center flex-column">
         <h1 class="text-center mt-4">Contact Us</h1>
@@ -223,11 +230,37 @@ $result = $conn->query($sql);
             <div class="box"></div>
             <h6>2024 Valesca Bakery All Right Resereved</h6>
             <div class="box"></div>
+=======
+    <!-- FOOTER -->
+    <footer class="bg-dark text-white pt-5 pb-3">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 col-md-6">
+                    <h5>Valesca Cake & Bakery</h5>
+                    <p>Alamat: Jalan Raya No. 123, Jakarta</p>
+                    <p>Telepon: +62 812 3456 7890</p>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <h5>Info</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="/Promo.html" class="text-white">Promo</a></li>
+                        <li><a href="/hotline.html" class="text-white">Hotline</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <h5>Follow Us</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="https://www.instagram.com" class="text-white">Instagram</a></li>
+                        <li><a href="https://www.facebook.com" class="text-white">Facebook</a></li>
+                    </ul>
+                </div>
+            </div>
+>>>>>>> ae1354af515dee7c5bc7e6d83f79753924240462
         </div>
     </footer>
 
-    <!-- Bootstrap JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
-
 </html>

@@ -4,7 +4,7 @@ $host = 'localhost';
 $username = 'root';
 $password = '';
 $dbname = 'db_valesca';
-$port = 3308;
+$port = 3306;
 
 //Create conncetion to MySQL
 $conn = new mysqli ($host, $username, $password, $dbname, $port);

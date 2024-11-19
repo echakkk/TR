@@ -20,7 +20,6 @@ $login = isset($_SESSION['username']); // Periksa apakah pengguna sudah login
 $sql = "SELECT * FROM menu2";
 $result = $conn->query($sql);
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -29,48 +28,31 @@ $result = $conn->query($sql);
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Valesca Cake & Bakery</title>
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
-        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="http://localhost/TR/valescaa.css">
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
-        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
-        crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
-        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
-        crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
-        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
-        crossorigin="anonymous"></script>
-    <!-- FONT-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@100..900&display=swap" rel="stylesheet">
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@300..900&display=swap" rel="stylesheet">
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@300..900&family=Paytone+One&display=swap"
-        rel="stylesheet">
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@300..900&family=Markazi+Text:wght@400..700&family=Paytone+One&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@100..900&family=Frank+Ruhl+Libre:wght@300..900&display=swap" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
+<<<<<<< HEAD
 <nav class="sticky-top navbar navbar-expand-lg d-flex custom-navbar">
         <img class="img-fluid" id="logo-collapse" src="http://localhost/TR/Logo.PNG">
+=======
+    <!-- NAVBAR -->
+    <nav class="sticky-top navbar navbar-expand-lg custom-navbar">
+        <img class="img-fluid" id="logo-collapse" src="./Logo.PNG">
+>>>>>>> ae1354af515dee7c5bc7e6d83f79753924240462
         <div class="d-flex justify-content-center">
             <ul class="navbar-nav">
                 <?php
                     if($login){
                 ?>
                 <li class="nav-item login-collapse">
+<<<<<<< HEAD
                     <a class="btn btn-custom" href="http://localhost/TR/logout.php">Logout</a>
                 </li>
                 <?php
@@ -89,10 +71,17 @@ $result = $conn->query($sql);
                     aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <img src="http://localhost/TR/navbar-toggler.png" width="30px">
                 </button>
+=======
+                    <a class="btn btn-custom" href="./login.html">Login Member</a>
+>>>>>>> ae1354af515dee7c5bc7e6d83f79753924240462
                 </li>
             </ul>
+            <button class="navbar-toggler" id="toggler" data-toggle="collapse" data-target="#navbarNav">
+                <img src="./navbar-toggler.png" width="30px">
+            </button>
         </div>
         <div class="collapse navbar-collapse" id="navbarNav">
+<<<<<<< HEAD
             <img class="img-fluid" id="logo" src="http://localhost/TR/Logo.PNG">
             <ul class="navbar-nav">
                 <li class="nav-item pr-4"><a class="nav-link" href="http://localhost/TR/Home.php">Home</a></li>
@@ -150,22 +139,38 @@ $result = $conn->query($sql);
                 ?>
             </ul>
             <img src="http://localhost/TR/halal.PNG" id="halal">
+=======
+            <img class="img-fluid" id="logo" src="./Logo.PNG">
+            <ul class="navbar-nav">
+                <li class="nav-item"><a class="nav-link" href="http://localhost/TR/Home.html">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="http://localhost/TR/AboutUs.html">About Us</a></li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link" href="http://localhost/TR/Product.html">Product</a>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item" href="http://localhost/TR/Produk/Brownies/Brownies.php">Brownies</a>
+                        <a class="dropdown-item" href="http://localhost/TR/Produk/Cake/Cake.php">Cake</a>
+                        <a class="dropdown-item" href="http://localhost/TR/Produk/Dessert/Dessert.php">Dessert</a>
+                    </div>
+                </li>
+                <li class="nav-item"><a class="nav-link" href="/Orders.html">Order</a></li>
+                <li class="nav-item login"><a class="btn btn-custom" href="/login.html">Login Member</a></li>
+            </ul>
+>>>>>>> ae1354af515dee7c5bc7e6d83f79753924240462
         </div>
     </nav>
 
     <!-- Content Section -->
     <section class="products py-5">
         <div class="container">
-            <h2 class="text-center mb-4">Semua Produk</h2>
+            <h2 class="text-center mb-4">Cake</h2>
             <div class="d-flex justify-content-center flex-wrap">
                 <?php if ($result && $result->num_rows > 0) : ?>
                     <?php while ($row = $result->fetch_assoc()) : ?>
                         <div class="col-lg-4 mb-4 d-flex justify-content-center">
                             <div class="text-center">
-                                <p class="text-black"><?php echo htmlspecialchars($row['nama_menu']); ?></p>
-                                <!-- Menampilkan gambar dari database -->
-                                <img src="<?php echo htmlspecialchars($row['gambar']); ?>" alt="<?php echo htmlspecialchars($row['nama_menu']); ?>" class="img-fluid rounded product-img" style="height: 200px; width: 100%; object-fit: cover; margin-bottom: 15px;">
-                                <p class="text-black">Rp <?php echo number_format($row['harga_menu'], 0, ',', '.'); ?></p>
+                                <p><?php echo htmlspecialchars($row['nama_menu']); ?></p>
+                                <img src="<?php echo htmlspecialchars($row['gambar']); ?>" alt="<?php echo htmlspecialchars($row['nama_menu']); ?>" class="img-fluid rounded" style="height: 200px; object-fit: cover;">
+                                <p>Rp <?php echo number_format($row['harga_menu'], 0, ',', '.'); ?></p>
                                 <p class="text-muted">Persediaan: <?php echo $row['persediaan']; ?></p>
                             </div>
                         </div>
@@ -179,6 +184,7 @@ $result = $conn->query($sql);
     <?php $conn->close(); ?>
 
     <!-- Footer -->
+<<<<<<< HEAD
     <footer class="custom-footer d-flex justify-content-center flex-column">
         <h1 class="text-center mt-4">Contact Us</h1>
         <div class="d-flex align-items-center justify-content-center div-2">
@@ -221,11 +227,17 @@ $result = $conn->query($sql);
             <div class="box"></div>
             <h6>2024 Valesca Bakery All Right Resereved</h6>
             <div class="box"></div>
+=======
+    <footer class="custom-footer">
+        <h1>Contact Us</h1>
+        <div class="d-flex justify-content-around">
+            <div>Ambarawa Sudirman</div>
+            <div>@valescabakery</div>
+            <div>Ambarawa Kartini</div>
+>>>>>>> ae1354af515dee7c5bc7e6d83f79753924240462
         </div>
+        <p>2024 Valesca Bakery All Right Reserved</p>
     </footer>
-
-    <!-- Bootstrap JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 
 </html>
