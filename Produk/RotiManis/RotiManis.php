@@ -1,13 +1,13 @@
 <?php
 // Konfigurasi koneksi ke database
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "db_valesca";
+$host = 'localhost';
+$username = 'root';
+$password = '';
+$dbname = 'db_valesca';
 $port = 3308; // Port MySQL Anda
 
 // Membuat koneksi
-$conn = new mysqli($servername, $username, $password, $dbname, $port);
+$conn = new mysqli($host, $username, $password, $dbname, $port);
 
 // Cek koneksi
 if ($conn->connect_error) {
@@ -16,7 +16,6 @@ if ($conn->connect_error) {
 
 session_start();
 $login = isset($_SESSION['username']); // Periksa apakah pengguna sudah login
-
 
 // Query untuk mengambil semua data dari tabel 'menu'
 $sql = "SELECT * FROM menu6";
@@ -30,17 +29,17 @@ $result = $conn->query($sql);
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Valesca Cake & Bakery</title>
-    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="/valescaa.css">
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"></script>
+    <link href="/Logo.PNG" rel="shortcut icon">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="http://localhost/TR/valescaa.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@100..900&display=swap" rel="stylesheet">
 </head>
 
 <body>
     <!-- NAVBAR -->
     <nav class="sticky-top navbar navbar-expand-lg d-flex custom-navbar">
-        <img class="img-fluid" id="logo-collapse" src="http://localhost/TR/Logo.PNG">
+        <img class="img-fluid" id="logo-collapse" src="/Logo.PNG">
         <div class="d-flex justify-content-center">
             <ul class="navbar-nav">
                 <?php
@@ -70,7 +69,6 @@ $result = $conn->query($sql);
         <div class="collapse navbar-collapse" id="navbarNav">
             <img class="img-fluid" id="logo" src="http://localhost/TR/Logo.PNG">
             <ul class="navbar-nav">
-<<<<<<< HEAD
                 <li class="nav-item pr-4"><a class="nav-link" href="http://localhost/TR/Home.php">Home</a></li>
                 <li class="nav-item pr-4"><a class="nav-link" href="http://localhost/TR/AboutUs.php">About Us</a></li>
                 <li class="nav-item dropdown pr-4">
@@ -124,41 +122,6 @@ $result = $conn->query($sql);
                     <?php
                 }
                 ?>
-=======
-                <li class="nav-item pr-4"><a class="nav-link" href="/Home.html">Home</a></li>
-                <li class="nav-item pr-4"><a class="nav-link" href="/AboutUs.html">About Us</a></li>
-                <li class="nav-item dropdown pr-4">
-                    <a class="nav-link" href="/Product.html">Product</a>
-                    <div class="dropdown-menu">
-                        <a class="dropdown-item" href="/Brownies.php">Brownies</a>
-                        <a class="dropdown-item" href="/Cake.php">Cake</a>
-                        <a class="dropdown-item" href="/Dessert.php">Dessert</a>
-                        <a class="dropdown-item" href="/Pastry.php">Pastry</a>
-                        <a class="dropdown-item" href="/Pizza.php">Pizza</a>
-                        <a class="dropdown-item" href="/RotiManis.php">Roti Manis</a>
-                        <a class="dropdown-item" href="/RotiManisBox.php">Roti Manis Box</a>
-                        <a class="dropdown-item" href="/Snack.php">Snack</a>
-                        <a class="dropdown-item" href="/Tart.php">Tart</a>
-                        <a class="dropdown-item" href="/Tawar.php">Tawar</a>
-                    </div>
-                </li>
-                <li class="nav-item dropdown pr-4">
-                    <a class="nav-link" href="/Promo.html">Info</a>
-                    <div class="dropdown-menu">
-                        <a class="dropdown-item" href="/Promo.html">Promo</a>
-                    </div>
-                </li>
-                <li class="nav-item dropdown pr-4">
-                    <a class="nav-link" href="/Orders.html">Order</a>
-                    <div class="dropdown-menu">
-                        <a class="dropdown-item" href="/Outlet.html">Outlet Valecia Bakery</a>
-                    </div>
-                </li>
-                <li class="nav-item pr-4"><a class="nav-link" href="/hotline.html">Hotline</a></li>
-                <li class="nav-item login" id="login">
-                    <a class="btn btn-custom" href="/login.html">Login Member</a>
-                </li>
->>>>>>> ae1354af515dee7c5bc7e6d83f79753924240462
             </ul>
             <img src="http://localhost/TR/halal.PNG" id="halal">
         </div>
@@ -167,14 +130,14 @@ $result = $conn->query($sql);
     <!-- Content Section -->
     <section class="products py-5">
         <div class="container">
-            <h2 class="text-center mb-4">Semua Produk</h2>
+            <h2 class="text-center mb-4">Roti Manis</h2>
             <div class="d-flex justify-content-center flex-wrap">
                 <?php if ($result && $result->num_rows > 0) : ?>
                     <?php while ($row = $result->fetch_assoc()) : ?>
                         <div class="col-lg-4 mb-4 d-flex justify-content-center">
                             <div class="text-center">
                                 <p class="text-black"><?php echo htmlspecialchars($row['nama_menu']); ?></p>
-                                <img src="<?php echo htmlspecialchars($row['gambar']); ?>" alt="<?php echo htmlspecialchars($row['nama_menu']); ?>" class="img-fluid rounded product-img" style="height: 200px; width: 100%; object-fit: cover; margin-bottom: 15px;">
+                                <img src="<?php echo htmlspecialchars($row['gambar']); ?>" alt="<?php echo htmlspecialchars($row['nama_menu']); ?>" class="img-fluid rounded product-img" style="height: 200px; object-fit: cover; margin-bottom: 15px;">
                                 <p class="text-black">Rp <?php echo number_format($row['harga_menu'], 0, ',', '.'); ?></p>
                                 <p class="text-muted">Persediaan: <?php echo $row['persediaan']; ?></p>
                             </div>
@@ -229,14 +192,12 @@ $result = $conn->query($sql);
         </div>
         <div class="d-flex justify-content-center align-items-center div-3">
             <div class="box"></div>
-            <h6>2024 Valesca Bakery All Right Reserved</h6>
+            <h6>2024 Valesca Bakery All Right Resereved</h6>
             <div class="box"></div>
         </div>
     </footer>
-<<<<<<< HEAD
+
     <!-- Bootstrap JS -->
-=======
->>>>>>> ae1354af515dee7c5bc7e6d83f79753924240462
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 

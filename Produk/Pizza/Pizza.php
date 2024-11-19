@@ -158,7 +158,7 @@ $result = $conn->query($sql);
     <!-- Content Section -->
     <section class="products py-5">
         <div class="container">
-            <h2 class="text-center mb-4">Semua Produk</h2>
+            <h2 class="text-center mb-4">Pizza</h2>
             <div class="d-flex justify-content-center flex-wrap">
                 <?php if ($result && $result->num_rows > 0) : ?>
                     <?php while ($row = $result->fetch_assoc()) : ?>

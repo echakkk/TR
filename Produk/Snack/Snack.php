@@ -96,13 +96,9 @@ $result = $conn->query($sql);
                 <li class="nav-item pr-4"><a class="nav-link" href="http://localhost/TR/Home.php">Home</a></li>
                 <li class="nav-item pr-4"><a class="nav-link" href="http://localhost/TR/AboutUs.php">About Us</a></li>
                 <li class="nav-item dropdown pr-4">
-<<<<<<< HEAD
                     <a class="nav-link" href="http://localhost/TR/Product.php">
                         Product
                     </a>
-=======
-                    <a class="nav-link" href="http://localhost/TR/Product.html">Product</a>
->>>>>>> ae1354af515dee7c5bc7e6d83f79753924240462
                     <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                         <a class="dropdown-item" href="http://localhost/TR/Produk/Brownies/Brownies.php">Brownies</a>
                         <a class="dropdown-item" href="http://localhost/TR/Produk/Cake/Cake.php">Cake</a>
@@ -119,25 +115,17 @@ $result = $conn->query($sql);
                     </div>
                 </li>
                 <li class="nav-item dropdown pr-4">
-<<<<<<< HEAD
                     <a class="nav-link" href="http://localhost/TR/Promo.php">
                         Info
                     </a>
-=======
-                    <a class="nav-link" href="/Promo.html">Info</a>
->>>>>>> ae1354af515dee7c5bc7e6d83f79753924240462
                     <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                         <a class="dropdown-item" href="http://localhost/TR/Promo.php">Promo</a>
                     </div>
                 </li>
                 <li class="nav-item dropdown pr-4">
-<<<<<<< HEAD
                     <a class="nav-link" href="http://localhost/TR/Orders.php">
                         Order
                     </a>
-=======
-                    <a class="nav-link" href="/Orders.html">Order</a>
->>>>>>> ae1354af515dee7c5bc7e6d83f79753924240462
                     <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                         <a class="dropdown-item" href="http://localhost/TR/Outlet.php">Outlet Valecia Bakery</a>
                     </div>
@@ -165,7 +153,7 @@ $result = $conn->query($sql);
     <!-- Content Section -->
     <section class="products py-5">
         <div class="container">
-            <h2 class="text-center mb-4">Semua Produk</h2>
+            <h2 class="text-center mb-4">Snack</h2>
             <div class="d-flex justify-content-center flex-wrap">
                 <?php if ($result && $result->num_rows > 0) : ?>
                     <?php while ($row = $result->fetch_assoc()) : ?>
@@ -185,7 +173,6 @@ $result = $conn->query($sql);
         </div>
     </section>
 
-<<<<<<< HEAD
     <!-- Footer -->
     <footer class="custom-footer d-flex justify-content-center flex-column">
         <h1 class="text-center mt-4">Contact Us</h1>
@@ -233,11 +220,6 @@ $result = $conn->query($sql);
     </footer>
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
-=======
-    <footer class="text-center py-3">
-        <p>&copy; 2024 Valesca Cake & Bakery</p>
-    </footer>
->>>>>>> ae1354af515dee7c5bc7e6d83f79753924240462
 </body>
 
 </html>

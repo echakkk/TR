@@ -14,14 +14,10 @@ if ($conn->connect_error) {
     die("Koneksi gagal: " . $conn->connect_error);
 }
 
-<<<<<<< HEAD
 session_start();
 $login = isset($_SESSION['username']); // Periksa apakah pengguna sudah login
 
 // Query untuk mengambil semua data dari tabel 'menu'
-=======
-// Query untuk mengambil semua data dari tabel 'menu7'
->>>>>>> ae1354af515dee7c5bc7e6d83f79753924240462
 $sql = "SELECT * FROM menu7";
 $result = $conn->query($sql);
 ?>
@@ -64,14 +60,9 @@ $result = $conn->query($sql);
                 
             </ul>
             <ul class="navbar-nav">
-<<<<<<< HEAD
                 <button class="navbar-toggler" id="toggler" data-toggle="collapse" data-target="#navbarNav"
                     aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <img src="http://localhost/TR/navbar-toggler.png" width="30px">
-=======
-                <button class="navbar-toggler" id="toggler" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                    <img src="/navbar-toggler.png" width="30px">
->>>>>>> ae1354af515dee7c5bc7e6d83f79753924240462
                 </button>
             </ul>
         </div>
@@ -79,7 +70,6 @@ $result = $conn->query($sql);
             <img class="img-fluid" id="logo" src="http://localhost/TR/Logo.PNG">
             <ul class="navbar-nav">
                 <li class="nav-item pr-4"><a class="nav-link" href="http://localhost/TR/Home.php">Home</a></li>
-<<<<<<< HEAD
                 <li class="nav-item pr-4"><a class="nav-link" href="http://localhost/TR/AboutUs.php">About Us</a></li>
                 <li class="nav-item dropdown pr-4">
                     <a class="nav-link" href="http://localhost/TR/Product.php">
@@ -134,32 +124,13 @@ $result = $conn->query($sql);
                 ?>
             </ul>
             <img src="http://localhost/TR/halal.PNG" id="halal">
-=======
-                <li class="nav-item pr-4"><a class="nav-link" href="http://localhost/TR/AboutUs.html">About Us</a></li>
-                <li class="nav-item dropdown pr-4">
-                    <a class="nav-link" href="http://localhost/TR/Product.html">Product</a>
-                    <div class="dropdown-menu">
-                        <a class="dropdown-item" href="http://localhost/TR/Produk/Brownies/Brownies.php">Brownies</a>
-                        <a class="dropdown-item" href="http://localhost/TR/Produk/Cake/Cake.php">Cake</a>
-                        <a class="dropdown-item" href="http://localhost/TR/Produk/RotiManis/RotiManis.php">Roti Manis</a>
-                    </div>
-                </li>
-                <li class="nav-item dropdown pr-4">
-                    <a class="nav-link" href="/Promo.html">Info</a>
-                    <div class="dropdown-menu">
-                        <a class="dropdown-item" href="/Promo.html">Promo</a>
-                    </div>
-                </li>
-                <li class="nav-item pr-4"><a class="nav-link" href="/hotline.html">Hotline</a></li>
-            </ul>
->>>>>>> ae1354af515dee7c5bc7e6d83f79753924240462
         </div>
     </nav>
 
     <!-- Content Section -->
     <section class="products py-5">
         <div class="container">
-            <h2 class="text-center mb-4">Semua Produk</h2>
+            <h2 class="text-center mb-4">Roti Manis Box</h2>
             <div class="d-flex justify-content-center flex-wrap">
                 <?php if ($result && $result->num_rows > 0) : ?>
                     <?php while ($row = $result->fetch_assoc()) : ?>
@@ -179,7 +150,6 @@ $result = $conn->query($sql);
         </div>
     </section>
     <?php $conn->close(); ?>
-<<<<<<< HEAD
 
     <!-- Footer -->
     <footer class="custom-footer d-flex justify-content-center flex-column">
@@ -229,8 +199,6 @@ $result = $conn->query($sql);
 
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
-=======
->>>>>>> ae1354af515dee7c5bc7e6d83f79753924240462
 </body>
 
 </html>

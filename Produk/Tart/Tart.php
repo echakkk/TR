@@ -95,13 +95,9 @@ $result = $conn->query($sql);
                 <li class="nav-item pr-4"><a class="nav-link" href="http://localhost/TR/Home.php">Home</a></li>
                 <li class="nav-item pr-4"><a class="nav-link" href="http://localhost/TR/AboutUs.php">About Us</a></li>
                 <li class="nav-item dropdown pr-4">
-<<<<<<< HEAD
                     <a class="nav-link" href="http://localhost/TR/Product.php">
                         Product
                     </a>
-=======
-                    <a class="nav-link" href="http://localhost/TR/Product.html">Product</a>
->>>>>>> ae1354af515dee7c5bc7e6d83f79753924240462
                     <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                         <a class="dropdown-item" href="http://localhost/TR/Produk/Brownies/Brownies.php">Brownies</a>
                         <a class="dropdown-item" href="http://localhost/TR/Produk/Cake/Cake.php">Cake</a>
@@ -118,25 +114,17 @@ $result = $conn->query($sql);
                     </div>
                 </li>
                 <li class="nav-item dropdown pr-4">
-<<<<<<< HEAD
                     <a class="nav-link" href="http://localhost/TR/Promo.php">
                         Info
                     </a>
-=======
-                    <a class="nav-link" href="/Promo.html">Info</a>
->>>>>>> ae1354af515dee7c5bc7e6d83f79753924240462
                     <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                         <a class="dropdown-item" href="http://localhost/TR/Promo.php">Promo</a>
                     </div>
                 </li>
                 <li class="nav-item dropdown pr-4">
-<<<<<<< HEAD
                     <a class="nav-link" href="http://localhost/TR/Orders.php">
                         Order
                     </a>
-=======
-                    <a class="nav-link" href="/Orders.html">Order</a>
->>>>>>> ae1354af515dee7c5bc7e6d83f79753924240462
                     <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                         <a class="dropdown-item" href="http://localhost/TR/Outlet.php">Outlet Valecia Bakery</a>
                     </div>
@@ -165,7 +153,7 @@ $result = $conn->query($sql);
     <!-- Content Section -->
     <section class="products py-5">
         <div class="container">
-            <h2 class="text-center mb-4">Semua Produk</h2>
+            <h2 class="text-center mb-4">Tart</h2>
             <div class="d-flex justify-content-center flex-wrap">
                 <?php if ($result && $result->num_rows > 0) : ?>
                     <?php while ($row = $result->fetch_assoc()) : ?>
@@ -186,7 +174,6 @@ $result = $conn->query($sql);
         </div>
     </section>
 
-<<<<<<< HEAD
     <!-- Footer -->
     <footer class="custom-footer d-flex justify-content-center flex-column">
         <h1 class="text-center mt-4">Contact Us</h1>
@@ -230,32 +217,6 @@ $result = $conn->query($sql);
             <div class="box"></div>
             <h6>2024 Valesca Bakery All Right Resereved</h6>
             <div class="box"></div>
-=======
-    <!-- FOOTER -->
-    <footer class="bg-dark text-white pt-5 pb-3">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-4 col-md-6">
-                    <h5>Valesca Cake & Bakery</h5>
-                    <p>Alamat: Jalan Raya No. 123, Jakarta</p>
-                    <p>Telepon: +62 812 3456 7890</p>
-                </div>
-                <div class="col-lg-4 col-md-6">
-                    <h5>Info</h5>
-                    <ul class="list-unstyled">
-                        <li><a href="/Promo.html" class="text-white">Promo</a></li>
-                        <li><a href="/hotline.html" class="text-white">Hotline</a></li>
-                    </ul>
-                </div>
-                <div class="col-lg-4 col-md-6">
-                    <h5>Follow Us</h5>
-                    <ul class="list-unstyled">
-                        <li><a href="https://www.instagram.com" class="text-white">Instagram</a></li>
-                        <li><a href="https://www.facebook.com" class="text-white">Facebook</a></li>
-                    </ul>
-                </div>
-            </div>
->>>>>>> ae1354af515dee7c5bc7e6d83f79753924240462
         </div>
     </footer>
 

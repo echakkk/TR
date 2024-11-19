@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 <?php
 // Konfigurasi koneksi ke database
 $servername = "localhost";
@@ -23,8 +22,6 @@ $sql = "SELECT * FROM menu10";
 $result = $conn->query($sql);
 ?>
 
-=======
->>>>>>> ae1354af515dee7c5bc7e6d83f79753924240462
 <!DOCTYPE html>
 <html lang="en">
 
@@ -50,22 +47,14 @@ $result = $conn->query($sql);
 <body>
     <!-- NAVBAR -->
     <nav class="sticky-top navbar navbar-expand-lg d-flex custom-navbar">
-<<<<<<< HEAD
         <img class="img-fluid" id="logo-collapse" src="http://localhost/TR/Logo.PNG">
-=======
-        <img class="img-fluid" id="logo-collapse" src="./Logo.PNG">
->>>>>>> ae1354af515dee7c5bc7e6d83f79753924240462
         <div class="d-flex justify-content-center">
             <ul class="navbar-nav">
                 <?php
                     if($login){
                 ?>
                 <li class="nav-item login-collapse">
-<<<<<<< HEAD
                     <a class="btn btn-custom" href="http://localhost/TR/logout.php">Logout</a>
-=======
-                    <a class="btn btn-custom" href="./login.html">Login Member</a>
->>>>>>> ae1354af515dee7c5bc7e6d83f79753924240462
                 </li>
                 <?php
                     }else {
@@ -81,32 +70,20 @@ $result = $conn->query($sql);
             <ul class="navbar-nav">
                 <button class="navbar-toggler" id="toggler" data-toggle="collapse" data-target="#navbarNav"
                     aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-<<<<<<< HEAD
                     <img src="http://localhost/TR/navbar-toggler.png" width="30px">
-=======
-                    <img src="./navbar-toggler.png" width="30px">
->>>>>>> ae1354af515dee7c5bc7e6d83f79753924240462
                 </button>
                 </li>
             </ul>
         </div>
         <div class="collapse navbar-collapse" id="navbarNav">
-<<<<<<< HEAD
             <img class="img-fluid" id="logo" src="http://localhost/TR/Logo.PNG">
-=======
-            <img class="img-fluid" id="logo" src="./Logo.PNG">
->>>>>>> ae1354af515dee7c5bc7e6d83f79753924240462
             <ul class="navbar-nav">
                 <li class="nav-item pr-4"><a class="nav-link" href="http://localhost/TR/Home.php">Home</a></li>
                 <li class="nav-item pr-4"><a class="nav-link" href="http://localhost/TR/AboutUs.php">About Us</a></li>
                 <li class="nav-item dropdown pr-4">
-<<<<<<< HEAD
                     <a class="nav-link" href="http://localhost/TR/Product.php">
                         Product
                     </a>
-=======
-                    <a class="nav-link" href="http://localhost/TR/Product.html">Product</a>
->>>>>>> ae1354af515dee7c5bc7e6d83f79753924240462
                     <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                         <a class="dropdown-item" href="http://localhost/TR/Produk/Brownies/Brownies.php">Brownies</a>
                         <a class="dropdown-item" href="http://localhost/TR/Produk/Cake/Cake.php">Cake</a>
@@ -123,30 +100,21 @@ $result = $conn->query($sql);
                     </div>
                 </li>
                 <li class="nav-item dropdown pr-4">
-<<<<<<< HEAD
                     <a class="nav-link" href="http://localhost/TR/Promo.php">
                         Info
                     </a>
-=======
-                    <a class="nav-link" href="/Promo.html">Info</a>
->>>>>>> ae1354af515dee7c5bc7e6d83f79753924240462
                     <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                         <a class="dropdown-item" href="http://localhost/TR/Promo.php">Promo</a>
                     </div>
                 </li>
                 <li class="nav-item dropdown pr-4">
-<<<<<<< HEAD
                     <a class="nav-link" href="http://localhost/TR/Orders.php">
                         Order
                     </a>
-=======
-                    <a class="nav-link" href="/Orders.html">Order</a>
->>>>>>> ae1354af515dee7c5bc7e6d83f79753924240462
                     <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                         <a class="dropdown-item" href="http://localhost/TR/Outlet.php">Outlet Valecia Bakery</a>
                     </div>
                 </li>
-<<<<<<< HEAD
                 <li class="nav-item pr-4"><a class="nav-link" href="http://localhost/TR/hotline.php">Hotline</a></li>
                 <?php
                 if ($login) {
@@ -165,14 +133,6 @@ $result = $conn->query($sql);
                 ?>
             </ul>
             <img src="http://localhost/TR/halal.PNG" id="halal">
-=======
-                <li class="nav-item pr-4"><a class="nav-link" href="/hotline.html">Hotline</a></li>
-                <li class="nav-item login" id="login">
-                    <a class="btn btn-custom" href="/login.html">Login Member</a>
-                </li>
-            </ul>
-            <img src="./halal.PNG" id="halal">
->>>>>>> ae1354af515dee7c5bc7e6d83f79753924240462
         </div>
     </nav>
 
@@ -181,34 +141,32 @@ $result = $conn->query($sql);
         <div class="container">
             <h2 class="text-center mb-4">Tawar</h2>
             <div class="d-flex justify-content-center flex-wrap">
-                <?php
-                include 'TawarModel.php'; // Menyertakan model
-                foreach ($brownies as $brownie) {
-                ?>
-                    <div class="col-lg-4 mb-4 d-flex justify-content-center">
-                        <div class="text-center">
-                            <p class="text-black"><?php echo htmlspecialchars($brownie['title']); ?></p>
-                            <img src="<?php echo htmlspecialchars($brownie['link']); ?>" alt="<?php echo htmlspecialchars($brownie['title']); ?>" class="img-fluid rounded product-img" style="height: 200px; margin-bottom: 15px;">
-                            <p class="text-black">Rp <?php echo number_format($brownie['price'], 0, ',', '.'); ?></p>
+                <?php if ($result && $result->num_rows > 0) : ?>
+                    <?php while ($row = $result->fetch_assoc()) : ?>
+                        <div class="col-lg-4 mb-4 d-flex justify-content-center">
+                            <div class="text-center">
+                                <p class="text-black"><?php echo htmlspecialchars($row['nama_menu']); ?></p>
+                                <!-- Menampilkan gambar dari database -->
+                                <img src="<?php echo htmlspecialchars($row['gambar']); ?>" alt="<?php echo htmlspecialchars($row['nama_menu']); ?>" class="img-fluid rounded product-img" style="height: 200px; width: 100%; object-fit: cover; margin-bottom: 15px;">
+                                <p class="text-black">Rp <?php echo number_format($row['harga_menu'], 0, ',', '.'); ?></p>
+                                <p class="text-muted">Persediaan: <?php echo $row['persediaan']; ?></p>
+                            </div>
                         </div>
-                    </div>
-                <?php
-                }
-                ?>  
+                    <?php endwhile; ?>
+                <?php else : ?>
+                    <p class="text-center">Menu tidak tersedia</p>
+                <?php endif; ?>
             </div>
         </div>
     </section>
+    <?php $conn->close(); ?>
     
     <!-- Footer -->
     <footer class="custom-footer d-flex justify-content-center flex-column">
         <h1 class="text-center mt-4">Contact Us</h1>
         <div class="d-flex align-items-center justify-content-center div-2">
             <div class="d-flex align-items-center cabang">
-<<<<<<< HEAD
                 <img src="http://localhost/TR//maps.webp">
-=======
-                <img src="./maps.webp">
->>>>>>> ae1354af515dee7c5bc7e6d83f79753924240462
                 <div class="d-flex flex-column">
                     <h6>Ambarawa</h6>
                     <h6>(Sudirman)</h6>
@@ -217,7 +175,6 @@ $result = $conn->query($sql);
             <div class="d-flex align-items-center flex-column contact">
                 <div class="d-flex justify-content-start flex-column">
                     <div class="d-flex justify-content-start align-items-center py-1">
-<<<<<<< HEAD
                         <img src="http://localhost/TR//Facebook.webp" id="logo-fb">
                         <h5>@Valesca Valesca</h5>
                     </div>
@@ -231,31 +188,12 @@ $result = $conn->query($sql);
                     </div>
                     <div class="d-flex justify-content-start align-items-center py-1">
                         <img src="http://localhost/TR//Whatsaap.webp" id="logo-wa">
-=======
-                        <img src="./Facebook.webp" id="logo-fb">
-                        <h5>@Valesca Valesca</h5>
-                    </div>
-                    <div class="d-flex justify-content-start align-items-center py-1">
-                        <img src="./Instagram.webp" id="logo-ig">
-                        <h5>@valescabakery</h5>
-                    </div>
-                    <div class="d-flex justify-content-start align-items-center py-1">
-                        <img src="./Tiktok.webp" id="logo-tiktok">
-                        <h5>@valescabakery01</h5>
-                    </div>
-                    <div class="d-flex justify-content-start align-items-center py-1">
-                        <img src="./Whatsaap.webp" id="logo-wa">
->>>>>>> ae1354af515dee7c5bc7e6d83f79753924240462
                         <h5>08156799697</h5>
                     </div>
                 </div>
             </div>
             <div class="d-flex align-items-center cabang">
-<<<<<<< HEAD
                 <img src="http://localhost/TR//maps.webp">
-=======
-                <img src="./maps.webp">
->>>>>>> ae1354af515dee7c5bc7e6d83f79753924240462
                 <div class="d-flex align-items-center justify-content-center flex-column">
                     <h6>Ambarawa</h6>
                     <h6>(Kartini)</h6>
