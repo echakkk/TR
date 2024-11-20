@@ -34,7 +34,7 @@ if (isset($_GET['logout'])) {
     exit();
 }
 
-// Upload data
+// Untuk menambahkan data baru, id akan di-generate secara otomatis.
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['title'], $_POST['kategori'], $_POST['link'], $_POST['price'])) {
     $title = $_POST['title'];
     $kategori = $_POST['kategori'];
@@ -59,7 +59,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['title'], $_POST['kate
     $stmt->close();
 }
 
-// DELETE data
+// Untuk delete, ID akan tetap sesuai dengan yang terhapus
 if (isset($_GET['delete_id'], $_GET['kategori'])) {
     $id = $_GET['delete_id'];
     $kategori = $_GET['kategori'];
@@ -133,8 +133,8 @@ $result = $conn->query($query);
         <h2 class="text-2xl font-bold text-center mb-6">Upload Menu </h2>
         <form action="dashboard.php" method="post" class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
             <div class="mb-4">
-                <label for="title" class="block text-gray-700 text-sm font-bold mb-2">Judul:</label>
-                <input type="text" id="title" name="title" required class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" placeholder="Masukkan judul brownies">
+                <label for="title" class="block text-gray-700 text-sm font-bold mb-2">Nama Produk:</label>
+                <input type="text" id="title" name="title" required class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" placeholder="Masukkan Nama Produk">
             </div>
             <div class="mb-4">
                 <label for="kategori" class="block text-gray-700 text-sm font-bold mb-2">Kategori:</label>
@@ -143,6 +143,7 @@ $result = $conn->query($query);
                     <option value="cake">Cake</option>
                     <option value="dessert">Dessert</option>
                     <option value="pastry">Pastry</option>
+                    <option value="pizza">Pizza</option>
                     <option value="roti">Roti</option>
                     <option value="roti manis">Roti Manis</option>
                     <option value="roti manis box">Roti Manis Box</option>
@@ -153,11 +154,11 @@ $result = $conn->query($query);
             </div>
             <div class="mb-4">
                 <label for="link" class="block text-gray-700 text-sm font-bold mb-2">Link Gambar:</label>
-                <input type="file" id="link" name="link" required class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" placeholder="Masukkan link gambar brownies">
+                <input type="file" id="link" name="link" required class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" placeholder="Masukkan Gambar Produk">
             </div>
             <div class="mb-4">
                 <label for="price" class="block text-gray-700 text-sm font-bold mb-2">Harga:</label>
-                <input type="number" id="price" name="price" required class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" placeholder="Masukkan harga brownies">
+                <input type="number" id="price" name="price" required class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" placeholder="Masukkan Harga Produk">
             </div>
             <div class="flex items-center justify-between">
                 <input type="submit" value="Upload" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">
@@ -172,7 +173,7 @@ $result = $conn->query($query);
         <thead class="bg-gradient-to-r from-blue-500 to-blue-700 text-white">
             <tr>
                 <th class="px-4 py-3 text-left font-semibold">ID</th>
-                <th class="px-4 py-3 text-left font-semibold">Judul</th>
+                <th class="px-4 py-3 text-left font-semibold">Nama Produk</th>
                 <th class="px-4 py-3 text-left font-semibold">Gambar</th>
                 <th class="px-4 py-3 text-left font-semibold">Harga</th>
                 <th class="px-4 py-3 text-center font-semibold">Aksi</th>
