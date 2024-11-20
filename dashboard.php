@@ -194,8 +194,8 @@ $result = $conn->query($query);
                     <a href="?kategori=<?= $kategori ?>&delete_id=<?= $row['id'] ?>" 
                        class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded shadow-sm transition duration-300"
                        onclick="return confirm('Yakin ingin menghapus data ini?')">Delete</a>
-                    <a href="?kategori=<?= $kategori ?>&edit_id=<?= $row['id'] ?>" 
-                       class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded shadow-sm transition duration-300">Edit</a>
+                    <!-- <a href="?kategori=<?= $kategori ?>&edit_id=<?= $row['id'] ?>" 
+                       class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded shadow-sm transition duration-300">Edit</a> -->
                 </td>
             </tr>
             <?php endwhile; ?>
@@ -203,64 +203,9 @@ $result = $conn->query($query);
     </table>
 </div>
 
-
-<!-- Form untuk Edit -->
-<?php
-if (isset($_GET['edit_id'])) {
-    $edit_id = $_GET['edit_id'];
-    $edit_query = "SELECT * FROM $table WHERE id = $edit_id";
-    $edit_result = $conn->query($edit_query);
-    $edit_data = $edit_result->fetch_assoc();
-?>
-<div class="bg-white shadow-md rounded-lg px-10 py-8 mt-10">
-    <h2 class="text-2xl font-bold mb-6 text-gray-700">Edit Data</h2>
-    <form action="dashboard.php" method="post" class="space-y-4">
-        <input type="hidden" name="id" value="<?= $edit_data['id'] ?>">
-        <div>
-            <label for="title" class="block text-sm font-medium text-gray-700">Judul:</label>
-            <input type="text" id="title" name="title" value="<?= $edit_data['title'] ?>" 
-                   required class="form-input w-full">
-        </div>
-        <div>
-            <label for="link" class="block text-sm font-medium text-gray-700">Link Gambar:</label>
-            <input type="text" id="link" name="link" value="<?= $edit_data['link'] ?>" 
-                   required class="form-input w-full">
-        </div>
-        <div>
-            <label for="price" class="block text-sm font-medium text-gray-700">Harga:</label>
-            <input type="number" id="price" name="price" value="<?= $edit_data['price'] ?>" 
-                   required class="form-input w-full">
-        </div>
-        <div>
-            <button type="submit" name="update" 
-                    class="bg-blue-500 hover:bg-blue-700 text-white py-2 px-4 rounded">Update</button>
-        </div>
-    </form>
-</div>
-<?php } ?>
-
-<!-- Logika Update -->
-<?php
-if (isset($_POST['update'])) {
-    $id = $_POST['id'];
-    $title = $_POST['title'];
-    $link = $_POST['link'];
-    $price = $_POST['price'];
-
-    $update_query = "UPDATE $table SET title = '$title', link = '$link', price = '$price' WHERE id = $id";
-    if ($conn->query($update_query)) {
-        echo "<script>alert('Data berhasil diperbarui!'); window.location = 'dashboard.php?kategori=$kategori';</script>";
-    } else {
-        echo "<script>alert('Gagal memperbarui data!');</script>";
-    }
-}
-?>
-
-
     <style>
-        /* CSS Styles */
-        .btn-blue, .btn-red, .btn-category { /* Styles here */ }
-        .form-input { /* Styles here */ }
+        .btn-blue, .btn-red, .btn-category {}
+        .form-input {}
     </style>
 </body>
 </html>
