@@ -9,8 +9,8 @@ $valid_categories = [
     'dessert' => 'dessert',
     'pastry' => 'pastry',
     'pizza' => 'pizza',
-    'roti manis' => 'rotimanis',
-    'roti manis box' => 'rotimanisbox',
+    'rotimanis' => 'rotimanis',
+    'rotimanisbox' => 'rotimanisbox',
     'snack' => 'snack',
     'tart' => 'tart',
     'tawar' => 'tawar',
@@ -184,7 +184,9 @@ $result = $conn->query($query);
                 <td class="border px-4 py-3 text-gray-700"><?= $row['id'] ?></td>
                 <td class="border px-4 py-3 text-gray-700"><?= $row['title'] ?></td>
                 <td class="border px-4 py-3">
-                    <img src="<?= $row['link'] ?>" alt="<?= $row['title'] ?>" class="h-16 w-16 object-cover rounded-md shadow-sm">
+                    <img src="http://localhost/TR/Produk/<?= isset($_GET['kategori']) ? ucfirst($_GET['kategori']) : 'Brownies' ?>/<?= $row['link'] ?>" 
+                        alt="<?= $row['title'] ?>" 
+                        class="h-16 w-16 object-cover rounded-md shadow-sm">
                 </td>
                 <td class="border px-4 py-3 text-gray-700">Rp <?= number_format($row['price'], 0, ',', '.') ?></td>
                 <td class="border px-4 py-3 text-center flex justify-center gap-2">
