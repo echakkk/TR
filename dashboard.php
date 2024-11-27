@@ -172,7 +172,7 @@ $result = $conn->query($query);
     <table class="w-full border-collapse bg-gray-50 overflow-hidden rounded-lg shadow-sm">
         <thead class="bg-gradient-to-r from-blue-500 to-blue-700 text-white">
             <tr>
-                <th class="px-4 py-3 text-left font-semibold">NO</th>
+                <th class="px-4 py-3 text-left font-semibold">No</th>
                 <th class="px-4 py-3 text-left font-semibold">Nama Produk</th>
                 <th class="px-4 py-3 text-left font-semibold">Gambar</th>
                 <th class="px-4 py-3 text-left font-semibold">Harga</th>
