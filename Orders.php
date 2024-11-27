@@ -120,7 +120,7 @@ $login = isset($_SESSION['username']); // Periksa apakah pengguna sudah login
         </div>
     </nav>
 
-    <section class="orders d-flex justify-content-start">
+    <section class="orders d-flex justify-content-start orders-page">
         <div class="bg-1 d-flex justify-content-center pesan">
         <img src="http://localhost/TR/Orders/1.png">
             <div class="bgt align-self-center">

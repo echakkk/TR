@@ -45,28 +45,28 @@ $login = isset($_SESSION['username']); // Periksa apakah pengguna sudah login
         rel="stylesheet">
 </head>
 
-<body>
-<!-- NAVBAR -->
-<nav class="sticky-top navbar navbar-expand-lg d-flex custom-navbar">
+<body class="hotline-page">
+    <!-- NAVBAR -->
+    <nav class="sticky-top navbar navbar-expand-lg d-flex custom-navbar">
         <img class="img-fluid" id="logo-collapse" src="http://localhost/TR/Logo.PNG">
         <div class="d-flex justify-content-center">
             <ul class="navbar-nav">
                 <?php
-                    if($login){
+                if ($login) {
+                    ?>
+                    <li class="nav-item login-collapse">
+                        <a class="btn btn-custom" href="http://localhost/TR/logout.php">Logout</a>
+                    </li>
+                    <?php
+                } else {
+                    ?>
+                    <li class="nav-item login-collapse">
+                        <a class="btn btn-custom" href="http://localhost/TR/login.php">Login Member</a>
+                    </li>
+                    <?php
+                }
                 ?>
-                <li class="nav-item login-collapse">
-                    <a class="btn btn-custom" href="http://localhost/TR/logout.php">Logout</a>
-                </li>
-                <?php
-                    }else {
-                ?>
-                <li class="nav-item login-collapse">
-                    <a class="btn btn-custom" href="http://localhost/TR/login.php">Login Member</a>
-                </li>
-                <?php
-                    }
-                ?>
-                
+
             </ul>
             <ul class="navbar-nav">
                 <button class="navbar-toggler" id="toggler" data-toggle="collapse" data-target="#navbarNav"
@@ -137,17 +137,17 @@ $login = isset($_SESSION['username']); // Periksa apakah pengguna sudah login
         </div>
     </nav>
 
-    
-    <section class="d-flex justify-content-center align-items-center flex-column hotline">
+
+    <section class="d-flex justify-content-center align-items-center flex-column hotline section">
         <!-- Gambar di sisi bawah -->
         <!-- Teks dan Tombol "Call Us" di atas gambar -->
         <div class="hotline-text">
             <h2>Hubungi Kami</h2>
             <!-- Tombol Call Us -->
             <a href="https://wa.me/628156749697" target="_blank" style="text-decoration: none;">
-            <button>
-                Call Us
-            </button>
+                <button>
+                    Call Us
+                </button>
             </a>
         </div>
         <div class="hotline-img">
@@ -156,7 +156,7 @@ $login = isset($_SESSION['username']); // Periksa apakah pengguna sudah login
     </section>
     <hr class="hr-hotline">
 
-    <footer class="custom-footer d-flex justify-content-center flex-column">
+    <footer class="custom-footer d-flex justify-content-center flex-column section">
         <h1 class="text-center mt-4">Contact Us</h1>
         <div class="d-flex align-items-center justify-content-center div-2">
             <div class="d-flex align-items-center cabang">
@@ -201,9 +201,29 @@ $login = isset($_SESSION['username']); // Periksa apakah pengguna sudah login
         </div>
     </footer>
 
+    <script>
+        window.addEventListener('scroll', function () {
+            var sections = document.querySelectorAll('.section');
+
+            sections.forEach(function (section) {
+                section.classList.add('not-show');
+                var sectionTop = section.getBoundingClientRect().top;
+                var windowHeight = window.innerHeight;
+
+
+                if (sectionTop < windowHeight +10) {
+                    section.classList.add('show');
+                    section.classList.remove('not-show');
+                } else {
+                    section.classList.remove('show');
+                    section.classList.add('not-show');
+                }
+            });
+        });
+    </script>
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="valescaa.js"></script>
 </body>
 
 </html>
