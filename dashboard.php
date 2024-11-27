@@ -172,7 +172,7 @@ $result = $conn->query($query);
     <table class="w-full border-collapse bg-gray-50 overflow-hidden rounded-lg shadow-sm">
         <thead class="bg-gradient-to-r from-blue-500 to-blue-700 text-white">
             <tr>
-                <th class="px-4 py-3 text-left font-semibold">ID</th>
+                <th class="px-4 py-3 text-left font-semibold">NO</th>
                 <th class="px-4 py-3 text-left font-semibold">Nama Produk</th>
                 <th class="px-4 py-3 text-left font-semibold">Gambar</th>
                 <th class="px-4 py-3 text-left font-semibold">Harga</th>
@@ -180,9 +180,12 @@ $result = $conn->query($query);
             </tr>
         </thead>
         <tbody>
-            <?php while ($row = $result->fetch_assoc()): ?>
+        <?php 
+            $no = 1; // Inisialisasi nomor urut
+            while ($row = $result->fetch_assoc()): 
+            ?>
             <tr class="border-t hover:bg-gray-100 transition duration-200">
-                <td class="border px-4 py-3 text-gray-700"><?= $row['id'] ?></td>
+                <td class="border px-4 py-3 text-gray-700"><?= $no++ ?></td> <!-- Ubah ke nomor urut -->
                 <td class="border px-4 py-3 text-gray-700"><?= $row['title'] ?></td>
                 <td class="border px-4 py-3">
                     <img src="http://localhost/TR/Produk/<?= isset($_GET['kategori']) ? ucfirst($_GET['kategori']) : 'Brownies' ?>/<?= $row['link'] ?>" 
@@ -191,12 +194,15 @@ $result = $conn->query($query);
                 </td>
                 <td class="border px-4 py-3 text-gray-700">Rp <?= number_format($row['price'], 0, ',', '.') ?></td>
                 <td class="border px-4 py-3 text-center flex justify-center gap-2">
-                    <a href="?kategori=<?= $kategori ?>&delete_id=<?= $row['id'] ?>" 
-                       class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded shadow-sm transition duration-300"
-                       onclick="return confirm('Yakin ingin menghapus data ini?')">Delete</a>
-                    <!-- <a href="?kategori=<?= $kategori ?>&edit_id=<?= $row['id'] ?>" 
-                       class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded shadow-sm transition duration-300">Edit</a> -->
-                </td>
+                <a href="?kategori=<?= $kategori ?>&delete_id=<?= $row['id'] ?>" 
+                class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded shadow-sm transition duration-300"
+                onclick="return confirm('Yakin ingin menghapus data ini?')">Delete</a>
+                <a href="edit.php?kategori=<?= $kategori ?>&edit_id=<?= $row['id'] ?>" 
+                class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded shadow-sm transition duration-300">
+                Edit
+                </a>
+            </td>
+
             </tr>
             <?php endwhile; ?>
         </tbody>
