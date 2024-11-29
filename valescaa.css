@@ -1,9 +1,127 @@
+/* KEYFRAME GROUP*/
+@keyframes fadeIn-Atas {
+    0% {
+        transform: translateY(-200%);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes fadeIn-Kanan {
+    0% {
+        transform: translateX(-200%);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes fadeIn-Kiri {
+    0% {
+        transform: translateX(200%);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes fadeIn-Bawah {
+    0% {
+        transform: translateY(100%);
+        opacity: 0;
+    }
+
+    100% {
+        ransform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes fadeIn-Bawah-W {
+    0% {
+        margin-top: 480px;
+        opacity: 0;
+    }
+
+    100% {
+        margin-top: 0px;
+        opacity: 1;
+    }
+}
+
+@keyframes fadeIn-Bawah-W2 {
+    0% {
+        margin-top: 100px;
+        opacity: 0;
+    }
+
+    100% {
+        margin-top: 0px;
+        opacity: 1;
+    }
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeOut {
+    0% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+@keyframes fadeOut-Kanan {
+    0% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateX(200%);
+        opacity: 0;
+    }
+}
+
+@keyframes fadeOut-Kiri {
+    0% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateX(-200%);
+        opacity: 0;
+    }
+}
+
 body {
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     font-optical-sizing: auto;
     font-weight: 12px;
     font-style: normal;
-    background-color: #ffe2df;
+    background-color: #ffecea;
+    z-index: -10;
 }
 
 .navbar-toggler:focus {
@@ -11,6 +129,7 @@ body {
     outline: 0;
     box-shadow: 0 0 0 0;
 }
+
 .background-img {
     position: absolute;
     top: 0;
@@ -70,12 +189,12 @@ body {
     width: 250px;
 }
 
-
 .custom-navbar {
     padding-top: 15px;
     padding-bottom: 15px;
     background-color: #5f1919 !important;
     max-height: 600px;
+    animation: fadeIn-Atas 1.8s ease-in-out;
 }
 
 .custom-navbar .nav-link {
@@ -129,11 +248,23 @@ body {
     color: #333;
 }
 
+.hero h1.mt-5 {
+    animation: fadeIn-Kiri 2.4s ease-in-out;
+}
+
 /* Carousel Styles */
 .carousel-item img {
     max-width: 100%;
     max-height: 440px;
     object-fit: cover;
+}
+
+.carousel {
+    animation: fadeIn-Kanan 2.2s ease-in-out;
+}
+
+.carousel-foods {
+    opacity: 0;
 }
 
 .bg-secondary {
@@ -234,6 +365,7 @@ header p {
     font-style: normal;
     max-width: 100%;
     max-height: 380px;
+    opacity: 0;
 }
 
 .promo img {
@@ -276,6 +408,7 @@ header p {
 .salam {
     color: #5f1919;
     background-color: #ffecea;
+    opacity: 0;
 }
 
 .salam h1 {
@@ -437,12 +570,34 @@ footer .div-2 {
     cursor: pointer;
     border-radius: 30px;
 }
+.aboutus {
+    animation: fadeIn-Kanan 2.4s ease-in-out;
+}
+.promo-page {
+    animation: fadeIn 2.7s ease-in-out;
+}
+.outlet-page {
+    animation: fadeIn-Bawah-W2 2.4s ease-in-out;
+}
+.orders-page {
+    animation: fadeIn-Bawah 2.2s ease-in-out;
+}
+footer {
+    animation: fadeIn-Bawah-W 2.4s ease-in-out;
+}
+body.hotline-page {
+    background-color: #5f1919;
+}
+.hotline {
+    animation: fadeIn 2.4s ease-in;
+}
+
 
 .aboutus .div-parent {
     margin-top: 50px;
     color: #5f1919;
     width: 800px;
-    height: 1200px;
+    height: 1120px;
 }
 
 .aboutus .div-parent {
@@ -488,6 +643,10 @@ footer .div-2 {
     margin-top: 135px;
 }
 
+.products.section {
+    opacity: 1;
+}
+
 @media (max-width: 1200px) {
     .contact {
         margin-left: 230px;
@@ -518,6 +677,78 @@ footer .div-2 {
 }
 
 @media (min-width: 991px) {
+    .salam #salam-img {
+        z-index: 0;
+    }
+
+    /*Transition Group*/
+    /*Not-Show Tranisiton*/
+    .section.not-show.promo-container .promo {
+        animation: fadeOut 1.4s ease-out;
+        opacity: 0;
+    }
+
+    /*Show Tranisiton*/
+    .section.show.promo-container .promo#promo-1 {
+        animation: fadeIn-Kanan 1.4s ease-out;
+        opacity: 1;
+    }
+
+    .section.show.promo-container .promo#promo-2 {
+        animation: fadeIn-Kanan 1.3s ease-out;
+        opacity: 1;
+    }
+
+    .section.show.promo-container .promo#promo-3 {
+        animation: fadeIn-Kanan 1.2s ease-out;
+        opacity: 1;
+    }
+
+    .products.section.show .carousel-foods{
+        animation: fadeIn 1.2s ease-out;
+        opacity: 1;
+    }
+    .salam.section.show {
+        opacity: 1;
+    }
+    .salam.section.not-show {
+        opacity: 0;
+    }
+    .salam.section.show #salam-img {
+        animation: fadeIn-Bawah-W2 1.2s ease-out;
+        opacity: 1;
+    }
+
+    .salam.section.show .text-salam {
+        animation: fadeIn 1.6s ease-out;
+        opacity: 1;
+    }
+    body.aboutus-page footer {
+        opacity: 0;
+    }
+    body.aboutus-page footer.section.show {
+        animation: fadeIn-Bawah-W2 1s ease-out;
+        opacity: 1;
+    }
+    body.promo-page footer {
+        opacity: 0;
+    }
+    body.promo-page footer.section.show {
+        animation: fadeIn-Bawah-W2 1s ease-out;
+        opacity: 1;
+    }
+    body.hotline-page footer {
+        opacity: 0;
+    }
+    body.hotline-page footer.section.show {
+        animation: fadeIn-Bawah-W2 1s ease-out;
+        opacity: 1;
+    }
+
+
+    /*--*/
+
+
     .hotline {
         padding-top: 40px;
         background-color: #5f1919;
@@ -557,9 +788,15 @@ footer .div-2 {
 }
 
 @media (max-width: 991px) {
+    .promo {
+        opacity: 1;
+        animation: fadeIn-Bawah 2.3s ease-in-out;
+    }
+
     .div-p2 h4 {
         font-size: 20px;
     }
+
     .aboutus .div-parent {
         margin-top: 50px;
         color: #5f1919;
@@ -806,6 +1043,7 @@ footer .div-2 {
     .div-p2 h4 {
         font-size: 14px;
     }
+
     .aboutus .div-parent {
         margin-top: 50px;
         color: #5f1919;
@@ -854,6 +1092,7 @@ footer .div-2 {
         margin-left: 180px;
         margin-top: 115px;
     }
+
     .hotline-img img {
         margin-top: 30px;
         width: auto;
@@ -1055,6 +1294,7 @@ footer .div-2 {
     #halal {
         width: 0px;
     }
+
     .aboutus .div-parent {
         text-align: justify;
         text-indent: 30px;

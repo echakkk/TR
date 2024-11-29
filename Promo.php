@@ -28,28 +28,28 @@ $login = isset($_SESSION['username']); // Periksa apakah pengguna sudah login
     <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@100..900&display=swap" rel="stylesheet">
 </head>
 
-<body>
-<!-- NAVBAR -->
-<nav class="sticky-top navbar navbar-expand-lg d-flex custom-navbar">
+<body class="promo-page">
+    <!-- NAVBAR -->
+    <nav class="sticky-top navbar navbar-expand-lg d-flex custom-navbar">
         <img class="img-fluid" id="logo-collapse" src="http://localhost/TR/Logo.PNG">
         <div class="d-flex justify-content-center">
             <ul class="navbar-nav">
                 <?php
-                    if($login){
+                if ($login) {
+                    ?>
+                    <li class="nav-item login-collapse">
+                        <a class="btn btn-custom" href="http://localhost/TR/logout.php">Logout</a>
+                    </li>
+                    <?php
+                } else {
+                    ?>
+                    <li class="nav-item login-collapse">
+                        <a class="btn btn-custom" href="http://localhost/TR/login.php">Login Member</a>
+                    </li>
+                    <?php
+                }
                 ?>
-                <li class="nav-item login-collapse">
-                    <a class="btn btn-custom" href="http://localhost/TR/logout.php">Logout</a>
-                </li>
-                <?php
-                    }else {
-                ?>
-                <li class="nav-item login-collapse">
-                    <a class="btn btn-custom" href="http://localhost/TR/login.php">Login Member</a>
-                </li>
-                <?php
-                    }
-                ?>
-                
+
             </ul>
             <ul class="navbar-nav">
                 <button class="navbar-toggler" id="toggler" data-toggle="collapse" data-target="#navbarNav"
@@ -120,7 +120,7 @@ $login = isset($_SESSION['username']); // Periksa apakah pengguna sudah login
         </div>
     </nav>
 
-    <section class="hero utama align-items-start flex-column">
+    <section class="hero utama align-items-start flex-column section">
         <div class="container py-5 d-flex justify-content-center">
             <img src="http://localhost/TR/Promo/1.jpg" class="mr-4 promoimg">
             <img src="http://localhost/TR/Promo/2.jpg" class="ml-4 promoimg">
@@ -131,7 +131,7 @@ $login = isset($_SESSION['username']); // Periksa apakah pengguna sudah login
         </div>
     </section>
 
-    <footer class="custom-footer d-flex justify-content-center flex-column">
+    <footer class="custom-footer d-flex justify-content-center flex-column section">
         <h1 class="text-center mt-4">Contact Us</h1>
         <div class="d-flex align-items-center justify-content-center div-2">
             <div class="d-flex align-items-center cabang">
@@ -177,9 +177,28 @@ $login = isset($_SESSION['username']); // Periksa apakah pengguna sudah login
     </footer>
 
     <!-- Bootstrap JS -->
+    <script>
+        window.addEventListener('scroll', function () {
+            var sections = document.querySelectorAll('.section');
+
+            sections.forEach(function (section) {
+                section.classList.add('not-show');
+                var sectionTop = section.getBoundingClientRect().top;
+                var windowHeight = window.innerHeight;
+
+
+                if (sectionTop < windowHeight + 200) {
+                    section.classList.add('show');
+                    section.classList.remove('not-show');
+                } else {
+                    section.classList.remove('show');
+                    section.classList.add('not-show');
+                }
+            });
+        });
+    </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="valescaa.js"></script>
 </body>
 
 </html>

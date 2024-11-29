@@ -25,28 +25,28 @@ $login = isset($_SESSION['username']); // Periksa apakah pengguna sudah login
         crossorigin="anonymous"></script>
 </head>
 
-<body>
-<!-- NAVBAR -->
-<nav class="sticky-top navbar navbar-expand-lg d-flex custom-navbar">
+<body class="aboutus-page">
+    <!-- NAVBAR -->
+    <nav class="sticky-top navbar navbar-expand-lg d-flex custom-navbar">
         <img class="img-fluid" id="logo-collapse" src="http://localhost/TR/Logo.PNG">
         <div class="d-flex justify-content-center">
             <ul class="navbar-nav">
                 <?php
-                    if($login){
+                if ($login) {
+                    ?>
+                    <li class="nav-item login-collapse">
+                        <a class="btn btn-custom" href="http://localhost/TR/logout.php">Logout</a>
+                    </li>
+                    <?php
+                } else {
+                    ?>
+                    <li class="nav-item login-collapse">
+                        <a class="btn btn-custom" href="http://localhost/TR/login.php">Login Member</a>
+                    </li>
+                    <?php
+                }
                 ?>
-                <li class="nav-item login-collapse">
-                    <a class="btn btn-custom" href="http://localhost/TR/logout.php">Logout</a>
-                </li>
-                <?php
-                    }else {
-                ?>
-                <li class="nav-item login-collapse">
-                    <a class="btn btn-custom" href="http://localhost/TR/login.php">Login Member</a>
-                </li>
-                <?php
-                    }
-                ?>
-                
+
             </ul>
             <ul class="navbar-nav">
                 <button class="navbar-toggler" id="toggler" data-toggle="collapse" data-target="#navbarNav"
@@ -118,7 +118,7 @@ $login = isset($_SESSION['username']); // Periksa apakah pengguna sudah login
     </nav>
     <!-- Content Section -->
 
-    <section class="d-flex justify-content-center aboutus">
+    <section class="d-flex justify-content-center aboutus section">
         <div class="div-parent">
             <div class="d-flex justify-content-start div-p1">
                 <img src="http://localhost/TR/Logo-AboutUs.png" id="logo-about">
@@ -126,33 +126,33 @@ $login = isset($_SESSION['username']); // Periksa apakah pengguna sudah login
             </div>
             <div class="div-p2">
                 <div class="box"></div>
-                <h4>Valesca Bakery adalah toko roti yang berdiri pada 21 Mei 2012
+                <h4>Valesca Bakery adalah toko roti yang berdiri pada 12 Agustus 2013
                     di
-                    Kota Ambarawa. Toko roti ini menjual berbagai jenis roti manis serta kue tart . Valwsca cake
-                    & bakery memberikan layanan terbaik dengan terbuat dari bahan - bahan pilihan, dibuat oleh tangan
+                    Kota Ambarawa. Toko roti ini menjual berbagai jenis roti manis serta kue tart . Valesca Cake
+                    & Bakery memberikan layanan terbaik dengan terbuat dari bahan - bahan pilihan, dibuat oleh tangan
                     berpengalaman, serta telah dipercaya oleh banyak kalangan
                 </h4>
                 <br>
                 <h4>
-                    Berawal outlet pertama di JL. Jendral Sudirman, kini Valesca cake & Bakey memiliki 1 di beberapa
-                    kota yang sama yaitu di Jl. R.A Kartini. Dengan
+                    Berawal dari outlet pertama di JL. Jendral Sudirman, kini Valesca Cake & Bakery memiliki satu cabang
+                    dikota yang sama yaitu di Jl. R.A Kartini. Dengan
                     semakin besarnya kepercayaan masyarakat kepada kami, sehingga dari tahun ke tahun kami terus
                     berinovasi untuk memberikan produk dan pelayanan terbaik.
                 </h4>
                 <br>
                 <h4>
-                    Dengan kesadaran bahwa pelayanan terbaik menjadi modal utama Valesca Cake & Bakery, maka pada tahun 2020 kami
-                    berinovasi untuk memudahkan pembelian kami melalui dalam hal Pengiriman. BBP merupakan
-                    program kami untuk mendekatkan dan memudahkan pembeli dengan menghadirkan produk kami langung
-                    kedepan rumah anda dan anda bisa membeli secara langsung tanpa harus datang ke outlet kami. Program
-                    ini juga ikut serta menyerap tenaga kerja karena mengajak mitra – mitra untuk ikut serta berjualan
-                    produk kami dan mendapatkan berbagai keuntungan menarik.
-                    Bless Bakery hadir untuk memberikan produk roti yang berkualitas dengan harga terjangkau.</h4>
+                    Dengan kesadaran bahwa pelayanan terbaik menjadi modal utama Valesca Cake & Bakery, maka pada tahun
+                    2020 kami
+                    berinovasi untuk memudahkan pembelian kami melalui dalam hal Pengiriman. kami memberikan
+                    program untuk mendekatkan dan memudahkan pembeli dengan menghadirkan produk kami langsung
+                    kedepan rumah anda dan anda bisa membeli tanpa harus datang ke outlet kami.
+                    Valesca Cake & Bakery hadir untuk memberikan produk roti yang berkualitas dengan harga terjangkau.
+                </h4>
             </div>
         </div>
     </section>
 
-    <footer class="custom-footer d-flex justify-content-center flex-column">
+    <footer class="custom-footer d-flex justify-content-center flex-column section">
         <h1 class="text-center mt-4">Contact Us</h1>
         <div class="d-flex align-items-center justify-content-center div-2">
             <div class="d-flex align-items-center cabang">
@@ -196,7 +196,26 @@ $login = isset($_SESSION['username']); // Periksa apakah pengguna sudah login
             <div class="box"></div>
         </div>
     </footer>
+    <script>
+        window.addEventListener('scroll', function () {
+            var sections = document.querySelectorAll('.section');
 
+            sections.forEach(function (section) {
+                section.classList.add('not-show');
+                var sectionTop = section.getBoundingClientRect().top;
+                var windowHeight = window.innerHeight;
+
+
+                if (sectionTop < windowHeight + 180) {
+                    section.classList.add('show');
+                    section.classList.remove('not-show');
+                } else {
+                    section.classList.remove('show');
+                    section.classList.add('not-show');
+                }
+            });
+        });
+    </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 

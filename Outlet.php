@@ -138,7 +138,7 @@ $login = isset($_SESSION['username']); // Periksa apakah pengguna sudah login
     </nav>
 
     <!-- SECTION -->
-    <section class="hero utama align-items-center flex-column">
+    <section class="hero utama align-items-center flex-column outlet-page">
         <h1 class="text-center py-4">Lokasi</h1>
         <div class="container-outlet">
             <div class="d-flex justify-content-center outlet">

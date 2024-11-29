@@ -151,10 +151,9 @@ $login = isset($_SESSION['username']); // Periksa apakah pengguna sudah login
                     </div>
                 </div>
                 <h1 class="mt-5 text-center">Welcome to Valesca Cake & Bakery</h1>
-
-                <div class="d-flex justify-content-center py-5">
+                <div class="d-flex justify-content-center py-5 promo-container section">
                     <div class="d-flex align-items-center flex-column pr-3">
-                        <div class="promo d-flex align-items-center flex-column">
+                        <div class="promo d-flex align-items-center flex-column" id="promo-1">
                             <a href="http://localhost/TR/Promo.html">
                                 <img class="img-fluid" src="Roti 1.jpeg">
                                 <h1 class="py-3">PROMO DAN EVENTS</h1>
@@ -162,7 +161,7 @@ $login = isset($_SESSION['username']); // Periksa apakah pengguna sudah login
                         </div>
                     </div>
                     <div class="d-flex align-items-center flex-column pr-3">
-                        <div class="promo d-flex align-items-center flex-column">
+                        <div class="promo d-flex align-items-center flex-column" id="promo-2">
                             <a href="http://localhost/TR/Product.html">
                                 <img class="img-fluid" src="Roti 2.jpeg">
                                 <h1 class="py-3">PRODUK BEST SELLER</h1>
@@ -170,7 +169,7 @@ $login = isset($_SESSION['username']); // Periksa apakah pengguna sudah login
                         </div>
                     </div>
                     <div class="d-flex align-items-center flex-column pr-3">
-                        <div class="promo d-flex align-items-center flex-column">
+                        <div class="promo d-flex align-items-center flex-column" id="promo-3">
                             <a href="http://localhost/TR/Orders.html">
                                 <img src="Roti 3.jpeg">
                                 <h1 class="py-3">PEMESANAN PRODUK</h1>
@@ -182,11 +181,11 @@ $login = isset($_SESSION['username']); // Periksa apakah pengguna sudah login
         </section>
 
         <!-- Product Section -->
-        <section class="products py-4 bg-secondary text-light ">
+        <section class="products py-4 bg-secondary text-light section">
             <div class="py-4 container">
-                <div class="d-flex justify-content-center">
+                <div class="d-flex justify-content-center carousel-foods">
                     <div class="col-lg-4">
-                        <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+                        <div id="carouselExampleControls" class="carousel slide" data-ride="carousel" id="carousel-1">
                             <div class="carousel-inner img-fluid rounded ">
                                 <div class="carousel-item active">
                                     <img class="d-block w-100" src="http://localhost/TR/Home_P/1/1.jpg"
@@ -204,7 +203,7 @@ $login = isset($_SESSION['username']); // Periksa apakah pengguna sudah login
                         </div>
                     </div>
                     <div class="col-lg-4">
-                        <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+                        <div id="carouselExampleControls" class="carousel slide" data-ride="carousel" id="carousel-2">
                             <div class="carousel-inner img-fluid rounded ">
                                 <div class="carousel-item active">
                                     <img class="d-block w-100" src="http://localhost/TR/Home_P/2/1.jpg"
@@ -222,7 +221,7 @@ $login = isset($_SESSION['username']); // Periksa apakah pengguna sudah login
                         </div>
                     </div>
                     <div class="col-lg-4">
-                        <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+                        <div id="carouselExampleControls" class="carousel slide" data-ride="carousel" id="carousel-3">
                             <div class="carousel-inner img-fluid rounded">
                                 <div class="carousel-item active">
                                     <img class="d-block w-100" src="http://localhost/TR/Home_P/3/1.jpg"
@@ -244,8 +243,8 @@ $login = isset($_SESSION['username']); // Periksa apakah pengguna sudah login
         </section>
 
         <!-- About Section -->
-        <section class="d-flex justify-content-center align-items-center salam">
-            <div class="pl-1">
+        <section class="d-flex justify-content-center align-items-center salam section">
+            <div class="pl-1" id="salam-img">
                 <img class="align-bottom" src="salam.PNG">
             </div>
             <div class="align-self-center text-center text-salam">
@@ -262,7 +261,7 @@ $login = isset($_SESSION['username']); // Periksa apakah pengguna sudah login
         </section>
     </main>
 
-    <footer class="custom-footer d-flex justify-content-center flex-column">
+    <footer class="custom-footer d-flex justify-content-center flex-column section">
         <h1 class="text-center mt-4">Contact Us</h1>
         <div class="d-flex align-items-center justify-content-center div-2">
             <div class="d-flex align-items-center cabang">
@@ -306,10 +305,9 @@ $login = isset($_SESSION['username']); // Periksa apakah pengguna sudah login
             <div class="box"></div>
         </div>
     </footer>
-
+    <script src="http://localhost/TR/valescaa.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="http://localhost/TR/valescaa.js"></script>
 </body>
 
 </html>

@@ -41,42 +41,56 @@ $login = isset($_SESSION['username']); // Periksa apakah pengguna sudah login
     <link
         href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@300..900&family=Markazi+Text:wght@400..700&family=Paytone+One&display=swap"
         rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        .product img {
+            width: 200px;
+            height: auto;
+        }
+
+        .btn-dark-red {
+            background-color: #8B0000;
+            color: white;
+        }
+
+        .btn-dark-red:hover {
+            background-color: #A52A2A;
+        }
+    </style>
 </head>
 
 <body>
-<!-- NAVBAR -->
-<nav class="sticky-top navbar navbar-expand-lg d-flex custom-navbar">
+    <!-- NAVBAR -->
+    <nav class="sticky top-0 navbar navbar-expand-lg flex custom-navbar bg-white shadow-md">
         <img class="img-fluid" id="logo-collapse" src="http://localhost/TR/Logo.PNG">
-        <div class="d-flex justify-content-center">
-            <ul class="navbar-nav">
+        <div class="flex justify-center">
+            <ul class="navbar-nav flex">
                 <?php
-                    if($login){
+                if ($login) {
                 ?>
-                <li class="nav-item login-collapse">
-                    <a class="btn btn-custom" href="http://localhost/TR/logout.php">Logout</a>
-                </li>
+                    <li class="nav-item login-collapse">
+                        <a class="btn btn-custom" href="http://localhost/TR/logout.php">Logout</a>
+                    </li>
                 <?php
-                    }else {
+                } else {
                 ?>
-                <li class="nav-item login-collapse">
-                    <a class="btn btn-custom" href="http://localhost/TR/login.php">Login Member</a>
-                </li>
+                    <li class="nav-item login-collapse">
+                        <a class="btn btn-custom" href="http://localhost/TR/login.php">Login Member</a>
+                    </li>
                 <?php
-                    }
+                }
                 ?>
-                
             </ul>
-            <ul class="navbar-nav">
+            <ul class="navbar-nav flex">
                 <button class="navbar-toggler" id="toggler" data-toggle="collapse" data-target="#navbarNav"
                     aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <img src="http://localhost/TR/navbar-toggler.png" width="30px">
                 </button>
-                </li>
             </ul>
         </div>
         <div class="collapse navbar-collapse" id="navbarNav">
             <img class="img-fluid" id="logo" src="http://localhost/TR/Logo.PNG">
-            <ul class="navbar-nav">
+            <ul class="navbar-nav flex">
                 <li class="nav-item pr-4"><a class="nav-link" href="http://localhost/TR/Home.php">Home</a></li>
                 <li class="nav-item pr-4"><a class="nav-link" href="http://localhost/TR/AboutUs.php">About Us</a></li>
                 <li class="nav-item dropdown pr-4">
@@ -117,17 +131,17 @@ $login = isset($_SESSION['username']); // Periksa apakah pengguna sudah login
                 <li class="nav-item pr-4"><a class="nav-link" href="http://localhost/TR/hotline.php">Hotline</a></li>
                 <?php
                 if ($login) {
-                    ?>
+                ?>
                     <li class="nav-item login" id="login">
                         <a class="btn btn-custom" href="http://localhost/TR/logout.php">Log Out</a>
                     </li>
-                    <?php
+                <?php
                 } else {
-                    ?>
+                ?>
                     <li class="nav-item login" id="logout">
                         <a class="btn btn-custom" href="http://localhost/TR/login.php">Login Member</a>
                     </li>
-                    <?php
+                <?php
                 }
                 ?>
             </ul>
@@ -135,53 +149,89 @@ $login = isset($_SESSION['username']); // Periksa apakah pengguna sudah login
         </div>
     </nav>
 
+    <main>
+        <div class="container mx-auto p-4">
+            <?php
+            $categories = ['brownies', 'cake', 'dessert', 'pastry', 'pizza', 'rotimanis', 'rotimanisbox', 'snack', 'tart', 'tawar'];
+            $conn = new mysqli('localhost', 'root', '', 'db_valesca');
 
-    <footer class="custom-footer d-flex justify-content-center flex-column">
-        <h1 class="text-center mt-4">Contact Us</h1>
-        <div class="d-flex align-items-center justify-content-center div-2">
-            <div class="d-flex align-items-center cabang">
-                <img src="http://localhost/TR//maps.webp">
-                <div class="d-flex flex-column">
+            if ($conn->connect_error) {
+                die("Connection failed: " . $conn->connect_error);
+            }
+
+            foreach ($categories as $category) {
+                $sql = "SELECT title, link FROM $category LIMIT 5";
+                $result = $conn->query($sql);
+
+                if ($result->num_rows > 0) {
+                    echo "<div class='category-section mb-8 text-center'>";
+                    echo "<div class='flex justify-center mb-4'>";
+                    echo "<h2 class='text-2xl font-bold border-4 border-black p-1'>" . ucfirst($category) . "</h2>";
+                    echo "</div>";
+                    echo "<div class='flex flex-wrap justify-center gap-4'>";
+                    while ($row = $result->fetch_assoc()) {
+                        echo "<div class='product'>";
+                        echo "<img src='http://localhost/TR/Produk/$category/" . $row['link'] . "' alt='" . $row['title'] . "' class='mx-auto'>";
+                        echo "<h3 class='text-lg mt-2'>" . $row['title'] . "</h3>";
+                        echo "</div>";
+                    }
+                    echo "</div>";
+                    echo "<a href='http://localhost/TR/Produk/" . ucfirst($category) . "/" . ucfirst($category) . ".php' class='btn btn-dark-red mt-4'>View More</a>";
+                    echo "<hr>";
+                    echo "</div>";
+                }
+            }
+
+            $conn->close();
+            ?>
+        </div>
+    </main>
+
+    <footer class="custom-footer flex flex-col justify-center items-center bg-gray-800 text-white py-8">
+        <h1 class="text-center text-3xl mt-4">Contact Us</h1>
+        <div class="flex items-center justify-center mt-4">
+            <div class="flex items-center mx-4">
+                <img src="http://localhost/TR//maps.webp" class="w-12 h-12">
+                <div class="flex flex-col ml-2">
                     <h6>Ambarawa</h6>
                     <h6>(Sudirman)</h6>
                 </div>
             </div>
-            <div class="d-flex align-items-center flex-column contact">
-                <div class="d-flex justify-content-start flex-column">
-                    <div class="d-flex justify-content-start align-items-center py-1">
-                        <img src="http://localhost/TR//Facebook.webp" id="logo-fb">
-                        <h5>@Valesca Valesca</h5>
-                    </div>
-                    <div class="d-flex justify-content-start align-items-center py-1">
-                        <img src="http://localhost/TR//Instagram.webp" id="logo-ig">
-                        <h5>@valescabakery</h5>
-                    </div>
-                    <div class="d-flex justify-content-start align-items-center py-1">
-                        <img src="http://localhost/TR//Tiktok.webp" id="logo-tiktok">
-                        <h5>@valescabakery01</h5>
-                    </div>
-                    <div class="d-flex justify-content-start align-items-center py-1">
-                        <img src="http://localhost/TR//Whatsaap.webp" id="logo-wa">
-                        <h5>08156799697</h5>
-                    </div>
+            <div class="flex flex-col items-center mx-4">
+                <div class="flex items-center py-1">
+                    <img src="http://localhost/TR//Facebook.webp" class="w-6 h-6">
+                    <h5 class="ml-2">@Valesca Valesca</h5>
+                </div>
+                <div class="flex items-center py-1">
+                    <img src="http://localhost/TR//Instagram.webp" class="w-6 h-6">
+                    <h5 class="ml-2">@valescabakery</h5>
+                </div>
+                <div class="flex items-center py-1">
+                    <img src="http://localhost/TR//Tiktok.webp" class="w-6 h-6">
+                    <h5 class="ml-2">@valescabakery01</h5>
+                </div>
+                <div class="flex items-center py-1">
+                    <img src="http://localhost/TR//Whatsaap.webp" class="w-6 h-6">
+                    <h5 class="ml-2">08156799697</h5>
                 </div>
             </div>
-            <div class="d-flex align-items-center cabang">
-                <img src="http://localhost/TR//maps.webp">
-                <div class="d-flex align-items-center justify-content-center flex-column">
+            <div class="flex items-center mx-4">
+                <img src="http://localhost/TR//maps.webp" class="w-12 h-12">
+                <div class="flex flex-col ml-2">
                     <h6>Ambarawa</h6>
                     <h6>(Kartini)</h6>
                 </div>
             </div>
         </div>
-        <div class="d-flex justify-content-center align-items-center div-3">
-            <div class="box"></div>
-            <h6>2024 Valesca Bakery All Right Resereved</h6>
-            <div class="box"></div>
+        <div class="flex justify-center items-center mt-4">
+            <div class="w-1/4 h-px bg-white"></div>
+            <h6 class="mx-4">2024 Valesca Bakery All Right Reserved</h6>
+            <div class="w-1/4 h-px bg-white"></div>
         </div>
     </footer>
 
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
 </body>
+
 </html>
