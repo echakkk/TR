@@ -1,4 +1,19 @@
 <?php
+
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "db_valesca";
+$port = 3308; // Port MySQL Anda
+
+// Membuat koneksi
+$conn = new mysqli($servername, $username, $password, $dbname, $port);
+
+// Cek koneksi
+if ($conn->connect_error) {
+    die("Koneksi gagal: " . $conn->connect_error);
+}
+
 session_start();
 $login = isset($_SESSION['username']); // Periksa apakah pengguna sudah login
 ?>
@@ -150,83 +165,88 @@ $login = isset($_SESSION['username']); // Periksa apakah pengguna sudah login
     </nav>
 
     <main>
-        <div class="container mx-auto p-4">
-            <?php
-            $categories = ['brownies', 'cake', 'dessert', 'pastry', 'pizza', 'rotimanis', 'rotimanisbox', 'snack', 'tart', 'tawar'];
-            $conn = new mysqli('localhost', 'root', '', 'db_valesca');
+    <div class="container mx-auto p-4">
+        <?php
+        $categories = ['brownies', 'cake', 'dessert', 'pastry', 'pizza', 'rotimanis', 'rotimanisbox', 'snack', 'tart', 'tawar'];
+        
+        // Koneksi ke MySQL di port 3308
+        $conn = new mysqli('localhost', 'root', '', 'db_valesca', 3308);
 
-            if ($conn->connect_error) {
-                die("Connection failed: " . $conn->connect_error);
-            }
+        if ($conn->connect_error) {
+            die("Connection failed: " . $conn->connect_error);
+        }
 
-            foreach ($categories as $category) {
-                $sql = "SELECT title, link FROM $category LIMIT 5";
-                $result = $conn->query($sql);
+        foreach ($categories as $category) {
+            $sql = "SELECT title, link FROM $category LIMIT 5";
+            $result = $conn->query($sql);
 
-                if ($result->num_rows > 0) {
-                    echo "<div class='category-section mb-8 text-center'>";
-                    echo "<div class='flex justify-center mb-4'>";
-                    echo "<h2 class='text-2xl font-bold border-4 border-black p-1'>" . ucfirst($category) . "</h2>";
-                    echo "</div>";
-                    echo "<div class='flex flex-wrap justify-center gap-4'>";
-                    while ($row = $result->fetch_assoc()) {
-                        echo "<div class='product'>";
-                        echo "<img src='http://localhost/TR/Produk/$category/" . $row['link'] . "' alt='" . $row['title'] . "' class='mx-auto'>";
-                        echo "<h3 class='text-lg mt-2'>" . $row['title'] . "</h3>";
-                        echo "</div>";
-                    }
-                    echo "</div>";
-                    echo "<a href='http://localhost/TR/Produk/" . ucfirst($category) . "/" . ucfirst($category) . ".php' class='btn btn-dark-red mt-4'>View More</a>";
-                    echo "<hr>";
+            if ($result && $result->num_rows > 0) {
+                echo "<div class='category-section mb-8 text-center'>";
+                echo "<div class='flex justify-center mb-4'>";
+                echo "<h2 class='text-2xl font-bold border-4 border-black p-1'>" . ucfirst($category) . "</h2>";
+                echo "</div>";
+                echo "<div class='flex flex-wrap justify-center gap-4'>";
+                while ($row = $result->fetch_assoc()) {
+                    echo "<div class='product'>";
+                    echo "<img src='http://localhost/TR/Produk/$category/" . $row['link'] . "' alt='" . $row['title'] . "' class='mx-auto'>";
+                    echo "<h3 class='text-lg mt-2'>" . $row['title'] . "</h3>";
                     echo "</div>";
                 }
+                echo "</div>";
+                echo "<a href='http://localhost/TR/Produk/" . ucfirst($category) . "/" . ucfirst($category) . ".php' class='btn btn-dark-red mt-4'>View More</a>";
+                echo "<hr>";
+                echo "</div>";
             }
+        }
 
-            $conn->close();
-            ?>
-        </div>
-    </main>
+        $conn->close();
+        ?>
+    </div>
+</main>
 
-    <footer class="custom-footer flex flex-col justify-center items-center bg-gray-800 text-white py-8">
-        <h1 class="text-center text-3xl mt-4">Contact Us</h1>
-        <div class="flex items-center justify-center mt-4">
-            <div class="flex items-center mx-4">
-                <img src="http://localhost/TR//maps.webp" class="w-12 h-12">
-                <div class="flex flex-col ml-2">
+
+<footer class="custom-footer d-flex justify-content-center flex-column section">
+        <h1 class="text-center mt-4">Contact Us</h1>
+        <div class="d-flex align-items-center justify-content-center div-2">
+            <div class="d-flex align-items-center cabang">
+                <img src="http://localhost/TR//maps.webp">
+                <div class="d-flex flex-column">
                     <h6>Ambarawa</h6>
                     <h6>(Sudirman)</h6>
                 </div>
             </div>
-            <div class="flex flex-col items-center mx-4">
-                <div class="flex items-center py-1">
-                    <img src="http://localhost/TR//Facebook.webp" class="w-6 h-6">
-                    <h5 class="ml-2">@Valesca Valesca</h5>
-                </div>
-                <div class="flex items-center py-1">
-                    <img src="http://localhost/TR//Instagram.webp" class="w-6 h-6">
-                    <h5 class="ml-2">@valescabakery</h5>
-                </div>
-                <div class="flex items-center py-1">
-                    <img src="http://localhost/TR//Tiktok.webp" class="w-6 h-6">
-                    <h5 class="ml-2">@valescabakery01</h5>
-                </div>
-                <div class="flex items-center py-1">
-                    <img src="http://localhost/TR//Whatsaap.webp" class="w-6 h-6">
-                    <h5 class="ml-2">08156799697</h5>
+            <div class="d-flex align-items-center flex-column contact">
+                <div class="d-flex justify-content-start flex-column">
+                    <div class="d-flex justify-content-start align-items-center py-1">
+                        <img src="http://localhost/TR//Facebook.webp" id="logo-fb">
+                        <h5>@Valesca Valesca</h5>
+                    </div>
+                    <div class="d-flex justify-content-start align-items-center py-1">
+                        <img src="http://localhost/TR//Instagram.webp" id="logo-ig">
+                        <h5>@valescabakery</h5>
+                    </div>
+                    <div class="d-flex justify-content-start align-items-center py-1">
+                        <img src="http://localhost/TR//Tiktok.webp" id="logo-tiktok">
+                        <h5>@valescabakery01</h5>
+                    </div>
+                    <div class="d-flex justify-content-start align-items-center py-1">
+                        <img src="http://localhost/TR//Whatsaap.webp" id="logo-wa">
+                        <h5>08156799697</h5>
+                    </div>
                 </div>
             </div>
-            <div class="flex items-center mx-4">
-                <img src="http://localhost/TR//maps.webp" class="w-12 h-12">
-                <div class="flex flex-col ml-2">
+            <div class="d-flex align-items-center cabang">
+                <img src="http://localhost/TR//maps.webp">
+                <div class="d-flex align-items-center justify-content-center flex-column">
                     <h6>Ambarawa</h6>
                     <h6>(Kartini)</h6>
                 </div>
             </div>
         </div>
-        <div class="flex justify-center items-center mt-4">
-            <div class="w-1/4 h-px bg-white"></div>
-            <h6 class="mx-4">2024 Valesca Bakery All Right Reserved</h6>
-            <div class="w-1/4 h-px bg-white"></div>
+        <div class="d-flex justify-content-center align-items-center div-3">
+            <div class="box"></div>
+            <h6>2024 Valesca Bakery All Right Resereved</h6>
+            <div class="box"></div>
         </div>
     </footer>
 
