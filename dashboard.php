@@ -209,9 +209,6 @@ $result = $conn->query($query);
     </table>
 </div>
 
-    <style>
-        .btn-blue, .btn-red, .btn-category {}
-        .form-input {}
-    </style>
+  
 </body>
 </html>
