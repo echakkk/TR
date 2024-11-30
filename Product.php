@@ -167,7 +167,7 @@ $login = isset($_SESSION['username']); // Periksa apakah pengguna sudah login
     <main>
     <div class="container mx-auto p-4">
         <?php
-        $categories = ['brownies', 'cake', 'dessert', 'pastry', 'pizza', 'rotimanis', 'rotimanisbox', 'snack', 'tart', 'tawar'];
+        $categories = ['brownies', 'cake', 'dessert', 'rotimanis', 'rotimanisbox', 'snack', 'tart'];
         
         // Koneksi ke MySQL di port 3308
         $conn = new mysqli('localhost', 'root', '', 'db_valesca', 3308);
@@ -183,7 +183,7 @@ $login = isset($_SESSION['username']); // Periksa apakah pengguna sudah login
             if ($result && $result->num_rows > 0) {
                 echo "<div class='category-section mb-8 text-center'>";
                 echo "<div class='flex justify-center mb-4'>";
-                echo "<h2 class='text-2xl font-bold border-4 border-black p-1'>" . ucfirst($category) . "</h2>";
+                echo "<h2 class='text-2xl font-bold '>" . ucfirst($category) . "</h2>";
                 echo "</div>";
                 echo "<div class='flex flex-wrap justify-center gap-4'>";
                 while ($row = $result->fetch_assoc()) {
@@ -194,7 +194,6 @@ $login = isset($_SESSION['username']); // Periksa apakah pengguna sudah login
                 }
                 echo "</div>";
                 echo "<a href='http://localhost/TR/Produk/" . ucfirst($category) . "/" . ucfirst($category) . ".php' class='btn btn-dark-red mt-4'>View More</a>";
-                echo "<hr>";
                 echo "</div>";
             }
         }
