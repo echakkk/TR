@@ -178,7 +178,7 @@ include 'db_valesca.php';
                 <div class="d-flex justify-content-center py-5 promo-container section">
                     <div class="d-flex align-items-center flex-column pr-3">
                         <div class="promo d-flex align-items-center flex-column" id="promo-1">
-                            <a href="http://localhost/TR/Promo.html">
+                            <a href="http://localhost/TR/Promo.php">
                                 <img class="img-fluid" src="Roti 1.jpeg">
                                 <h1 class="py-3">PROMO DAN EVENTS</h1>
                             </a>
@@ -186,7 +186,7 @@ include 'db_valesca.php';
                     </div>
                     <div class="d-flex align-items-center flex-column pr-3">
                         <div class="promo d-flex align-items-center flex-column" id="promo-2">
-                            <a href="http://localhost/TR/Product.html">
+                            <a href="http://localhost/TR/Product.php">
                                 <img class="img-fluid" src="Roti 2.jpeg">
                                 <h1 class="py-3">PRODUK BEST SELLER</h1>
                             </a>
@@ -194,7 +194,7 @@ include 'db_valesca.php';
                     </div>
                     <div class="d-flex align-items-center flex-column pr-3">
                         <div class="promo d-flex align-items-center flex-column" id="promo-3">
-                            <a href="http://localhost/TR/Orders.html">
+                            <a href="http://localhost/TR/Orders.php">
                                 <img src="Roti 3.jpeg">
                                 <h1 class="py-3">PEMESANAN PRODUK</h1>
                             </a>
