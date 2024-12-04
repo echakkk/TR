@@ -144,11 +144,23 @@ $login = isset($_SESSION['username']); // Periksa apakah pengguna sudah login
         <div class="hotline-text">
             <h2>Hubungi Kami</h2>
             <!-- Tombol Call Us -->
-            <a href="https://wa.me/628156749697" target="_blank" style="text-decoration: none;">
-                <button>
-                    Call Us
-                </button>
-            </a>
+            <?php
+                if ($login) { 
+                    // Jika sudah login
+                    ?>
+                    <a href="https://wa.me/628156749697" target="_blank" style="text-decoration: none;">
+                        <button>
+                            Call Us
+                        </button>
+                    </a>
+                    <?php
+                } else { 
+                    // Jika belum login
+                    ?>
+                    <p style="color: red; font-weight: bold;">Anda harus login terlebih dahulu</p>
+                    <?php
+                }
+                ?>
         </div>
         <div class="hotline-img">
             <img src="http://localhost/TR/hotline.JPG">

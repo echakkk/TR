@@ -1,6 +1,7 @@
 <?php
 session_start();
 $login = isset($_SESSION['username']); // Periksa apakah pengguna sudah login
+include 'db_valesca.php'; 
 ?>
 
 <!DOCTYPE html>
@@ -150,7 +151,30 @@ $login = isset($_SESSION['username']); // Periksa apakah pengguna sudah login
                         </div>
                     </div>
                 </div>
-                <h1 class="mt-5 text-center">Welcome to Valesca Cake & Bakery</h1>
+                <?php
+                if (isset($_SESSION['username'])) {
+                    // Ambil username dari sesi
+                    $username = $_SESSION['username'];
+                
+                    // Query untuk mengambil nama user berdasarkan username
+                    $query = "SELECT name FROM user WHERE username = ?";
+                    $stmt = $conn->prepare($query);
+                    $stmt->bind_param("s", $username);
+                    $stmt->execute();
+                    $result = $stmt->get_result();
+                
+                    if ($result->num_rows > 0) {
+                        $row = $result->fetch_assoc();
+                        $name = $row['name'];
+                        echo "<h1 class='mt-5 text-center'>Welcome to Valesca Cake & Bakery $name </h1>";
+                    } else {
+                        echo "<h1 class='mt-5 text-center'>Welcome to Valesca Cake & Bakery</h1>";
+                    }
+                } else {
+                    // Jika belum login
+                    echo "<h1 class='mt-5 text-center'>Welcome to Valesca Cake & Bakery</h1>";
+                }
+                ?>
                 <div class="d-flex justify-content-center py-5 promo-container section">
                     <div class="d-flex align-items-center flex-column pr-3">
                         <div class="promo d-flex align-items-center flex-column" id="promo-1">
